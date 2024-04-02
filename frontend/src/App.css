@@ -1,6 +1,14 @@
 #root {
-  max-width: 1280px;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  width: 100vw;
+  /* las siguientes config corregir cuando se agregue contenido a la pagina */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+
