@@ -1,22 +1,18 @@
-#root {
-  min-width: 320px;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-  width: 100vw;
-  /* las siguientes config corregir cuando se agregue contenido a la pagina */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 
 /* Documento
    ========================================================================== */
 
+/* 
+  * Remover el margen, relleno y comportamiento de de las medidas de las cajas.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /** 
  * 1. Corrige la altura de línea en todos los navegadores. 
@@ -30,7 +26,6 @@ html {
   /* 2 */
 }
 
-
 /* Secciones
    ========================================================================== */
 
@@ -40,9 +35,24 @@ html {
  */
 
 body {
-  margin: 0;
-}
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /**
  * Renderiza consistentemente el elemento `main` en IE. 
@@ -52,15 +62,14 @@ main {
   display: block;
 }
 
-
 /**
   * Corrige el tamaño de fuente y margen en los elementos `h1`dentro de los contextos `section` y 
   * `article` en Chrome, Firefox y Safari. 
  */
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 
@@ -74,7 +83,6 @@ h1 {
  */
 
 hr {
-  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -106,8 +114,14 @@ pre {
 
 a {
   background-color: transparent;
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
 
+a:hover {
+  color: #535bf2;
+}
 
 /**
  * 1. Elimina el borde del botón en Chrome 57- 
@@ -192,10 +206,8 @@ img {
   border-style: none;
 }
 
-
 /* Formularios
    ========================================================================== */
-
 
 /** 
 * 1. Cambia los estilos de fuente en todos los navegadores. 
@@ -213,8 +225,6 @@ textarea {
   /* 1 */
   line-height: 1.15;
   /* 1 */
-  margin: 0;
-  /* 2 */
 }
 
 
@@ -241,7 +251,6 @@ select {
   text-transform: none;
 }
 
-
 /** 
 * Corrige la incapacidad de aplicar estilos a tipos sobre los que se puede hacer clic en iOS y Safari. 
 */
@@ -253,6 +262,19 @@ button,
   -webkit-appearance: button;
 }
 
+button {
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  cursor: pointer;
+  border: unset;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
 
 /** 
 * Elimina el borde interior y el relleno en Firefox. 
@@ -287,7 +309,6 @@ fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-
 /** 
 * 1. Corrige el ajuste de texto en Edge e IE. 
 * 2. Corrige la herencia de color de los elementos `fieldset` en IE. 
@@ -296,15 +317,12 @@ fieldset {
 */
 
 legend {
-  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
   display: table;
   /* 1 */
   max-width: 100%;
-  /* 1 */
-  padding: 0;
   /* 3 */
   white-space: normal;
   /* 1 */
@@ -328,20 +346,14 @@ textarea {
   overflow: auto;
 }
 
-
 /** 
-* 1. Agrega el tamaño de caja correcto en IE 10. 
-* 2. Elimina el relleno en IE 10. 
+* Elimina el relleno en IE 10. 
 */
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
-
 
 /** 
 * Corrige el estilo del cursor de los botones para incrementar y reducir en Chrome. 
@@ -409,7 +421,6 @@ summary {
   display: list-item;
 }
 
-
 /* Misc
    ========================================================================== */
 
@@ -422,11 +433,38 @@ template {
   display: none;
 }
 
-
 /** 
 * Agrega la visualización correcta en IE 10. 
 */
 
 [hidden] {
   display: none;
+}
+
+#root {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 100vw;
+  /* las siguientes config corregir cuando se agregue contenido a la pagina */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
 }
