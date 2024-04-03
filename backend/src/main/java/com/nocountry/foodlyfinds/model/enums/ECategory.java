@@ -5,5 +5,5 @@ public enum ECategory {
     VERDURAS,
     CARNES,
     LACTEOS,
-    PANADERIA
+    PANADERIAS
 }
