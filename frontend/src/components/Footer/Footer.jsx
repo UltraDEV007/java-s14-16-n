@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link as LinkRouter } from 'react-router-dom';
-import '../styles/footer.css'
+import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faUser, faPercent, faClipboardList, faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons'
-
-
-
 
 const pages = [
   {
     name: 'Inicio',
     path: '/inicio',
     icon: faHouse
-
   },
   {
     name: 'Perfil',
@@ -54,10 +50,6 @@ function Footer() {
           </ul>
 
         </nav>
-
-
-
-
       </footer>
     </>
   )
