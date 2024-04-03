@@ -28,11 +28,7 @@ header {
     height: 38px;
   }
 
-  > label {
-    grid-column: span 3;
-  }
-
-  search, label {
+  > :is(search, label) {
     grid-column: span 3;
     justify-self: center;
   }
