@@ -2,40 +2,39 @@ import React from 'react'
 import { Link as LinkRouter } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faBell, faCartShopping} from '@fortawesome/free-solid-svg-icons'
+import {  faBell, faCartShopping, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import HamburgerBtn from '../Buttons/HamburgerBtn/HamburgerBtn';
+import Search from '../Search/Search';
 
-const pages = [
-  {
-    name: 'Notificaciones',
-    path: '/notificaciones',
-    icon: faBell
+const pages = [{
+  name: 'Carrito',
+  path: '/carrito',
+  icon:faCartShopping
+}, {
+  name: 'Notificaciones',
+  path: '/notificaciones',
+  icon: faBell
   },
-  {
-    name: 'Carrito',
-    path: '/carrito',
-    icon:faCartShopping
-  },
-  
 ];
+
 function Navbar() {
   return (
     <>
       <header>
         <HamburgerBtn />
+        <address>
+          <FontAwesomeIcon icon={faLocationDot}/>
+          <p>Mi ubicación</p>
+        </address>
         <nav >
-          <ul style={{width:'90%', display:'flex', flexDirection:'row', justifyContent:'flex-end', columnGap:'20px', marginRight:'50px'}}>
+          <ul>
             {pages.map((page) => (
-              <li key={page.path} style={{listStyleType:'none' }}>
+              <li key={page.path} >
                 <LinkRouter to={page.path}><FontAwesomeIcon icon={page.icon} /></LinkRouter>
               </li>))}
           </ul>
-
         </nav>
-
-
-
-
+        <Search />
       </header>
     </>
   )

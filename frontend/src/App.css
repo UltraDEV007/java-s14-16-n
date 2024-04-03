@@ -147,6 +147,10 @@ strong {
   font-weight: bolder;
 }
 
+address {
+  font-style: inherit;
+}
+
 
 /**
  * 1. Corrige la herencia y el escalado del tamaño de la fuente en todos los navegadores. 
@@ -346,6 +350,10 @@ textarea {
   overflow: auto;
 }
 
+li {
+  list-style-type: none;
+}
+
 /** 
 * Elimina el relleno en IE 10. 
 */
@@ -439,6 +447,10 @@ template {
 
 [hidden] {
   display: none;
+}
+
+:root {
+  --bg-color: #ebebeb;
 }
 
 #root {

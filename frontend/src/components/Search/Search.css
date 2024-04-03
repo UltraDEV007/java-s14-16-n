@@ -1,0 +1,32 @@
+search {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #DDE1E6;
+
+  button {
+    padding-left: 15px;
+    
+    * {
+      fill: #A2A9B0;
+    }
+  }
+
+  [type='search'] {
+    flex-grow: 1;
+    background: inherit;
+    padding-inline-start: 10px;
+    color: inherit;
+    outline: none;
+    border: unset;
+  }
+
+  ::placeholder {
+    opacity: .6;
+  }
+}
+
+search + label {
+  display: flex;
+  gap: 10px
+}
