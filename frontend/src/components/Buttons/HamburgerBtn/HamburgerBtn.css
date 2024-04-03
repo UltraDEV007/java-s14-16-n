@@ -1,0 +1,24 @@
+.hamburger-btn {
+  width: 24px;
+  height: 24px;
+
+  rect {
+    width: 85%;
+    height: 10%;
+    x: 6%;
+    fill: black;
+    rx: 3;
+
+    &:first-child {
+      y: 20%;
+    }
+
+    &:nth-child(2) {
+      y: 45%;
+    }
+
+    &:last-child {
+      y: 70%;
+    }
+  }
+}
