@@ -3,13 +3,13 @@ import { Link as LinkRouter } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBell, faCartShopping, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import HamburgerBtn from '../Buttons/HamburgerBtn/HamburgerBtn';
+import HamburgerBtn from '../share/Buttons/HamburgerBtn/HamburgerBtn';
 import Search from '../Search/Search';
 
 const pages = [{
   name: 'Carrito',
   path: '/carrito',
-  icon:faCartShopping
+  icon: faCartShopping
 }, {
   name: 'Notificaciones',
   path: '/notificaciones',
