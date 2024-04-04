@@ -1,4 +1,4 @@
-search {
+.search-bar {
   display: flex;
   border-radius: 8px;
   overflow: hidden;
@@ -24,9 +24,4 @@ search {
   ::placeholder {
     opacity: .6;
   }
-}
-
-search + label {
-  display: flex;
-  gap: 10px
 }
