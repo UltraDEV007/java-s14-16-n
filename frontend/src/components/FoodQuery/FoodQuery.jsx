@@ -1,4 +1,4 @@
-import Search from "../Search/Search";
+import Search from "../share/Search/Search";
 import Form from "../share/Form/Form";
 import './FoodQuery.css'
 
