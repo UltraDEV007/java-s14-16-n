@@ -1,7 +1,9 @@
 import { useState } from "react"
 
+const disabledAttr = 'disabled'
+
 function assert(func) {
-  return func && typeof func === 'function'
+  return Boolean(func) && typeof func === 'function'
 }
 
 export default function Form({
@@ -11,6 +13,7 @@ export default function Form({
   onSubmit,
   validate,
   onChange,
+  btnRef,
 }) {
   const [disabled, setDisabled] = useState(validate);
 
@@ -29,15 +32,19 @@ export default function Form({
   }
 
   function validate(e) {
+    if (Boolean(btnRef)) {
+      const isNotValid = !Array
+        .from(e.currentTarget.elements)
+        .every(input => input.validity.valid)
+      
+      setDisabled(isNotValid)
+
+      if (isNotValid) btnRef.current.setAttribute(disabledAttr, true)
+      else btnRef.current.removeAttribute(disabledAttr)
+
+    } else return
+    
     if (assert(onChange)) {
-      const 
-        form = e.currentTarget.elements,
-        isValid = Array
-          .from(form)
-          .every(input => input.validity.valid)
-
-      setDisabled(!isValid)
-
       onChange({
         e,
         disabled,
@@ -48,7 +55,8 @@ export default function Form({
   return (
     <>
       <form {...{name, className}} 
-        noValidate onSubmit={submit} 
+        noValidate 
+        onSubmit={submit} 
         onChange={validate} 
       >
         {children}
