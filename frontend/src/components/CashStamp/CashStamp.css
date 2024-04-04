@@ -1,0 +1,74 @@
+.cash-stamp {
+  display: grid;
+  row-gap: 30px;
+  grid-template-columns: 25px 1fr 25px;
+  grid-auto-rows: max-content;
+  min-height: 100dvh;
+  color: black;
+  background-color: white;
+
+  a {
+    justify-self: start;
+    position: relative;
+    top: 25px;
+    
+    path {
+      fill: black;
+    }
+  }
+
+  > *:not(hr) {
+    grid-column: 2;
+  }
+
+  > hr {
+    grid-column: span 3;
+    background-color: invert;
+  }
+
+  > p {
+    width: 40%;
+    font-size: 14px;
+  }
+
+  [type='number'] {
+    background: transparent;
+    border: 0;
+    width: 100%;
+    font-size: 42px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    label:has(&) {
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      display: flex;
+      margin: 0 15px;
+      align-items: center;
+
+      &:focus-within {
+        border: 2px solid white;
+      }
+
+      > svg {
+        height: 42px;
+        aspect-ratio: 2 / 3;
+        padding-left: 15px;
+      }
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    font-size: 21px;
+    padding: 22px;
+    font-weight: 400;
+    color: inherit;
+  }
+}
