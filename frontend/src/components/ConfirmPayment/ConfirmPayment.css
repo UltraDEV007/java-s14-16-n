@@ -1,0 +1,25 @@
+.confirm-payment {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: 50% max-content;
+  color: black;
+  background: white;
+  align-items: end;
+  row-gap: 31%;
+  padding: 0 70px;
+
+  > h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  > button {
+    font-size: 26px;
+    padding: 6px;
+  }
+
+  > :is(h3, button) {
+    text-transform: uppercase;
+  }
+}
