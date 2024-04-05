@@ -68,6 +68,7 @@ CREATE TABLE `order`
     order_id     INT PRIMARY KEY AUTO_INCREMENT,
     user_id      INT,
     product_id   INT,
+    qty          INT,
     total_amount DECIMAL(10, 2),
     order_type   ENUM ('TAKEAWAY', 'DELIVERY'),
     order_date   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
