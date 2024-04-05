@@ -20,13 +20,21 @@ function App() {
         <Routes>
           <Route path='/' element={<Welcome />}></Route>
           <Route path='/inicio' element={<Home/>}></Route>
+          <Route path='/busqueda' >
+            <Route path=':mealId' ></Route>
+            <Route path='pagar'>
+              <Route path='confirmar' element={<></>}></Route>
+              <Route path='medio-de-pago' element={<></>}></Route>
+              <Route path='monto-de-efectivo' element={<Payout />}></Route>
+              <Route path='procesando-pago' element={<ConfirmPayment />}></Route>
+              <Route path='pedido-aprobado' element={<Approved />}></Route>
+              <Route path='detalles-de-entrega' element={<></>}></Route>
+            </Route>
+          </Route>
           <Route path='/perfil' element={<Profile/>}></Route>
           <Route path='/beneficios' element={<Bonus/>}></Route>
           <Route path='/pedidos' element={<Orders/>}></Route>
           <Route path='/pagos' element={<Payment/>}></Route>
-          <Route path='/test-monto-de-efectivo' element={<Payout />}></Route>
-          <Route path='/test-procesando-pago' element={<ConfirmPayment />}></Route>
-          <Route path='/test-pedido-aprovado' element={<Approved />}></Route>
         </Routes>
       <Footer />
     </>
