@@ -273,6 +273,7 @@ button {
   font-weight: 500;
   cursor: pointer;
   border: unset;
+  color: inherit;
 }
 
 button:focus,

@@ -9,7 +9,9 @@ import Orders from './pages/Orders';
 import Payment from './pages/Payment';
 import Bonus from './pages/Bonus';
 import Welcome from './pages/Logo';
-import CashStamp from './components/CashStamp/CashStamp';
+import Payout from './components/Payout/Payout';
+import ConfirmPayment from './components/ConfirmPayment/ConfirmPayment';
+import Approved from './components/Approved/Approved';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path='/beneficios' element={<Bonus/>}></Route>
           <Route path='/pedidos' element={<Orders/>}></Route>
           <Route path='/pagos' element={<Payment/>}></Route>
-          <Route path='/test-monto-de-efectivo' element={<CashStamp />}></Route>
+          <Route path='/test-monto-de-efectivo' element={<Payout />}></Route>
+          <Route path='/test-procesando-pago' element={<ConfirmPayment />}></Route>
+          <Route path='/test-pedido-aprovado' element={<Approved />}></Route>
         </Routes>
       <Footer />
     </>
