@@ -47,13 +47,13 @@
     }
 
     label:has(&) {
-      border: 1px solid rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.5);
       display: flex;
       margin: 0 15px;
       align-items: center;
 
       &:focus-within {
-        border: 2px solid white;
+        border: 1px solid #000000;
       }
 
       > svg {
