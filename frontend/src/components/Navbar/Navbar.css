@@ -1,0 +1,29 @@
+header {
+  display: grid;
+  grid-template-columns: 32px 1fr max-content;
+  row-gap: 30px;
+  align-items: center;
+  padding: 20px 15px 0;
+  background: var(--bg-color);
+  color: black;
+
+  > address {
+    display: flex;
+    gap: 5px;
+    text-align: start;
+    padding-left: 14px;
+  }
+
+  > nav {
+    height: 24px;
+
+    > ul {
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  > form {
+    grid-column: span 3;
+  }
+}

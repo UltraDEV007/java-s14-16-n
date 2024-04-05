@@ -1,6 +1,6 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
-import com.nocountry.foodlyfinds.model.dto.UserDTO;
+import com.nocountry.foodlyfinds.model.dto.UserTblDTO;
 import com.nocountry.foodlyfinds.model.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     @Override
-    public List<UserDTO> findAll() {
+    public List<UserTblDTO> findAll() {
         return null;
     }
 
