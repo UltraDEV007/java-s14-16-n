@@ -9,6 +9,7 @@ import Orders from './pages/Orders';
 import Payment from './pages/Payment';
 import Bonus from './pages/Bonus';
 import Welcome from './pages/Logo';
+import CashStamp from './components/CashStamp/CashStamp';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/beneficios' element={<Bonus/>}></Route>
           <Route path='/pedidos' element={<Orders/>}></Route>
           <Route path='/pagos' element={<Payment/>}></Route>
+          <Route path='/test-monto-de-efectivo' element={<CashStamp />}></Route>
         </Routes>
       <Footer />
     </>
