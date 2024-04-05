@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "user_tbl", schema = "foodlyfinds", catalog = "")
+@Table(name = "user_tbl")
 public class UserTblEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

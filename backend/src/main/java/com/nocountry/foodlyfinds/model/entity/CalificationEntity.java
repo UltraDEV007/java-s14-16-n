@@ -15,7 +15,6 @@ import java.util.Objects;
 @NoArgsConstructor
 @Builder
 @Table(name = "calification")
-
 public class CalificationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
