@@ -8,19 +8,21 @@ import './CashStamp.css'
 export default function CashStamp() {
   return (
     <>
-      <Form className={'cash-stamp'}>
-        <Link to='..'><FontAwesomeIcon icon={faArrowLeft} /></Link>
-        <h4>Porfavor, especifica el monto con el que pagarás</h4>
-        <hr />
-        <p>valor total de la compra ${'7000'}</p>
-        <label >
-          <FontAwesomeIcon icon={faDollarSign} />
-          <input type="number" name="amount" />
-        </label>
-        <MainBtn>Hacer pedido</MainBtn>
-        <MainBtn>Quiero agregar</MainBtn>
-        <hr />
-      </Form>
+      <main>
+        <Form className={'cash-stamp'}>
+          <Link to='..'><FontAwesomeIcon icon={faArrowLeft} /></Link>
+          <h4>Porfavor, especifica el monto con el que pagarás</h4>
+          <hr />
+          <p>valor total de la compra ${'7000'}</p>
+          <label >
+            <FontAwesomeIcon icon={faDollarSign} />
+            <input type="number" name="amount" />
+          </label>
+          <MainBtn>Hacer pedido</MainBtn>
+          <MainBtn>Quiero agregar</MainBtn>
+          <hr />
+        </Form>
+      </main>
     </>
   )
 }
