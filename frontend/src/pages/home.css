@@ -1,0 +1,11 @@
+.cardProductContainer {
+    width: 320px;
+    /* corregir altura segun media query */
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: aqua;
+}
