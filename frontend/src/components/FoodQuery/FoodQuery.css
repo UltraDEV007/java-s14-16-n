@@ -1,6 +1,6 @@
 .food-query {
   display: grid;
-  gap: 30px;
+  gap: 10px;
   justify-items: center;
 
   > search {

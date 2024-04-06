@@ -6,24 +6,29 @@ header {
   padding: 20px 15px 0;
   background: var(--bg-color);
   color: black;
+  height: 30vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-  > address {
+  >address {
     display: flex;
     gap: 5px;
     text-align: start;
     padding-left: 14px;
   }
 
-  > nav {
+  >nav {
     height: 24px;
 
-    > ul {
+    >ul {
       display: flex;
       gap: 12px;
     }
   }
 
-  > form {
+  >form {
     grid-column: span 3;
   }
 }

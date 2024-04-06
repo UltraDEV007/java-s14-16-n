@@ -1,11 +1,11 @@
 .cardProductContainer {
-    width: 320px;
-    /* corregir altura segun media query */
-    height: 60vh;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    background-color: aqua;
+    margin-top: 33vh;
+    margin-bottom: 23vh;
 }
