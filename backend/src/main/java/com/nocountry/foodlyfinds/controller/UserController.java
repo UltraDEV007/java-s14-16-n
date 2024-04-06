@@ -55,6 +55,17 @@ public class UserController {
        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(userService.getUserPhoto(userId));
    }
 
+    @GetMapping("{userId}")
+    public ResponseEntity<?> findUserById(@PathVariable Long userId){
+        return ResponseEntity.ok(userService.findById(userId));
+    }
+
+    @DeleteMapping("{userId}")
+    public ResponseEntity<?> deleteUserById(@PathVariable Long userId){
+        userService.deleteById(userId);
+        return ResponseEntity.noContent().build();
+    }
+
 //    private final ImageService imageService;
 //    private final CloudinaryService cloudinaryService;
 //    private final UserRepository UR;

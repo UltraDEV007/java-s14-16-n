@@ -3,6 +3,7 @@ package com.nocountry.foodlyfinds.model.service.impl;
 import com.nocountry.foodlyfinds.exception.ResourceNotFoundException;
 import com.nocountry.foodlyfinds.model.dto.UserTblDTO;
 import com.nocountry.foodlyfinds.model.dto.request.ProfileRequest;
+import com.nocountry.foodlyfinds.model.dto.response.UserResponse;
 import com.nocountry.foodlyfinds.model.entity.UserTblEntity;
 import com.nocountry.foodlyfinds.model.repository.UserRepository;
 import com.nocountry.foodlyfinds.model.service.UserService;
@@ -54,6 +55,19 @@ public class UserServiceImpl implements UserService {
        userRepository.save(userDB);
     }
 
+    @Transactional(readOnly = true)
+    @Override
+    public UserResponse findById(Long userId) {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+        return UserResponse.builder()
+                .id(userDB.getUserId())
+                .name(userDB.getName())
+                .phoneNumber(userDB.getPhoneNumber())
+                .build();
+    }
+
+    @Transactional(readOnly = true)
     @Override
     public Resource getUserPhoto(Long userId) {
         UserTblEntity userDB = userRepository.findById(userId)
@@ -62,6 +76,13 @@ public class UserServiceImpl implements UserService {
             throw new ResourceNotFoundException("The user with id " + userId + " does not have an associated image.");
         }
         return new ByteArrayResource(userDB.getPhoto());
+    }
+
+    @Override
+    public void deleteById(Long userId) {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+        userRepository.delete(userDB);
     }
 
 //    private final UserRepository UR;
