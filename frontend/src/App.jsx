@@ -9,11 +9,13 @@ import Orders from './pages/Orders';
 import Payment from './pages/Payment';
 import Bonus from './pages/Bonus';
 import Welcome from './pages/Logo';
+import PaymentMethod from './components/PaymentMethod/PaymentMethod';
 
 function App() {
   return (
     <>
-      <Navbar />
+    <PaymentMethod />
+      {/* <Navbar />
         <Routes>
           <Route path='/' element={<Welcome />}></Route>
           <Route path='/inicio' element={<Home/>}></Route>
@@ -22,7 +24,7 @@ function App() {
           <Route path='/pedidos' element={<Orders/>}></Route>
           <Route path='/pagos' element={<Payment/>}></Route>
         </Routes>
-      <Footer />
+      <Footer /> */}
     </>
   )
 }
