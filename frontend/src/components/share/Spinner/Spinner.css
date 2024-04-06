@@ -1,0 +1,15 @@
+@keyframes rotate {
+  from {
+    rotate: 0;
+  } to {
+    rotate: 360deg
+  }
+}
+
+.dotted-spinner {
+  border-radius: 50%;
+  border: 3px dotted black;
+  aspect-ratio: 1;
+  animation: rotate 3s infinite linear;
+  height: 100%
+}
