@@ -3,13 +3,10 @@ package com.nocountry.foodlyfinds.model.entity;
 import com.nocountry.foodlyfinds.model.enums.ECompensation;
 import com.nocountry.foodlyfinds.model.enums.EIssueType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Objects;
 
 @Entity
 @Data

@@ -1,14 +1,11 @@
 package com.nocountry.foodlyfinds.model.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -29,7 +26,7 @@ public class ProductEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private CategoryEntity category;
+    private CategoryEntity categoryId;
 
     private String productImageUrl;
 
