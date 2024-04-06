@@ -51,13 +51,13 @@
       background: rgb(129, 129, 129);
     }
 
-    > input:checked:after {
+    > input:checked::after {
       background: rgb(54, 54, 54);
       left: 80px;
     }
 
     > label {
-      transition: .5s;
+      transition: 0.5s;
     }
   }
 
