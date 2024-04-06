@@ -18,6 +18,7 @@ import Approved from './components/Approved/Approved';
 
 // conexion al json
 import { products } from './data/products';
+import Main from './pages/Main';
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -47,27 +48,27 @@ function App() {
   return (
     <>
       <AppContext.Provider value={{ dataProducts }}>
-        <Navbar />
         <Routes>
-          <Route path='/' element={<Welcome />}></Route>
-          <Route path='/inicio' element={<Home />}></Route>
+          <Route path='/' element={<Welcome />} />
+          <Route path='/*' element={<Main />} >
+            <Route path='inicio' element={<Home />} />
+            <Route path='perfil' element={<Profile />} />
+            <Route path='beneficios' element={<Bonus />} />
+            <Route path='pedidos' element={<Orders />} />
+            <Route path='pagos' element={<Payment />} />
+          </Route>
           <Route path='/busqueda' >
-            <Route path=':mealId' ></Route>
-            <Route path='pagar'>
-              <Route path='confirmar' element={<></>}></Route>
-              <Route path='medio-de-pago' element={<></>}></Route>
-              <Route path='monto-de-efectivo' element={<Payout />}></Route>
-              <Route path='procesando-pago' element={<ConfirmPayment />}></Route>
-              <Route path='pedido-aprobado' element={<Approved />}></Route>
-              <Route path='detalles-de-entrega' element={<></>}></Route>
+            <Route path=':mealId' />
+            <Route path='pagar' >
+              <Route path='confirmar' />
+              <Route path='medio-de-pago' />
+              <Route path='monto-de-efectivo' element={<Payout />} />
+              <Route path='procesando-pago' element={<ConfirmPayment />} />
+              <Route path='pedido-aprobado' element={<Approved />} />
+              <Route path='detalles-de-entrega' />
             </Route>
           </Route>
-          <Route path='/perfil' element={<Profile />}></Route>
-          <Route path='/beneficios' element={<Bonus />}></Route>
-          <Route path='/pedidos' element={<Orders />}></Route>
-          <Route path='/pagos' element={<Payment />}></Route>
         </Routes>
-        <Footer />
       </AppContext.Provider>
 
 

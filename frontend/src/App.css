@@ -241,6 +241,7 @@ button,
 input {
   /* 1 */
   overflow: visible;
+  color: inherit;
 }
 
 
@@ -273,7 +274,6 @@ button {
   font-weight: 500;
   cursor: pointer;
   border: unset;
-  color: inherit;
 }
 
 button:focus,
