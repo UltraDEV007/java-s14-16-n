@@ -9,9 +9,18 @@ package com.nocountry.foodlyfinds.controller;
 //import com.nocountry.backend.model.service.CloudinaryService;
 //import com.nocountry.backend.model.service.ImageService;
 //import com.nocountry.backend.model.service.UserService;
+import com.nocountry.foodlyfinds.model.dto.UserTblDTO;
+import com.nocountry.foodlyfinds.model.dto.request.ProfileRequest;
+import com.nocountry.foodlyfinds.model.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.security.core.Authentication;
@@ -23,11 +32,29 @@ import org.springframework.web.bind.annotation.RestController;
 //import java.util.concurrent.ExecutionException;
 
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping("api/v1/user")
 @RequiredArgsConstructor
 public class UserController {
 
-//    private final UserService US;
+   private final UserService userService;
+
+   @PostMapping
+   public ResponseEntity<?> saveUser(@Valid @RequestBody UserTblDTO userRequest){
+        userService.save(userRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
+
+   @PutMapping("{userId}/add-img")
+   public ResponseEntity<?> addImageToUser(@Valid ProfileRequest userRequest, @PathVariable Long userId, @RequestParam MultipartFile archivo) throws IOException {
+        userService.addPhoto(userRequest, userId, archivo);
+        return ResponseEntity.ok().build();
+   }
+
+   @GetMapping("{userId}/uploads/img")
+   public ResponseEntity<?> addImageToUser(@PathVariable Long userId){
+       return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(userService.getUserPhoto(userId));
+   }
+
 //    private final ImageService imageService;
 //    private final CloudinaryService cloudinaryService;
 //    private final UserRepository UR;
