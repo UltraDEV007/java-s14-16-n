@@ -14,8 +14,7 @@ import PaymentMethod from './components/PaymentMethod/PaymentMethod';
 function App() {
   return (
     <>
-    <PaymentMethod />
-      {/* <Navbar />
+      <Navbar />
         <Routes>
           <Route path='/' element={<Welcome />}></Route>
           <Route path='/inicio' element={<Home/>}></Route>
@@ -24,7 +23,7 @@ function App() {
           <Route path='/pedidos' element={<Orders/>}></Route>
           <Route path='/pagos' element={<Payment/>}></Route>
         </Routes>
-      <Footer /> */}
+      <Footer />
     </>
   )
 }
