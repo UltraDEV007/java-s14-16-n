@@ -2,16 +2,13 @@ package com.nocountry.foodlyfinds.model.entity;
 
 import com.nocountry.foodlyfinds.model.enums.EOrder_type;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Data
@@ -28,13 +25,11 @@ public class OrderEntity {
     @JoinColumn(name = "user_id")
     private UserTblEntity user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private ProductEntity product;
-
-//    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Product.class, cascade = CascadeType.PERSIST)
-//    @JoinTable(name = "order_product", joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id"))
-//    private List<Product> product;
+    @ManyToMany(fetch = FetchType.LAZY, targetEntity = ProductEntity.class, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "order_product",
+            joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "orderId"), inverseJoinColumns = @JoinColumn(name = "product_id", referencedColumnName = "productId"))
+    private List<ProductEntity> product;
 
     private BigDecimal totalAmount;
 
