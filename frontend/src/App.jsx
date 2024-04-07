@@ -20,6 +20,7 @@ import Approved from "./components/Approved/Approved";
 // conexion al json
 import { products } from "./data/products";
 import Main from "./pages/Main";
+import Summary from "./components/Summary/Summary";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -64,7 +65,7 @@ function App() {
               <Route path="monto-de-efectivo" element={<Payout />} />
               <Route path="procesando-pago" element={<ConfirmPayment />} />
               <Route path="pedido-aprobado" element={<Approved />} />
-              <Route path="detalles-de-entrega" />
+              <Route path="detalles-de-entrega" element={<Summary />} />
             </Route>
           </Route>
         </Routes>
