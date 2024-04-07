@@ -16,7 +16,7 @@ import Payout from "./components/Payout/Payout";
 import PaymentMethod from "./components/PaymentMethod/PaymentMethod";
 import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
-
+import Compensation from "./components/Compensation/Compensation";
 // conexion al json
 import { products } from "./data/products";
 import Main from "./pages/Main";
@@ -66,6 +66,7 @@ function App() {
               <Route path="procesando-pago" element={<ConfirmPayment />} />
               <Route path="pedido-aprobado" element={<Approved />} />
               <Route path="detalles-de-entrega" element={<Summary />} />
+              <Route path="compensacion" element={<Compensation />} />
             </Route>
           </Route>
         </Routes>
