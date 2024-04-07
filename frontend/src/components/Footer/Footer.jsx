@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as LinkRouter } from 'react-router-dom';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faUser, faPercent, faClipboardList, faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faUser, faPercent, faFileLines, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 const pages = [
   {
@@ -23,12 +23,12 @@ const pages = [
   {
     name: 'Pedidos',
     path: '/pedidos',
-    icon: faClipboardList
+    icon: faFileLines
   },
   {
     name: 'Pagos',
     path: '/pagos',
-    icon: faFileInvoiceDollar
+    icon: faDollarSign
   }
 ];
 
