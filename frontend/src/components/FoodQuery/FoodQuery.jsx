@@ -10,6 +10,7 @@ export default function FoodQuery() {
         <label >
           <p>Envio a domicilio</p>
           <input type="checkbox" name="shipment" />
+          <span />
           <p>Retiro Local</p>
         </label>
       </Form>
