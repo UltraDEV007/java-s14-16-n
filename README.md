@@ -125,28 +125,52 @@
 
   <a  href="https://markdown.es/" target="_blank">
 
-  ![markdown](https://img.shields.io/badge/markdown-blue?logo=markdown)
+  ![markdown](https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff)
+
+  </a>
+
+  <a  href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
+
+  ![JS](https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff)
 
   </a>
 
    <a  href="https://developer.mozilla.org/es/docs/Glossary/HTML5" target="_blank">
 
-  ![HTML5](https://img.shields.io/badge/HTML5-red?logo=HTML5&logoColor=black)
+  ![HTML5](https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff)
 
   </a>
 
-   <a  href="https://www.python.org/" target="_blank">
-  
-  ![phyton](https://img.shields.io/badge/pyhton-%23F7DF1E?logo=python&logoColor=blue)
+   <a  href="https://es.react.dev/" target="_blank">
+
+  ![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
+
+  </a>
+
+  <a  href="https://vitejs.dev/guide/" target="_blank">
+
+  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
+  </a>
+
+  <a  href="https://www.w3schools.com/css/" target="_blank">
+
+  ![CSS3](https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff)
 
   </a>
 
 
   <h4>Tecnologías usadas en Back End</h4>
 
-   <a  href="https://www.python.org/" target="_blank">
+   <a  href="https://www.java.com/es/" target="_blank">
 
-  ![phyton](https://img.shields.io/badge/pyhton-%23F7DF1E?logo=python&logoColor=blue)
+  ![Java](https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white)
+
+  </a>
+
+  <a  href="https://spring.io/projects/spring-framework" target="_blank">
+
+  ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 
   </a>
 
