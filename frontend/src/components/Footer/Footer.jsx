@@ -1,21 +1,14 @@
-import React from "react";
-import { Link as LinkRouter } from "react-router-dom";
-import "../styles/footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faUser,
-  faPercent,
-  faClipboardList,
-  faFileInvoiceDollar,
-  faExclamation,
-} from "@fortawesome/free-solid-svg-icons";
+import React from 'react'
+import { Link as LinkRouter } from 'react-router-dom';
+import './Footer.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faUser, faPercent, faFileLines, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 
 const pages = [
   {
-    name: "Inicio",
-    path: "/inicio",
-    icon: faHouse,
+    name: 'Inicio',
+    path: '/inicio',
+    icon: faHouse
   },
   {
     name: "Perfil",
@@ -28,20 +21,15 @@ const pages = [
     icon: faPercent,
   },
   {
-    name: "Pedidos",
-    path: "/pedidos",
-    icon: faClipboardList,
+    name: 'Pedidos',
+    path: '/pedidos',
+    icon: faFileLines
   },
   {
-    name: "Pagos",
-    path: "/pagos",
-    icon: faFileInvoiceDollar,
-  },
-  {
-    name: "Producto Elegido",
-    path: "/producto-elegido",
-    icon: faExclamation,
-  },
+    name: 'Pagos',
+    path: '/pagos',
+    icon: faDollarSign
+  }
 ];
 
 function Footer() {

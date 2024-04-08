@@ -1,3 +1,459 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+
+/* Documento
+   ========================================================================== */
+
+/* 
+  * Remover el margen, relleno y comportamiento de de las medidas de las cajas.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/** 
+ * 1. Corrige la altura de línea en todos los navegadores. 
+ * 2. Previene los ajustes del tamaño de la fuente tras los cambios de orientación en iOS. 
+ */
+
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Secciones
+   ========================================================================== */
+
+
+/**
+ * Elimina el margen en todos los navegadores. 
+ */
+
+body {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: black;
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Renderiza consistentemente el elemento `main` en IE. 
+ */
+
+main {
+  display: block;
+}
+
+/**
+  * Corrige el tamaño de fuente y margen en los elementos `h1`dentro de los contextos `section` y 
+  * `article` en Chrome, Firefox y Safari. 
+ */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+/* Contenido agrupado
+   ========================================================================== */
+
+
+/**
+ * 1. Agrega el tamaño de caja correcto en Firefox. 
+ * 2. Muestra el excedente en Edge e IE. 
+ */
+
+hr {
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+
+/**
+ * 1. Corrige la herencia y el escalado del tamaño de la fuente en todos los navegadores. 
+ * 2. Corrige el tamaño de fuente impar `em` en todos los navegadores. 
+ */
+
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+
+/* Semántica a nivel de texto
+   ========================================================================== */
+
+
+/**
+ * Elimina el fondo gris de los enlaces activos en IE 10. 
+ */
+
+a {
+  background-color: transparent;
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/**
+ * 1. Elimina el borde del botón en Chrome 57- 
+ * 2. Agrega la decoración de texto correcta en Chrome, Edge, IE, Opera y Safari. 
+ */
+
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+
+/**
+ * Agrega el grosor de fuente correcto en Chrome, Edge y Safari. 
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+address {
+  font-style: inherit;
+}
+
+
+/**
+ * 1. Corrige la herencia y el escalado del tamaño de la fuente en todos los navegadores. 
+ * 2. Corrige el tamaño de fuente impar `em` en todos los navegadores. 
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+
+/** 
+* Agrega el tamaño de fuente correcto en todos los navegadores. 
+*/
+
+small {
+  font-size: 80%;
+}
+
+
+/** 
+* Evita que los elementos `sub` y `sup` afecten a la altura de línea en 
+* todos los navegadores. 
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+/* Contenido insertado
+   ========================================================================== */
+
+
+/** 
+* Elimina el borde de las imágenes dentro de enlaces en IE 10. 
+*/
+
+img {
+  border-style: none;
+}
+
+/* Formularios
+   ========================================================================== */
+
+/** 
+* 1. Cambia los estilos de fuente en todos los navegadores. 
+* 2. Elimina el margen en Firefox y Safari. 
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+}
+
+
+/** 
+* Muestra el excedente en IE. 
+* 1. Muestra el excedente en Edge 
+*/
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+  color: inherit;
+}
+
+
+/** 
+* Elimina la herencia de text-transform en Edge, Firefox e IE. 
+* 1. Elimina la herencia de text-transform en Firefox. 
+*/
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/** 
+* Corrige la incapacidad de aplicar estilos a tipos sobre los que se puede hacer clic en iOS y Safari. 
+*/
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button {
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-weight: 500;
+  cursor: pointer;
+  border: unset;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/** 
+* Elimina el borde interior y el relleno en Firefox. 
+*/
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+
+/** 
+* Restablece los estilos del foco que fueron desconfigurados por la regla anterior. 
+*/
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+
+/** 
+* Corrige el relleno en Firefox. 
+*/
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/** 
+* 1. Corrige el ajuste de texto en Edge e IE. 
+* 2. Corrige la herencia de color de los elementos `fieldset` en IE. 
+* 3. Elimina el relleno para que los desarrolladores no se vean sorprendidos cuando pongan a cero 
+* los elementos `fieldset` en todos los navegadores. 
+*/
+
+legend {
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+
+/** 
+* Agrega el alineado vertical correcto en Chrome, Firefox y Opera. 
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+
+/** 
+* Elimina la barra de desplazamiento vertical predeterminada en IE 10+. 
+*/
+
+textarea {
+  overflow: auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+/** 
+* Elimina el relleno en IE 10. 
+*/
+
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+}
+
+/** 
+* Corrige el estilo del cursor de los botones para incrementar y reducir en Chrome. 
+*/
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+
+/** 
+* 1. Corrige la apariencia extraña en Chrome y Safari. 
+* 2. Corrige el estilo de contorno en Safari. 
+*/
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+
+/** 
+* Elimina el relleno interior en Chrome y Safari, en macOS. 
+*/
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+/** 
+* 1. Corrige la incapacidad de aplicar estilos a tipos sobre los que se puede hacer clic en iOS y Safari. 
+* 2. Cambia las propiedades de fuente para `inherit` en Safari. 
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+
+/* Interactivo
+   ========================================================================== */
+
+
+/* 
+* Agrega la visualización correcta en Edge, IE 10+ y Firefox. 
+*/
+
+details {
+  display: block;
+}
+
+
+/* 
+* Agrega la visualización correcta en todos los navegadores. 
+*/
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+
+/** 
+* Agrega la visualización correcta en IE 10+. 
+*/
+
+template {
+  display: none;
+}
+
+/** 
+* Agrega la visualización correcta en IE 10. 
+*/
+
+[hidden] {
+  display: none;
+}
+
+:root {
+  --bg-color: #f5f5f5;
+}
+
 #root {
   min-width: 320px;
   margin: 0 auto;
@@ -11,4 +467,17 @@
   justify-content: space-between;
 }
 
+@media (prefers-color-scheme: light) {
+  body {
+    color: #213547;
+    background-color: #ffffff;
+  }
 
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
