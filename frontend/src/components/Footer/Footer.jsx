@@ -11,14 +11,14 @@ const pages = [
     icon: faHouse
   },
   {
-    name: 'Perfil',
-    path: '/perfil',
-    icon: faUser
+    name: "Perfil",
+    path: "/perfil",
+    icon: faUser,
   },
   {
-    name: 'Beneficios',
-    path: '/beneficios',
-    icon: faPercent
+    name: "Beneficios",
+    path: "/beneficios",
+    icon: faPercent,
   },
   {
     name: 'Pedidos',
@@ -35,24 +35,36 @@ const pages = [
 function Footer() {
   return (
     <>
-      <footer className='footer'>
-        <nav style={{ width: '98%', marginLeft:'1%', marginRight:'1%' }}>
-          <ul style={{ width: '100%', display: 'flex', flexDirection: 'row', columnGap: '20px', justifyContent: 'center' }}>
+      <footer className="footer">
+        <nav style={{ width: "98%", marginLeft: "1%", marginRight: "1%" }}>
+          <ul
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "row",
+              columnGap: "20px",
+              justifyContent: "center",
+            }}
+          >
             {pages.map((page) => (
-              <li key={page.path} style={{ listStyleType: 'none' }}>
+              <li
+                key={page.path}
+                style={{ listStyleType: "none" }}
+              >
                 <LinkRouter to={page.path}>
-
-                  <FontAwesomeIcon icon={page.icon}
-                    style={{ fontSize: '20px' }} />
-                  <p style={{ fontSize: '14px' }}>{page.name}</p>
+                  <FontAwesomeIcon
+                    icon={page.icon}
+                    style={{ fontSize: "20px" }}
+                  />
+                  <p style={{ fontSize: "14px" }}>{page.name}</p>
                 </LinkRouter>
-              </li>))}
+              </li>
+            ))}
           </ul>
-
         </nav>
       </footer>
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

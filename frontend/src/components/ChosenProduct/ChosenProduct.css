@@ -1,0 +1,88 @@
+.mainWrapper {
+  background-color: white;
+  color: #242424;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.backward {
+  text-align: left;
+  display: inline-flex;
+}
+
+.pointer {
+  cursor: pointer;
+}
+.sizeUp {
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.infoRestaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+}
+.infoRestaurant p {
+  margin-top: 7px;
+  font-size: 12px;
+}
+.infoFood {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.imageFood > img {
+  width: 100px;
+  height: 90px;
+}
+.ingredients {
+  text-align: left;
+  padding-left: 3rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row p {
+  font-size: 14px;
+}
+
+.inputText {
+  border-radius: 10px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+  width: 100%;
+}
+
+.rowBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.MyButton {
+  margin-top: 1rem;
+  padding: 8px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.columnBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
