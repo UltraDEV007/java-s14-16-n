@@ -1,28 +1,32 @@
-package com.nocountry.foodlyfinds.model.dto;
+package com.nocountry.foodlyfinds.model.dto.response;
 
-import com.nocountry.foodlyfinds.model.entity.CategoryEntity;
-import com.nocountry.foodlyfinds.model.entity.StoreEntity;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Data
-@AllArgsConstructor
+@Builder
 @NoArgsConstructor
-public class ProductDTO {
+@AllArgsConstructor
+public class ProductWithIdResponse {
     @NotNull(message = "Product ID is required")
     private Long productId;
 
     @NotNull(message = "Store ID is required")
-    private StoreEntity storeId;
+    private Long storeId;
 
     @NotEmpty(message = "Product name is required")
     private String name;
 
     @NotNull(message = "Category is required")
-    private CategoryEntity categoryId;
+    private Long categoryId;
 
     @NotEmpty(message = "Product image URL is required")
     private String productImageUrl;
@@ -38,6 +42,6 @@ public class ProductDTO {
     private BigDecimal price;
 
     @NotNull(message = "Waiting time is required")
-    @Min(value = 1, message = "Waiting time must be greater than 0")
+    @Min(1)
     private Integer waitingTime;
 }
