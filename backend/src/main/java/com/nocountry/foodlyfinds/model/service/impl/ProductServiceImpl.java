@@ -37,4 +37,12 @@ public class ProductServiceImpl implements ProductService {
                 .map(product -> modelMapper.map(product, ProductWithIdResponse.class))
                 .toList();
     }
+
+    //Buscar por nombre de producto
+    @Override
+    public List<ProductResponse> findByNameIgnoreCaseContaining(String name) {
+        return productRepository.findByNameIgnoreCaseContaining(name.replace("%20", " ")).stream()
+                .map(product -> modelMapper.map(product, ProductResponse.class))
+                .toList();
+    }
 }

@@ -12,4 +12,8 @@ public interface ProductService {
     ProductEntity findById(Long id);
 
     List<ProductWithIdResponse> findByCategoryIdCategoryId(Long categoryId);
+
+    //Buscar por nombre de producto
+    List<ProductResponse> findByNameIgnoreCaseContaining(String name);
 }
+
