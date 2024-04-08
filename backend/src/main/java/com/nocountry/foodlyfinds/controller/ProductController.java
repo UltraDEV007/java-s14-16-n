@@ -1,6 +1,7 @@
 package com.nocountry.foodlyfinds.controller;
 
 import com.nocountry.foodlyfinds.model.dto.response.ProductResponse;
+import com.nocountry.foodlyfinds.model.dto.response.ProductWithIdResponse;
 import com.nocountry.foodlyfinds.model.entity.ProductEntity;
 import com.nocountry.foodlyfinds.model.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,10 @@ public class ProductController {
     @GetMapping(value = "/findbyid/{id}")
     public ResponseEntity<ProductEntity> findByProductId(@PathVariable Long id) {
         return ResponseEntity.ok().body(productService.findById(id));
+    }
+
+    @GetMapping(value = "/findbycategoryid/{id}")
+    public ResponseEntity<List<ProductWithIdResponse>> findByCategoryId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(productService.findByCategoryIdCategoryId(id));
     }
 }
