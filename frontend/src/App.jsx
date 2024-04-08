@@ -19,11 +19,13 @@ import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
 // conexion al json
 import { products } from "./data/products";
+import { stores} from './data/stores';
 import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [dataStores, setDataStores] = useState ([])
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -41,13 +43,15 @@ function App() {
     //     setLoading(false);
     //   });
 
+
     setDataProducts(products);
+    setDataStores(stores)
     setLoading(false);
   }, []);
 
   return (
     <>
-      <AppContext.Provider value={{ dataProducts }}>
+      <AppContext.Provider value={{ dataProducts, dataStores }}>
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/*" element={<Main />}>
