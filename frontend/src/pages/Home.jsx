@@ -5,11 +5,11 @@ import CardProduct from '../components/cardProduct/CardProduct'
 
 
 function Home() {
-  const { dataProducts } = useContext(AppContext);
+  const { dataProducts, dataStores } = useContext(AppContext);
   return (
     <>
       <div className='cardProductContainer'>
-        <CardProduct products={dataProducts} />
+        <CardProduct products={dataProducts} stores={dataStores}/>
       </div>
     </>
   )
