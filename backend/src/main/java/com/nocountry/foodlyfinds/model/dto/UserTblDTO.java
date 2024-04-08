@@ -2,12 +2,14 @@ package com.nocountry.foodlyfinds.model.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserTblDTO {
 
     @NotEmpty
@@ -25,8 +27,8 @@ public class UserTblDTO {
     private String coords;
 
     @NotEmpty
-    @Size(min =10, max = 20)
+    @Size(min = 10, max = 20, message = " debe contener entre {min} y {max} caracteres")
     private String phoneNumber;
 
-    private String userImageUrl;
+    //private String userImageUrl;
 }
