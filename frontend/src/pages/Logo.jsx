@@ -7,7 +7,7 @@ export default function Welcome() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    setTimeout(navigate, 2e3, 'inicio')
+    setTimeout(navigate, 15e2, 'inicio')
   })
 
   return (
