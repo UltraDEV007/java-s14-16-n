@@ -22,6 +22,8 @@ import { products } from "./data/products";
 import { stores} from './data/stores';
 import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
+import FinalClaim from "./components/FinalClaim/FinalClaim";
+import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -71,6 +73,8 @@ function App() {
               <Route path="pedido-aprobado" element={<Approved />} />
               <Route path="detalles-de-entrega" element={<Summary />} />
               <Route path="compensacion" element={<Compensation />} />
+              <Route path="final-con-reclamo" element={<FinalClaim />} />
+              <Route path="final-exitoso" element={<FinalSuccess />} />
             </Route>
           </Route>
         </Routes>
