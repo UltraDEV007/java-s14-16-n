@@ -1,6 +1,7 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
 import com.nocountry.foodlyfinds.model.dto.response.ProductResponse;
+import com.nocountry.foodlyfinds.model.entity.ProductEntity;
 import com.nocountry.foodlyfinds.model.repository.ProductRepository;
 import com.nocountry.foodlyfinds.model.service.ProductService;
 import org.modelmapper.ModelMapper;
@@ -22,5 +23,10 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findAll().stream()
                 .map(product -> modelMapper.map(product, ProductResponse.class))
                 .toList();
+    }
+
+    @Override
+    public ProductEntity findById(Long id) {
+        return productRepository.findById(id).orElse(null);
     }
 }
