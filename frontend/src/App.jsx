@@ -1,31 +1,39 @@
-import React, { useState, useContext, useEffect } from 'react';
-import AppContext from './context/AppContex';
-import { API_BASE_URL } from './config';
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import axios from 'axios';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Orders from './pages/Orders';
-import Payment from './pages/Payment';
-import Bonus from './pages/Bonus';
-import Welcome from './pages/Logo';
-import Payout from './components/Payout/Payout';
-import ConfirmPayment from './components/ConfirmPayment/ConfirmPayment';
-import Approved from './components/Approved/Approved';
+import React, { useState, useContext, useEffect } from "react";
+import AppContext from "./context/AppContex";
+import { API_BASE_URL } from "./config";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import axios from "axios";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Orders from "./pages/Orders";
+import Payment from "./pages/Payment";
+import Bonus from "./pages/Bonus";
+import Welcome from "./pages/Logo";
+import Payout from "./components/Payout/Payout";
+import PaymentMethod from "./components/PaymentMethod/PaymentMethod";
+import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
+import Approved from "./components/Approved/Approved";
+import Compensation from "./components/Compensation/Compensation";
+import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
 
 // conexion al json
-import { products } from './data/products';
-import Main from './pages/Main';
+import { products } from "./data/products";
+import { stores } from "./data/stores";
+import Main from "./pages/Main";
+import Summary from "./components/Summary/Summary";
+import FinalClaim from "./components/FinalClaim/FinalClaim";
+import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [dataStores, setDataStores] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // codigo para obtener los productos de la api 
+    // codigo para obtener los productos de la api
     // axios
     //   .get(`${API_BASE_URL}/products`)
     //   .then((response) => {
@@ -40,42 +48,89 @@ function App() {
     //   });
 
     setDataProducts(products);
-    setLoading(false)
-
+    setDataStores(stores);
+    setLoading(false);
   }, []);
-
 
   return (
     <>
-      <AppContext.Provider value={{ dataProducts }}>
+      <AppContext.Provider value={{ dataProducts, dataStores }}>
         <Routes>
-          <Route path='/' element={<Welcome />} />
-          <Route path='/*' element={<Main />} >
-            <Route path='inicio' element={<Home />} />
-            <Route path='perfil' element={<Profile />} />
-            <Route path='beneficios' element={<Bonus />} />
-            <Route path='pedidos' element={<Orders />} />
-            <Route path='pagos' element={<Payment />} />
+          <Route
+            path="/"
+            element={<Welcome />}
+          />
+          <Route
+            path="/*"
+            element={<Main />}
+          >
+            <Route
+              path="inicio"
+              element={<Home />}
+            />
+            <Route
+              path="perfil"
+              element={<Profile />}
+            />
+            <Route
+              path="beneficios"
+              element={<Bonus />}
+            />
+            <Route
+              path="pedidos"
+              element={<Orders />}
+            />
+            <Route
+              path="pagos"
+              element={<Payment />}
+            />
           </Route>
-          <Route path='/busqueda' >
-            <Route path=':mealId' />
-            <Route path='pagar' >
-              <Route path='confirmar' />
-              <Route path='medio-de-pago' />
-              <Route path='monto-de-efectivo' element={<Payout />} />
-              <Route path='procesando-pago' element={<ConfirmPayment />} />
-              <Route path='pedido-aprobado' element={<Approved />} />
-              <Route path='detalles-de-entrega' />
+          <Route path="/busqueda">
+            <Route path=":mealId" />
+            <Route path="pagar">
+              <Route path="confirmar" />
+              <Route
+                path="medio-de-pago"
+                element={<PaymentMethod />}
+              />
+              <Route
+                path="monto-de-efectivo"
+                element={<Payout />}
+              />
+              <Route
+                path="procesando-pago"
+                element={<ConfirmPayment />}
+              />
+              <Route
+                path="pedido-aprobado"
+                element={<Approved />}
+              />
+              <Route
+                path="detalles-de-entrega"
+                element={<Summary />}
+              />
+              <Route
+                path="compensacion"
+                element={<Compensation />}
+              />
+              <Route
+                path="final-con-reclamo"
+                element={<FinalClaim />}
+              />
+              <Route
+                path="final-exitoso"
+                element={<FinalSuccess />}
+              />
+              <Route
+                path="producto-elegido"
+                element={<ChosenProduct />}
+              />
             </Route>
           </Route>
         </Routes>
       </AppContext.Provider>
-
-
-
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

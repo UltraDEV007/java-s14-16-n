@@ -1,0 +1,25 @@
+.final-claim {
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 30px; */
+  padding: 0 25px 0 25px;
+  min-height: 100dvh;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+
+  > h5 {
+    margin-top: 2dvh;
+    font-size: x-large;
+  }
+
+  > div {
+    margin-top: 3dvh;
+
+    > img {
+      width: 8em;
+      margin-top: 3dvh;
+    }
+  }
+}

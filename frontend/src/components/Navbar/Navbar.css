@@ -7,7 +7,7 @@ header {
   background: var(--bg-color);
   color: black;
   height: 30vh;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,6 +17,7 @@ header {
     gap: 5px;
     text-align: start;
     padding-left: 14px;
+    
   }
 
   >nav {
@@ -25,7 +26,13 @@ header {
     >ul {
       display: flex;
       gap: 12px;
+      >li{
+        >a{
+          color: black;
+        }
+      }
     }
+      
   }
 
   >form {
