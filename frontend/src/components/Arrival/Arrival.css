@@ -1,0 +1,64 @@
+.arrival {
+  display: flex;
+  flex-direction: column;
+  padding: 0 25px 0 25px;
+  min-height: 100dvh;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-size: large;
+  font-weight: 400;
+
+  > section {
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
+      border-radius: 25px;
+  }
+
+  > .sign {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 5dvh;
+    padding: 5dvh 3dvh;
+
+    > h4 {
+      font-size: x-large;
+    }
+
+    > p {
+      margin-top: 2dvh;
+    }
+  }
+
+  > .choice {
+    display: grid;
+    grid-column: 2;
+    column-gap: 6dvh;
+    grid-auto-flow: column;
+    width: 75%;
+    margin-top: 6dvh;
+    padding: 2dvh;
+    justify-items: center;
+    border-radius: 4px;
+  }
+
+  button {
+    width: 8dvh;
+    font-weight: 100;
+    color: white;
+    font-size: medium;
+    text-transform: uppercase;
+    background-color: rgb(177, 176, 176);
+    padding: 2dvh;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  button:focus {
+    background-color: rgb(63, 63, 63);
+    border-style: none;
+    outline: none;
+  }
+}
