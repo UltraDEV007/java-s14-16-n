@@ -162,6 +162,12 @@
 
   <h4>Tecnologías usadas en Back End</h4>
 
+  <a  href="https://swagger.io/" target="_blank">
+
+  ![SWAGGER](https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff)
+
+  </a>
+
    <a  href="https://www.java.com/es/" target="_blank">
 
   ![Java](https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white)
@@ -174,18 +180,36 @@
 
   </a>
 
+  <a  href="https://www.mysql.com/products/connector/" target="_blank">
+
+  ![MYSQL](https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff)
+
+  </a>
+
+  <a  href="https://projectlombok.org/" target="_blank">
+
+  ![Lombok](https://img.shields.io/badge/Lombok-bc1f2d?style=for-the-badge&logo=Lombok&logoColor=fff)
+
+  </a>
+
   
   <h4>Tecnologías usadas en QA</h4>
 
    <a  href="https://www.postman.com/blue-eclipse-566265/workspace/no-country/collection/32526974-0ceaeebf-d85b-41d2-9186-e4e1ea72926e" target="_blank">
 
-  ![análisis postman](https://img.shields.io/badge/VER_AN%C3%81LISIS_POSTMAN-fe6a33)
+  ![Postman](https://img.shields.io/badge/Postman-fe6a33?style=for-the-badge&logo=Postman&logoColor=fff)
 
   </a>
 
-  <a  href="https://drive.google.com/file/d/1ggLfdRjDWXCyUZaRQ4jJQozuD0jmvCi8/view?usp=sharing" target="_blank">
+  <a  href="https://www.selenium.dev/" target="_blank">
 
-  ![informe testmonitor](https://img.shields.io/badge/VER_INFORME_TEST_MONITOR-7fb11a)
+  ![Excel](https://img.shields.io/badge/Selenium-01b400?style=for-the-badge&logo=Selenium&logoColor=fff)
+
+  </a>
+
+  <a  href="https://www.microsoft.com/es-ar/microsoft-365/excel" target="_blank">
+
+  ![Excel](https://img.shields.io/badge/Excel-127b42?style=for-the-badge&logo=Excel&logoColor=fff)
 
   </a>
   
