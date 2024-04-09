@@ -37,5 +37,6 @@ public class ProductEntity {
 
     private BigDecimal price;
 
-    private Integer waitingTime;
+    @Column(name = "waiting_time")
+    private Integer waitingTimeMinutes;
 }
