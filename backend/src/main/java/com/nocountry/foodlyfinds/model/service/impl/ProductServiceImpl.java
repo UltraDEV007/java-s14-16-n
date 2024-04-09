@@ -45,7 +45,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     //Buscar por id de tienda
+@Override
     public List<ProductWithIdResponse> findByStoreIdStoreId(Long id) {
         return productRepository.findByStoreIdStoreId(id).stream().map(product -> modelMapper.map(product, ProductWithIdResponse.class)).toList();
+    }
+
+    //Buscar por ingredientes
+    @Override
+    public List<ProductResponse> findByIngredientsIgnoreCaseContaining(String ingredients) {
+        return productRepository.findByIngredientsIgnoreCaseContaining(ingredients.replace("%20", " ")).stream().map(product -> modelMapper.map(product, ProductResponse.class)).toList();
     }
 }

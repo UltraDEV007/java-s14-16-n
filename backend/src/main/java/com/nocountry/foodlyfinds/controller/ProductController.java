@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/product")
+@RequestMapping(value = "/api/product")
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductServiceImpl productService;
@@ -43,5 +43,11 @@ public class ProductController {
     @GetMapping(value = "/findbystore/{id}")
     public ResponseEntity<List<ProductWithIdResponse>> findByStoreId(@PathVariable Long id) {
         return ResponseEntity.ok().body(productService.findByStoreIdStoreId(id));
+    }
+
+    //findByIngredients
+    @GetMapping(value = "/findbyingredient/{ingredients}")
+    public ResponseEntity<List<ProductResponse>> findByIngredientsIgnoreCaseContaining(@PathVariable String ingredients) {
+        return ResponseEntity.ok().body(productService.findByIngredientsIgnoreCaseContaining(ingredients));
     }
 }

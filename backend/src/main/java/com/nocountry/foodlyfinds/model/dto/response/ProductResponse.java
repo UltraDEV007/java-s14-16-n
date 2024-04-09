@@ -2,6 +2,7 @@ package com.nocountry.foodlyfinds.model.dto.response;
 
 import com.nocountry.foodlyfinds.model.entity.CategoryEntity;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,5 +42,6 @@ public class ProductResponse {
 
     @NotNull(message = "Waiting time is required")
     @Min(1)
-    private Integer waitingTime;
+    @Column(name = "waiting_time")
+    private Integer waitingTimeMinutes;
 }
