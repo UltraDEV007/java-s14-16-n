@@ -33,4 +33,15 @@ public class ProductController {
     public ResponseEntity<List<ProductWithIdResponse>> findByCategoryId(@PathVariable Long id) {
         return ResponseEntity.ok().body(productService.findByCategoryIdCategoryId(id));
     }
+
+    @GetMapping(value = "/findbyname/{name}")
+    public ResponseEntity<List<ProductResponse>> findByNameIgnoreCaseContaining(@PathVariable String name) {
+        return ResponseEntity.ok().body(productService.findByNameIgnoreCaseContaining(name));
+    }
+
+    //findByStore
+    @GetMapping(value = "/findbystore/{id}")
+    public ResponseEntity<List<ProductWithIdResponse>> findByStoreId(@PathVariable Long id) {
+        return ResponseEntity.ok().body(productService.findByStoreIdStoreId(id));
+    }
 }

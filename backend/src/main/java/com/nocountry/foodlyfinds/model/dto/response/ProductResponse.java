@@ -17,11 +17,11 @@ public class ProductResponse {
     @NotNull(message = "Product ID is required")
     private Long productId;
 
-    @NotNull(message = "Store ID is required")
-    private StoreEntity storeId;
-
     @NotEmpty(message = "Product name is required")
     private String name;
+
+    @NotNull(message = "Store ID is required")
+    private StoreEntity storeId;
 
     @NotNull(message = "Category is required")
     private CategoryEntity categoryId;
