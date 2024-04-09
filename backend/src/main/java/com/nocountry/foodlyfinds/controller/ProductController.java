@@ -44,4 +44,10 @@ public class ProductController {
     public ResponseEntity<List<ProductWithIdResponse>> findByStoreId(@PathVariable Long id) {
         return ResponseEntity.ok().body(productService.findByStoreIdStoreId(id));
     }
+
+    //findByIngredients
+    @GetMapping(value = "/findbyingredient/{ingredients}")
+    public ResponseEntity<List<ProductResponse>> findByIngredientsIgnoreCaseContaining(@PathVariable String ingredients) {
+        return ResponseEntity.ok().body(productService.findByIngredientsIgnoreCaseContaining(ingredients));
+    }
 }
