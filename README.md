@@ -110,13 +110,19 @@
 
  <a href="https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1" target="_blank">
  
-  ![diseño figma](https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white)
+  ![Diseño Figma](https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white)
 
   </a>
 
   <a  href="https://www.adobe.com/ar/products/photoshop.html" target="_blank">
 
-  ![photoshop](https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop)
+  ![Photoshop](https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop)
+
+  </a>
+
+  <a  href="https://www.adobe.com/ar/products/illustrator.html" target="_blank">
+
+  ![Illustrator](https://img.shields.io/badge/Illustrator-330000?logo=Illustrator&logoColor=black)
 
   </a>
   
