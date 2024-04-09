@@ -18,6 +18,7 @@ import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
+import Arrival from './components/Arrival/Arrival'
 
 // conexion al json
 import { products } from "./data/products";
@@ -125,6 +126,9 @@ function App() {
                 path="producto-elegido"
                 element={<ChosenProduct />}
               />
+              <Route 
+                path="aviso-de-llegada"
+                element={<Arrival />}/>
             </Route>
           </Route>
         </Routes>
