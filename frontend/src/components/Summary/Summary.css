@@ -1,0 +1,45 @@
+main {
+  gap: 20px;
+  padding: 27px 0 51px;
+  color: black;
+  background: white;
+  min-height: 100dvh;
+
+  > figure, & {
+    display: grid;
+  }
+
+  > :is(figure, .box) {
+    justify-self: center;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  > :nth-last-child(2) {
+    font-size: 20px;
+  }
+
+  > .box {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+    padding-inline: 25px;
+    font-size: 20px;
+  }
+
+  p:not(.box), h3 {
+    padding-inline-start: 33px;
+    text-align: start;
+  }
+
+  > figure {
+    position: relative;
+    place-items: center;
+
+    p {
+      position: absolute;
+    }
+  }
+}

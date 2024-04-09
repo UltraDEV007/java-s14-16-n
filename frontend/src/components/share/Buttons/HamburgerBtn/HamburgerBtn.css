@@ -1,0 +1,23 @@
+.hamburger-btn {
+  aspect-ratio: 1;
+
+  rect {
+    width: 85%;
+    height: 10%;
+    x: 6%;
+    fill: black;
+    rx: 3;
+
+    &:first-child {
+      y: 20%;
+    }
+
+    &:nth-child(2) {
+      y: 45%;
+    }
+
+    &:last-child {
+      y: 70%;
+    }
+  }
+}

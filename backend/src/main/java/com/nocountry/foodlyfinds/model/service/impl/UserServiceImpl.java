@@ -1,18 +1,88 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
-import com.nocountry.foodlyfinds.model.dto.UserDTO;
+import com.nocountry.foodlyfinds.exception.ResourceNotFoundException;
+import com.nocountry.foodlyfinds.model.dto.UserTblDTO;
+import com.nocountry.foodlyfinds.model.dto.request.ProfileRequest;
+import com.nocountry.foodlyfinds.model.dto.response.UserResponse;
+import com.nocountry.foodlyfinds.model.entity.UserTblEntity;
+import com.nocountry.foodlyfinds.model.repository.UserRepository;
 import com.nocountry.foodlyfinds.model.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
+    private final UserRepository userRepository;
     @Override
-    public List<UserDTO> findAll() {
+    public List<UserTblDTO> findAll() {
         return null;
+    }
+    @Transactional
+    @Override
+    public void save(UserTblDTO userRequest) {
+        userRepository.save(UserTblEntity.builder()
+                        .name(userRequest.getName())
+                        .email(userRequest.getEmail())
+                        .password(userRequest.getPassword())
+                        .coords(userRequest.getCoords())
+                        .phoneNumber(userRequest.getPhoneNumber())
+                .build());
+    }
+
+    @Transactional
+    @Override
+    public void addPhoto(ProfileRequest userRequest, Long userId, MultipartFile archivo) throws IOException {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+
+       userDB.setUserId(userId);
+       userDB.setName(userRequest.getName());
+       userDB.setPhoneNumber(userRequest.getPhoneNumber());
+
+       if(!archivo.isEmpty()){
+           userDB.setPhoto(archivo.getBytes());
+       }
+
+       userRepository.save(userDB);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public UserResponse findById(Long userId) {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+        return UserResponse.builder()
+                .id(userDB.getUserId())
+                .name(userDB.getName())
+                .phoneNumber(userDB.getPhoneNumber())
+                .build();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public Resource getUserPhoto(Long userId) {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+        if(userDB.getPhoto() == null){
+            throw new ResourceNotFoundException("The user with id " + userId + " does not have an associated image.");
+        }
+        return new ByteArrayResource(userDB.getPhoto());
+    }
+
+    @Override
+    public void deleteById(Long userId) {
+        UserTblEntity userDB = userRepository.findById(userId)
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId));
+        userRepository.delete(userDB);
     }
 
 //    private final UserRepository UR;
