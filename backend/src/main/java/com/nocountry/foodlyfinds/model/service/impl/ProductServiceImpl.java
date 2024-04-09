@@ -7,6 +7,7 @@ import com.nocountry.foodlyfinds.model.repository.ProductRepository;
 import com.nocountry.foodlyfinds.model.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -19,30 +20,32 @@ public class ProductServiceImpl implements ProductService {
         this.modelMapper = modelMapper;
     }
 
+    //Buscar todos los productos
     @Override
     public List<ProductResponse> findAll() {
-        return productRepository.findAll().stream()
-                .map(product -> modelMapper.map(product, ProductResponse.class))
-                .toList();
+        return productRepository.findAll().stream().map(product -> modelMapper.map(product, ProductResponse.class)).toList();
     }
 
+    //Buscar por id de producto
     @Override
     public ProductEntity findById(Long id) {
         return productRepository.findById(id).orElse(null);
     }
 
+    //Buscar por id de categoria
     @Override
     public List<ProductWithIdResponse> findByCategoryIdCategoryId(Long categoryId) {
-        return productRepository.findByCategoryIdCategoryId(categoryId).stream()
-                .map(product -> modelMapper.map(product, ProductWithIdResponse.class))
-                .toList();
+        return productRepository.findByCategoryIdCategoryId(categoryId).stream().map(product -> modelMapper.map(product, ProductWithIdResponse.class)).toList();
     }
 
     //Buscar por nombre de producto
     @Override
     public List<ProductResponse> findByNameIgnoreCaseContaining(String name) {
-        return productRepository.findByNameIgnoreCaseContaining(name.replace("%20", " ")).stream()
-                .map(product -> modelMapper.map(product, ProductResponse.class))
-                .toList();
+        return productRepository.findByNameIgnoreCaseContaining(name.replace("%20", " ")).stream().map(product -> modelMapper.map(product, ProductResponse.class)).toList();
+    }
+
+    //Buscar por id de tienda
+    public List<ProductWithIdResponse> findByStoreIdStoreId(Long id) {
+        return productRepository.findByStoreIdStoreId(id).stream().map(product -> modelMapper.map(product, ProductWithIdResponse.class)).toList();
     }
 }
