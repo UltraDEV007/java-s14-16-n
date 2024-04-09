@@ -49,15 +49,15 @@ VALUES (1, 1, 'INCORRECT_ORDER', 'DISCOUNT'),
 -- Datos de ejemplo para la tabla product
 INSERT INTO product (product_id, name, category_id, product_image_url, ingredients, clarification, price, waiting_time, store_id)
 VALUES
-    (1, 'Hamburguesa clásica', 1, 'https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg', '["Carne de res", "Queso cheddar", "Lechuga", "Tomate", "Pan de hamburguesa"]', '',5000.00, 10,2),
-    (2, 'Pizza Margarita', 2, 'https://i.postimg.cc/j58qsk74/Pizza-Margarita.jpg', '["Mozzarella", "Tomate", "Albahaca", "Masa de pizza"]', '', 7000.00, 15,2),
-    (3, 'Ensalada de atún', 3, 'https://i.postimg.cc/PJ9tDpKL/Ensalada-At-n.jpg', '["Lechuga", "Atún", "Huevo duro", "Tomate", "Aceitunas", "Cebolla", "Vinagreta"]', '', 2000.00, 10,2),
-    (4, 'Pizza Hawaiana', 2, 'https://i.postimg.cc/gcSrdryb/Pizza-Hawaiana.jpg', '["Jamón", "Piña", "Mozzarella", "Masa de pizza"]', '', 8000.00, 15,1),
-    (5, 'Pizza Pepperoni', 2, 'https://i.postimg.cc/6qmQh16p/Pizza-Pepperoni.jpg', '["Pepperoni", "Mozzarella", "Masa de pizza", "Salsa de tomate"]', '', 7500.00, 15,1),
-    (6, 'Pizza Vegetariana', 2, 'https://i.postimg.cc/HL9sNLWK/Pizza-Vegetariana.png', '["Pimientos", "Cebolla", "Champiñones", "Tomate", "Mozzarella", "Masa de pizza"]', '', 9000.00, 15,1),
-    (7, 'Pollo al curry', 5, 'https://i.postimg.cc/zX4BbMPd/Pollo-Curry.jpg', '["Pollo", "Curry", "Leche de coco", "Pimiento", "Cebolla", "Arroz"]', '', 7000.00, 30,3),
-    (8, 'Fideos con Albóndigas', 4, 'https://i.postimg.cc/NfKF0Yb9/Fideos-Alb-ndigas.jpg', '["Fideos", "Albóndigas", "Salsa de tomate", "Cebolla", "Ajo", "Aceite de oliva", "Sal", "Pimienta", "Queso rallado (opcional)"]', '', 8000.00, 45,3),
-    (9, 'Tacos al pastor', 6, 'https://i.postimg.cc/R0BZGtmK/Tacos-Pastor.jpg', '["Carne de cerdo adobada", "Tortillas de maíz", "Piña", "Cebolla", "Cilantro", "Salsa picante"]', '', 8000.00, 30,3);
+    (1, 'Hamburguesa clásica', 1, 'https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg', '"Carne de res, Queso cheddar, Lechuga Tomate, Pan de hamburguesa', '',5000.00, 10,2),
+    (2, 'Pizza Margarita', 2, 'https://i.postimg.cc/j58qsk74/Pizza-Margarita.jpg', 'Mozzarella, Tomate, Albahaca, Masa de pizza', '', 7000.00, 15,2),
+    (3, 'Ensalada de atún', 3, 'https://i.postimg.cc/PJ9tDpKL/Ensalada-At-n.jpg', 'Lechuga, Atún, Huevo duro, Tomate, Aceitunas, Cebolla, Vinagreta', '', 2000.00, 10,2),
+    (4, 'Pizza Hawaiana', 2, 'https://i.postimg.cc/gcSrdryb/Pizza-Hawaiana.jpg', 'Jamón, Piña, Mozzarella, Masa de pizza', '', 8000.00, 15,1),
+    (5, 'Pizza Pepperoni', 2, 'https://i.postimg.cc/6qmQh16p/Pizza-Pepperoni.jpg', 'Pepperoni, Mozzarella, Masa de pizza, Salsa de tomate', '', 7500.00, 15,1),
+    (6, 'Pizza Vegetariana', 2, 'https://i.postimg.cc/HL9sNLWK/Pizza-Vegetariana.png', 'Pimientos, Cebolla, Champiñones, Tomate, Mozzarella, Masa de pizza', '', 9000.00, 15,1),
+    (7, 'Pollo al curry', 5, 'https://i.postimg.cc/zX4BbMPd/Pollo-Curry.jpg', 'Pollo, Curry, Leche de coco, Pimiento, Cebolla, Arroz', '', 7000.00, 30,3),
+    (8, 'Fideos con Albóndigas', 4, 'https://i.postimg.cc/NfKF0Yb9/Fideos-Alb-ndigas.jpg', 'Fideos, Albóndigas, Salsa de tomate, Cebolla, Ajo, Aceite de oliva, Sal, Pimienta, Queso rallado (opcional)', '', 8000.00, 45,3),
+    (9, 'Tacos al pastor', 6, 'https://i.postimg.cc/R0BZGtmK/Tacos-Pastor.jpg', 'Carne de cerdo adobada, Tortillas de maíz, Piña, Cebolla, Cilantro, Salsa picante', '', 8000.00, 30,3);
 
 -- Datos de ejemplo para la tabla order
 INSERT INTO order_tbl (user_id, total_amount, order_type)
