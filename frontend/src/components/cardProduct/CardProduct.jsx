@@ -1,22 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Navigate } from "react-router-dom";
+import AppContext from '../../context/AppContex';
 import './cardProduct.css'
 
 
 function CardProduct({ products, stores }) {
-    const [selectedProduct, setSelectedProduct] = useState();
+    const {selectedProduct, setSelectedProduct} = useContext(AppContext)
     const [goToItem, setGoToItem]= useState(false)
 
     const handleCardProduct = (itemId) => {
+        console.log('elegi el producto con id'+ itemId)
         if (itemId !== selectedProduct) {
             setSelectedProduct(itemId);
             setGoToItem(true)
         }
     }
+    console.log(selectedProduct)
     // dirigir la navegacion al detalle de producto actualizar path segun endopoint de API
-    // if (goToItem) {
-    //     return <Navigate to={'/productos/' + selectedProduct} />
-    //   }
+    if (goToItem) {
+        return <Navigate to={'/busqueda/pagar/producto-elegido'} />
+      }
     
     const getStoreInfo = (storeId) => {
         const store = stores.find(store => store.id === storeId);

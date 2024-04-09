@@ -1,3 +1,8 @@
+import React, { useContext, useState } from "react";
+import AppContext from "../../context/AppContex";
+import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+// codigo del componente
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
@@ -6,14 +11,37 @@ import {
 import "./ChosenProduct.css";
 import ImageComida from "../../assets/ImageComida.svg";
 import ImagePizzeria from "../../assets/ImagePizzeria.svg";
+
 const ChosenProduct = () => {
+  // traer el id del producto seleccionado
+  //   const {selectedProduct}=useContext(AppContext);
+  // const id=selectedProduct
+  const [confirmOrder, setConfirmOrder] = useState(false)
+  const [goToMenu, setGoToMenu] = useState(false)
+
+  const handleConfirmar = () => {
+    setConfirmOrder(true)
+    console.log('hice clic en confirmar')
+  }
+  const handleBackToMenu = () => {
+    setGoToMenu(true)
+  }
+  if (confirmOrder) {
+    return <Navigate to={'/busqueda/pagar/confirmar'} />
+  }
+  if (goToMenu){
+    return <Navigate to={'/inicio'} />
+  }
+
   return (
     <main className="mainWrapper">
       <section className="backward">
-        <FontAwesomeIcon
+        <Link to='/inicio'><FontAwesomeIcon
           className="pointer sizeUp"
           icon={faArrowLeft}
         />
+        </Link>
+        
       </section>
       <section className="infoRestaurant">
         <img
@@ -69,11 +97,13 @@ const ChosenProduct = () => {
           className="MyButton"
           type="button"
           value="Ver más menus"
+          onClick={handleBackToMenu}
         />
         <input
           className="MyButton"
           type="button"
           value="Confirmar"
+          onClick={handleConfirmar}
         />
       </div>
     </main>

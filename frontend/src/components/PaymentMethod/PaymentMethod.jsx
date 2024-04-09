@@ -12,7 +12,7 @@ export default function PaymentMethod() {
   return (
     <>
       <Form className={"payment-method"}>
-        <Link to="..">
+        <Link to="/busqueda/pagar/confirmar">
           <FontAwesomeIcon icon={faArrowLeft} />
         </Link>
         <h4>Elegí tu medio de pago</h4>

@@ -26,10 +26,12 @@ import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
 import FinalClaim from "./components/FinalClaim/FinalClaim";
 import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
+import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
   const [dataStores, setDataStores] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -54,7 +56,7 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ dataProducts, dataStores }}>
+      <AppContext.Provider value={{ dataProducts, dataStores, selectedProduct, setSelectedProduct }}>
         <Routes>
           <Route
             path="/"
@@ -88,7 +90,7 @@ function App() {
           <Route path="/busqueda">
             <Route path=":mealId" />
             <Route path="pagar">
-              <Route path="confirmar" />
+              <Route path="confirmar" element={<ConfirmOrder />}/>
               <Route
                 path="medio-de-pago"
                 element={<PaymentMethod />}
@@ -125,6 +127,7 @@ function App() {
                 path="producto-elegido"
                 element={<ChosenProduct />}
               />
+        
             </Route>
           </Route>
         </Routes>
