@@ -21,5 +21,8 @@ public interface ProductService {
 
     //Buscar por id de tienda
     List<ProductWithIdResponse> findByStoreIdStoreId(Long id);
+
+    //Buscar por ingredientes
+    List<ProductResponse> findByIngredientsIgnoreCaseContaining(String ingredients);
 }
 
