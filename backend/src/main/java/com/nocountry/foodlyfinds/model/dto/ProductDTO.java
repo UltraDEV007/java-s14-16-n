@@ -2,6 +2,7 @@ package com.nocountry.foodlyfinds.model.dto;
 
 import com.nocountry.foodlyfinds.model.entity.CategoryEntity;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,5 +40,6 @@ public class ProductDTO {
 
     @NotNull(message = "Waiting time is required")
     @Min(value = 1, message = "Waiting time must be greater than 0")
-    private Integer waitingTime;
+    @Column(name = "waiting_time")
+    private Integer waitingTimeMinutes;
 }

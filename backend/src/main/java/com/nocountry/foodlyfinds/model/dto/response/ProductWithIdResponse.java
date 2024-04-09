@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.dto.response;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
@@ -43,5 +44,6 @@ public class ProductWithIdResponse {
 
     @NotNull(message = "Waiting time is required")
     @Min(1)
-    private Integer waitingTime;
+    @Column(name = "waiting_time")
+    private Integer waitingTimeMinutes;
 }
