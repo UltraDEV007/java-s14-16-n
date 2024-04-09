@@ -7,7 +7,7 @@ export default function ConfirmPayment() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    setTimeout(navigate, 3e3, '../pedido-aprobado')
+    setTimeout(navigate, 1e3, '../pedido-aprobado')
   })
 
   return(
