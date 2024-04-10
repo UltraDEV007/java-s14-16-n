@@ -11,7 +11,7 @@ import Profile from "./pages/Profile";
 import Orders from "./pages/Orders";
 import Payment from "./pages/Payment";
 import Bonus from "./pages/Bonus";
-import Welcome from "./pages/Logo";
+import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
 import PaymentMethod from "./components/PaymentMethod/PaymentMethod";
 import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";

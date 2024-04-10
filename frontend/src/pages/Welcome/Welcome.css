@@ -1,0 +1,18 @@
+.welcome {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(#3f9bff 50%, #d57fff 0%);
+  overflow: hidden;
+  position: relative;
+
+  > svg {
+    position: absolute;
+    translate: 0 20px;
+  }
+
+  > img {
+    width: 90%;
+    z-index: 1;
+  }
+}
