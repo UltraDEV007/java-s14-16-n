@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
 
         Map<String, Object> errors = new HashMap<>();
         result.getFieldErrors().forEach( error ->{
-            errors.put(error.getField(), "El campo " + error.getField() + " " + error.getDefaultMessage());
+            errors.put(error.getField(), "The field " + error.getField() + " " + error.getDefaultMessage());
         });
 
         ApiErrorResponse errorResponse = new ApiErrorResponse();
