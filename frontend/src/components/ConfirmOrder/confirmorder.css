@@ -1,0 +1,43 @@
+.ConfirmContent{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.infoConfirm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.foodContent{
+    margin-left: 25%;
+    margin-right: 25%;
+    width:50%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+.foodContent>img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+.orderInfoA{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+   padding-right: 20px;
+}
