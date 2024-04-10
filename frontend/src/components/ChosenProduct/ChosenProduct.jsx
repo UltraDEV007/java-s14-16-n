@@ -11,7 +11,6 @@ import {
 import "./ChosenProduct.css";
 import ImageComida from "../../assets/ImageComida.svg";
 import ImagePizzeria from "../../assets/ImagePizzeria.svg";
-import { Link } from "react-router-dom";
 
 const ChosenProduct = () => {
   // traer el id del producto seleccionado
