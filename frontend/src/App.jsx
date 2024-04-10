@@ -18,7 +18,8 @@ import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
-import Arrival from './components/Arrival/Arrival'
+import Arrival from "./components/Arrival/Arrival";
+import SearchResult from "./components/SearchResult/SearchResult";
 
 // conexion al json
 import { products } from "./data/products";
@@ -57,7 +58,14 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ dataProducts, dataStores, selectedProduct, setSelectedProduct }}>
+      <AppContext.Provider
+        value={{
+          dataProducts,
+          dataStores,
+          selectedProduct,
+          setSelectedProduct,
+        }}
+      >
         <Routes>
           <Route
             path="/"
@@ -91,7 +99,10 @@ function App() {
           <Route path="/busqueda">
             <Route path=":mealId" />
             <Route path="pagar">
-              <Route path="confirmar" element={<ConfirmOrder />}/>
+              <Route
+                path="confirmar"
+                element={<ConfirmOrder />}
+              />
               <Route
                 path="medio-de-pago"
                 element={<PaymentMethod />}
@@ -128,10 +139,15 @@ function App() {
                 path="producto-elegido"
                 element={<ChosenProduct />}
               />
-        
-              <Route 
+
+              <Route
                 path="aviso-de-llegada"
-                element={<Arrival />}/>
+                element={<Arrival />}
+              />
+              <Route
+                path="resultado-de-busqueda"
+                element={<SearchResult />}
+              />
             </Route>
           </Route>
         </Routes>

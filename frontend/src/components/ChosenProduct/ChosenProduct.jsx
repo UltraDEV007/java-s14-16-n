@@ -11,37 +11,38 @@ import {
 import "./ChosenProduct.css";
 import ImageComida from "../../assets/ImageComida.svg";
 import ImagePizzeria from "../../assets/ImagePizzeria.svg";
+import { Link } from "react-router-dom";
 
 const ChosenProduct = () => {
   // traer el id del producto seleccionado
   //   const {selectedProduct}=useContext(AppContext);
   // const id=selectedProduct
-  const [confirmOrder, setConfirmOrder] = useState(false)
-  const [goToMenu, setGoToMenu] = useState(false)
+  const [confirmOrder, setConfirmOrder] = useState(false);
+  const [goToMenu, setGoToMenu] = useState(false);
 
   const handleConfirmar = () => {
-    setConfirmOrder(true)
-    console.log('hice clic en confirmar')
-  }
+    setConfirmOrder(true);
+    console.log("hice clic en confirmar");
+  };
   const handleBackToMenu = () => {
-    setGoToMenu(true)
-  }
+    setGoToMenu(true);
+  };
   if (confirmOrder) {
-    return <Navigate to={'/busqueda/pagar/confirmar'} />
+    return <Navigate to={"/busqueda/pagar/confirmar"} />;
   }
-  if (goToMenu){
-    return <Navigate to={'/inicio'} />
+  if (goToMenu) {
+    return <Navigate to={"/inicio"} />;
   }
 
   return (
     <main className="mainWrapper">
       <section className="backward">
-        <Link to='/inicio'><FontAwesomeIcon
-          className="pointer sizeUp"
-          icon={faArrowLeft}
-        />
+        <Link to="/busqueda/pagar/resultado-de-busqueda">
+          <FontAwesomeIcon
+            className="pointer sizeUp"
+            icon={faArrowLeft}
+          />
         </Link>
-        
       </section>
       <section className="infoRestaurant">
         <img
@@ -56,13 +57,11 @@ const ChosenProduct = () => {
             icon={faUpRightFromSquare}
           />
         </p>
-
-        <div></div>
       </section>
       <section className="infoFood">
         <article className="nameFood">
-          <h2>PIZZA B</h2>
-          <h2>$7000</h2>
+          <h2>Pizza B</h2>
+          <h2>$ 7000</h2>
         </article>
         <article className="imageFood">
           <img
@@ -86,7 +85,7 @@ const ChosenProduct = () => {
           value="+ - 1"
         />
         <input
-          className="MyButton"
+          className="btnAdd"
           type="button"
           value="Agregar"
         />
@@ -94,13 +93,13 @@ const ChosenProduct = () => {
       <div className="columnBtns">
         <h2>¿Quieres sumar algo más?</h2>
         <input
-          className="MyButton"
+          className="btnMenu"
           type="button"
           value="Ver más menus"
           onClick={handleBackToMenu}
         />
         <input
-          className="MyButton"
+          className="btnConfirm"
           type="button"
           value="Confirmar"
           onClick={handleConfirmar}
