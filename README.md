@@ -168,13 +168,7 @@
 
   <h4>Tecnologías usadas en Back End</h4>
 
-  <a  href="https://swagger.io/" target="_blank">
-
-  ![SWAGGER](https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff)
-
-  </a>
-
-   <a  href="https://www.java.com/es/" target="_blank">
+  <a  href="https://www.java.com/es/" target="_blank">
 
   ![Java](https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white)
 
@@ -189,6 +183,18 @@
   <a  href="https://www.mysql.com/products/connector/" target="_blank">
 
   ![MYSQL](https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff)
+
+  </a>
+
+   <a  href="https://www.docker.com/" target="_blank">
+
+  ![Docker](https://img.shields.io/badge/Docker-1d63ed?style=for-the-badge&logo=Docker&logoColor=fff)
+
+  </a>
+
+  <a  href="https://swagger.io/" target="_blank">
+
+  ![SWAGGER](https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff)
 
   </a>
 
@@ -297,7 +303,7 @@
   <div>
   <h2>Cómo nos organizamos</h2>
 
-[![](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)](https://discord.gg/NyrMSqX4) [![](https://img.shields.io/badge/Trello-095ED8?style=for-the-badge&logo=Trello&logoColor=fff)](https://trello.com/) [![](https://img.shields.io/badge/Slack-%23ED8B00?style=for-the-badge&logo=Slack&logoColor=fff)](https://slack.com/) [![](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=Whatsapp&logoColor=fff)](https://www.whatsapp.com/)
+[![](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)](https://discord.gg/NyrMSqX4) [![](https://img.shields.io/badge/Slack-%23ED8B00?style=for-the-badge&logo=Slack&logoColor=fff)](https://slack.com/) [![](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=Whatsapp&logoColor=fff)](https://www.whatsapp.com/)
 
  </div>
 
@@ -327,4 +333,4 @@
 
  <a href="mailto:esportsmelg@gmail.com">
  <img src="https://icongr.am/entypo/email.svg?size=128&color=currentColor" width="50" height="50">
-  </a> 
+  </a>
