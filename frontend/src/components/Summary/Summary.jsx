@@ -11,7 +11,7 @@ export default function Summary() {
 
   return (
     <>
-      <main>
+      <main className='summary'>
         <figure>
           <img src={logo} alt='comida'/>
           <p>Comida</p>
