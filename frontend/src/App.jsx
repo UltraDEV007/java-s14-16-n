@@ -18,6 +18,7 @@ import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
+import SearchResult from "./components/SearchResult/SearchResult";
 
 // conexion al json
 import { products } from "./data/products";
@@ -124,6 +125,10 @@ function App() {
               <Route
                 path="producto-elegido"
                 element={<ChosenProduct />}
+              />
+              <Route
+                path="resultado-de-busqueda"
+                element={<SearchResult />}
               />
             </Route>
           </Route>
