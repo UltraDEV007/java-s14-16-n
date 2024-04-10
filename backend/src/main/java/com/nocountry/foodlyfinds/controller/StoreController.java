@@ -43,7 +43,7 @@ public class StoreController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     public ResponseEntity<?> update(@RequestBody StoreEntity store) {
         try{
             storeService.update(store);
@@ -66,7 +66,7 @@ public class StoreController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StoreDTO>> getAllStores() {
+    public ResponseEntity<List<StoreDTO>> getAll() {
         return ResponseEntity.status(HttpStatus.OK).body(storeService.findAll());
     }
 }
