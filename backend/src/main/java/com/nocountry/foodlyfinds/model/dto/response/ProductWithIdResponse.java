@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
@@ -23,9 +24,11 @@ public class ProductWithIdResponse {
     @NotEmpty(message = "Product name is required")
     private String name;
 
+    @JsonProperty("store")
     @NotNull(message = "Store ID is required")
     private Long storeId;
 
+    @JsonProperty("category")
     @NotNull(message = "Category is required")
     private Long categoryId;
 
