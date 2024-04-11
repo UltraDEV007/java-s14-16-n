@@ -8,10 +8,10 @@ function CardProduct({ products }) {
     const { selectedProduct, setSelectedProduct } = useContext(AppContext)
     const [goToItem, setGoToItem] = useState(false)
 
-    const handleCardProduct = (itemId) => {
-        console.log('elegi el producto con id' + itemId)
-        if (itemId !== selectedProduct) {
-            setSelectedProduct(itemId);
+    const handleCardProduct = (id) => {
+        console.log('elegi el producto con id' + id)
+        if (id !== selectedProduct) {
+            setSelectedProduct(id);
             setGoToItem(true)
         }
     }
@@ -33,7 +33,7 @@ function CardProduct({ products }) {
 
                 // const store = getStoreInfo(item.productId);
                 // return (
-                    <div className='cardProduct' key={item.productId} onClick={() => handleCardProduct(item.id)}>
+                    <div className='cardProduct' key={item.productId} onClick={() => handleCardProduct(item.productId)}>
                         <div className='cardImage'>
                             <img src={item.productImageUrl} alt={item.name + ' imagen'} ></img>
                         </div>
