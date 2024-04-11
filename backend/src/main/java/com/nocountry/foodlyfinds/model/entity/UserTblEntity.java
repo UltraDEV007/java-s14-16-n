@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -35,6 +36,5 @@ public class UserTblEntity {
     @JsonIgnore
     private byte[] photo;
 
-    private String userImageUrl;
 
 }
