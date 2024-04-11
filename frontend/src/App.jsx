@@ -4,8 +4,6 @@ import { API_BASE_URL } from "./config";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Orders from "./pages/Orders";

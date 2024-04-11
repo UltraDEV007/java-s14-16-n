@@ -4,13 +4,11 @@ export default function MainBtn({
   children,
   type = 'button',
   className,
-  disabled,
-  onClick,
+  ...props
 }) {
   return <button {...{
     className: `main-btn${className ? ' ' + className : ''}`,
     type, 
-    disabled,
-    onClick,
+    ...props
   }} >{children}</button>
 }
