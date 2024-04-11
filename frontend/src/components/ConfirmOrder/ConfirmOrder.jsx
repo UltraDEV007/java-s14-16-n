@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import './confirmorder.css'
 import MainBtn from "../share/Buttons/MainBtn/MainBtn";
 import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
-import Backward from "../share/Buttons/Backward/Backward";
 
 
 function ConfirmOrder() {
@@ -27,12 +26,12 @@ function ConfirmOrder() {
     <>
       <div className="ConfirmContent">
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          {/* <Link to='/busqueda/pagar/producto-elegido'><FontAwesomeIcon
+          <Link to='/busqueda/pagar/producto-elegido'><FontAwesomeIcon
             className="pointer sizeUp"
             icon={faArrowLeft}
           />
-          </Link> */}
-          <Backward />
+          </Link>
+
           <p>Confirmá tu Pedido</p>
         </div>
 
