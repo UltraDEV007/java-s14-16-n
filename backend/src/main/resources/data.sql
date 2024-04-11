@@ -1,21 +1,8 @@
--- Eliminar la base de datos si existe
-DROP SCHEMA `foodlyfinds`;
-
--- Crear la base de datos
-CREATE SCHEMA `foodlyfinds`;
-
--- Seleccionar la base de datos
-USE `foodlyfinds`;
-
--- Insertar datos de ejemplo en las tablas creadas automaticamente por java
---
-
-
 -- Datos de ejemplo para la tabla user_tbl
 INSERT INTO user_tbl (name, email, password, coords, phone_number)
-VALUES ('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', '123-456-7890'),
-       ('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', '987-654-3210'),
-       ('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', '555-555-5555');
+VALUES ('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', 123-456-7890),
+       ('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', 987-654-3210),
+       ('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', 555-555-5555);
 
 -- Datos de ejemplo para la tabla store
 INSERT INTO store (store_id,name, address, phone_number, store_image_url)
