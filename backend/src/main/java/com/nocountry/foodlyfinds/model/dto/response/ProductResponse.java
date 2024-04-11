@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.nocountry.foodlyfinds.model.entity.CategoryEntity;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
 import jakarta.persistence.Column;
@@ -21,9 +22,11 @@ public class ProductResponse {
     @NotEmpty(message = "Product name is required")
     private String name;
 
+    @JsonProperty("store")
     @NotNull(message = "Store ID is required")
     private StoreEntity storeId;
 
+    @JsonProperty("category")
     @NotNull(message = "Category is required")
     private CategoryEntity categoryId;
 
