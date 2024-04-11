@@ -450,10 +450,6 @@ template {
   display: none;
 }
 
-:root {
-  --bg-color: #f5f5f5;
-}
-
 #root {
   min-width: 320px;
   margin: 0 auto;

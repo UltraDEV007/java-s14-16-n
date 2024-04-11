@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import AppContext from "./context/AppContex";
 import { API_BASE_URL } from "./config";
-import "./App.css";
+import "./index.css";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
