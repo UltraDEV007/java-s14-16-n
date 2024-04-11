@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/api/product")
+@RequestMapping(value = "api/v1/product")
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductServiceImpl productService;
