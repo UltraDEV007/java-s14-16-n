@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
+import com.nocountry.foodlyfinds.exception.ResourceNotFoundException;
 import com.nocountry.foodlyfinds.model.dto.response.ProductResponse;
 import com.nocountry.foodlyfinds.model.dto.response.ProductWithIdResponse;
 import com.nocountry.foodlyfinds.model.entity.ProductEntity;
@@ -29,8 +30,7 @@ public class ProductServiceImpl implements ProductService {
     //Buscar por id de producto
     @Override
     public ProductEntity findById(Long id) {
-        return productRepository.findById(id).orElse(null);
-    }
+        return productRepository.findById(id).orElseThrow( ()-> new ResourceNotFoundException("The product with ID " + id + " was not found or the ID is invalid. Please try again."));}
 
     //Buscar por id de categoria
     @Override
