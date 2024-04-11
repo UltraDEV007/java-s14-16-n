@@ -129,25 +129,13 @@
   
   <h4>Tecnologías usadas en Front End</h4>
 
-  <a  href="https://markdown.es/" target="_blank">
-
-  ![markdown](https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff)
-
-  </a>
-
   <a  href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
 
   ![JS](https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff)
 
   </a>
 
-   <a  href="https://developer.mozilla.org/es/docs/Glossary/HTML5" target="_blank">
-
-  ![HTML5](https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff)
-
-  </a>
-
-   <a  href="https://es.react.dev/" target="_blank">
+  <a  href="https://es.react.dev/" target="_blank">
 
   ![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
 
@@ -159,9 +147,21 @@
 
   </a>
 
+   <a  href="https://developer.mozilla.org/es/docs/Glossary/HTML5" target="_blank">
+
+  ![HTML5](https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff)
+
+  </a>
+
   <a  href="https://www.w3schools.com/css/" target="_blank">
 
   ![CSS3](https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff)
+
+  </a>
+
+  <a  href="https://markdown.es/" target="_blank">
+
+  ![markdown](https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff)
 
   </a>
 
@@ -264,10 +264,10 @@
 | **Elisa - UX/UI README DESIGNER**| 
 | <a href="https://www.behance.net/elilucero"><img src="https://img.shields.io/badge/Behance-%2320232a.svg?style=for-the-badge&logo=Behance&logoColor=%%2361DAFB"/></a> <a href="https://www.linkedin.com/in/elilucero"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | 
 
-| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/ariadna-moreno.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/joel-fiare.png" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/elisa-lucero.jpeg" width=200>|
-|:-:|:-:|:-:|
-| **Ariadna Moreno - BACK END**| **Joel Benjamín Fiaré - BACK END**| **José Ramírez - BACK END** |
-| <a href="https://github.com/AriadnaMorenoL"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/ariadnamorenol/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/JoelFiare"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/joelfiare/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/JozRamirez10"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/jmramglez"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/ariadna-moreno.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/joel-fiare.png" width=200>| 
+|:-:|:-:|
+| **Ariadna Moreno - BACK END**| **Joel Benjamín Fiaré - BACK END**|
+| <a href="https://github.com/AriadnaMorenoL"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/ariadnamorenol/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/JoelFiare"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/joelfiare/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | 
 
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/martin-mu%C3%B1oz.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/pablo-avila.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/anderson-maldonado.jpeg" width=200>|
 |:-:|:-:|:-:|
@@ -303,7 +303,7 @@
   <div>
   <h2>Cómo nos organizamos</h2>
 
-[![](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)](https://discord.gg/NyrMSqX4) [![](https://img.shields.io/badge/Slack-%23ED8B00?style=for-the-badge&logo=Slack&logoColor=fff)](https://slack.com/) [![](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=Whatsapp&logoColor=fff)](https://www.whatsapp.com/)
+[![](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff)](https://discord.gg/NyrMSqX4) [![](https://img.shields.io/badge/Slack-%23ED8B00?style=for-the-badge&logo=Slack&logoColor=fff)](https://slack.com/) [![](https://img.shields.io/badge/Whatsapp-25D366?style=for-the-badge&logo=Whatsapp&logoColor=fff)](https://www.whatsapp.com/) [![](https://img.shields.io/badge/GithubProjects-black?style=for-the-badge&logo=GithubProjects&logoColor=fff)](https://github.com/No-Country/s14-16-n-java/projects?query=is%3Aopen) 
 
  </div>
 
@@ -333,4 +333,4 @@
 
  <a href="mailto:esportsmelg@gmail.com">
  <img src="https://icongr.am/entypo/email.svg?size=128&color=currentColor" width="50" height="50">
-  </a>
+  </a> 
