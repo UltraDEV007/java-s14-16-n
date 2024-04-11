@@ -26,4 +26,5 @@ public class CalificationEntity {
     private StoreEntity store;
 
     private Integer value;
+
 }

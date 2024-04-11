@@ -24,4 +24,5 @@ public class StoreEntity {
     private String phoneNumber;
 
     private String storeImageUrl;
+
 }
