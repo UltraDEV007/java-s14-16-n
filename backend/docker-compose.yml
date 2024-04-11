@@ -13,7 +13,7 @@ services:
       - db
   db:
     container_name: mysql_db
-    image: mysql:8.0
+    image: mysql:8.3.0-oraclelinux8
     restart: unless-stopped
     ports:
       - 3306:3306
