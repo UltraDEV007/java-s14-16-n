@@ -7,8 +7,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Arrays;
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -31,7 +29,7 @@ public class UserTblEntity {
     private String phoneNumber;
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
+//    @Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
     @JsonIgnore
     private byte[] photo;
 
