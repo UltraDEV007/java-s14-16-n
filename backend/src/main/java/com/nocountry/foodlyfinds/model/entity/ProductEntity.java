@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,6 +19,7 @@ public class ProductEntity {
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonProperty("store")
     @JoinColumn(name = "store_id")
     private StoreEntity storeId;
 
@@ -26,6 +28,7 @@ public class ProductEntity {
 
     @ToString.Exclude
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonProperty("category")
     @JoinColumn(name = "category_id")
     private CategoryEntity categoryId;
 
