@@ -2,7 +2,7 @@
   display: grid;
   row-gap: 20px;
   height: 100dvh;
-  padding: 58px 70px 28px;
+  padding: 58px 16px 28px;
   background: center / 100% 100% url(../../assets/background-Approve.svg);
   letter-spacing: -.32px;
 
@@ -21,9 +21,10 @@
   > p {
     font-size: 16px;
     font-weight: 400;
+    margin-inline: 17%;
   }
 
   > p:last-of-type {
-    margin-bottom: 56px
+    margin-bottom: 26px;
   }
 }
