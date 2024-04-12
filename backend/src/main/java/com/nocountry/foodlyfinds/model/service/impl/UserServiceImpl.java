@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse findById(Long userId) {
         UserTblEntity userDB = userRepository.findById(userId)
-                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId + "Sorry, no record found in the database."));
+                .orElseThrow( ()-> new ResourceNotFoundException("User not found with id " + userId + " Sorry, no record found in the database."));
         byte[] photo = userDB.getPhoto();
         Integer photoHashCode = null;
         if (photo != null && photo.length > 0) {
@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
         UserTblEntity userDB = userRepository.findById(userId)
                 .orElseThrow( ()-> new ResourceNotFoundException("User not found with ID " + userId + ". The user with the provided ID does not exist in the database."));
         if(userDB.getPhoto() == null){
-            throw new ResourceNotFoundException("The user with id " + userId + " does not have an associated image.");
+            throw new InvalidImageException("The user with id " + userId + " does not have an associated image.");
         }
         return new ByteArrayResource(userDB.getPhoto());
     }
