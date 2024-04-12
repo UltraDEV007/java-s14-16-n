@@ -39,7 +39,7 @@ public class StoreServiceImpl implements StoreService {
 
     @Override
     public void update(StoreEntity store) throws BadRequestException, NotFoundException {
-        Long storeId = store.getStoreId();
+        Long storeId = store.getId();
 
         Optional<StoreEntity> optionalStore = storeRepository.findById(storeId);
 

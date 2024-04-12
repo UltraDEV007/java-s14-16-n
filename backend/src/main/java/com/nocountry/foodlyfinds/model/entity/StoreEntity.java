@@ -21,7 +21,7 @@ public class StoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty("id")
-    private Long storeId;
+    private Long id;
 
     @NotBlank(message = "Name cannot be blank")
     @Pattern(regexp = "^[a-zA-Z ]+$", message = "Name must contain only letters and spaces")
@@ -37,6 +37,6 @@ public class StoreEntity {
     private String phoneNumber;
 
     @NotBlank(message = "Store image URL cannot be blank")
-    @URL(message = "Invalid URL format for store image")
+    @Pattern(regexp = "^https://img\\.mesa\\d+\\.pe/archivos/webpages/\\d+-[\\w-]+\\.png$", message = "Invalid store image URL format")
     private String storeImageUrl;
 }

@@ -1,9 +1,6 @@
 package com.nocountry.foodlyfinds.model.dto;
 
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.util.List;
@@ -20,7 +17,7 @@ public class StoreDTO {
 
     public static StoreDTO convertTo(StoreEntity entity) {
         StoreDTO dto = new StoreDTO();
-        dto.setStoreId(entity.getStoreId());
+        dto.setStoreId(entity.getId());
         dto.setName(entity.getName());
         dto.setAddress(entity.getAddress());
         dto.setPhoneNumber(entity.getPhoneNumber());
