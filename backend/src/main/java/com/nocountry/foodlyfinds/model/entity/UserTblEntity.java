@@ -9,8 +9,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
+=======
+import java.util.Arrays;
+import java.util.Objects;
+>>>>>>> feature/issues
 
 @Entity
 @Data
@@ -39,6 +44,7 @@ public class UserTblEntity {
     @JsonIgnore
     private byte[] photo;
 
+<<<<<<< HEAD
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderEntity> orders;
 
@@ -55,5 +61,7 @@ public class UserTblEntity {
         this.orders.remove(order);
         order.setUser(null);
     }
+=======
+>>>>>>> feature/issues
 
 }
