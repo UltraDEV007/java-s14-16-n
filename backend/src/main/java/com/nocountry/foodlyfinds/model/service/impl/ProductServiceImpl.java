@@ -62,4 +62,13 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductResponse> findByIngredientsIgnoreCaseContaining(String ingredients) {
         return productRepository.findByIngredientsIgnoreCaseContaining(ingredients.replace("%20", " ")).stream().map(product -> modelMapper.map(product, ProductResponse.class)).toList();
     }
+
+    //Buscar productos por id, id de categoria, nombre, id de tienda e ingredientes con query dinámico
+    @Override
+    public List<ProductResponse> searchProducts(Long id, Long categoryId, String name, Long storeId, String ingredients) {
+        return productRepository.searchProducts(id, categoryId, name, storeId, ingredients)
+                .stream()
+                .map(product -> modelMapper.map(product, ProductResponse.class))
+                .toList();
+    }
 }
