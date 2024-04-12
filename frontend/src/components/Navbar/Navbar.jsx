@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as LinkRouter, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import { faBell, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import HamburgerBtn from '../share/Buttons/HamburgerBtn/HamburgerBtn';
 // import ToggleButton from '../ToggleButton/ToggleButton';
 // import Search from "../share/Search/Search";
@@ -44,18 +44,20 @@ function Navbar() {
     default:
       paginaActual = 'Mi ubicación';
   }
+
+  const hideBackArrow = location.pathname === '/inicio';
+
   return (
     <>
       <header>
         <div className='headerH'>
-          <BackArrow />
-        {/* <FontAwesomeIcon className="pointer goBack" icon={faChevronLeft} /> */}
+           {!hideBackArrow && <BackArrow />}
           <address>
-            <FontAwesomeIcon icon={faLocationDot} style={{color: '#D57FFF', fontSize:'21px'}}/>
-            <p style={{fontSize:'16px', lineHeight:'21px', fontWeight:'500'}}>{paginaActual}</p>
+            <FontAwesomeIcon icon={faLocationDot} style={{ color: '#D57FFF', fontSize: '21px' }} />
+            <p style={{ fontSize: '16px', lineHeight: '21px', fontWeight: '500' }}>{paginaActual}</p>
           </address>
           <div className='headerLinks'>
-            <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{color: '#D57FFF', fontSize:'21px', width:'32px'}}/></LinkRouter>
+            <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{ color: '#D57FFF', fontSize: '21px', width: '32px' }} /></LinkRouter>
             {/* <FontAwesomeIcon icon={faBars} /> */}
             <HamburgerBtn />
           </div>
