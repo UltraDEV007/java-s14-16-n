@@ -1,45 +1,38 @@
 .summary {
-  gap: 20px;
-  padding: 27px 0 51px;
-  color: black;
-  background: white;
-  min-height: 100dvh;
+  display: grid;
+  gap: 14px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: -.32px;
+  align-items: start;
 
-  > figure, & {
-    display: grid;
-  }
-
-  > :is(figure, .box) {
+  > img {
+    object-fit: cover;
     justify-self: center;
   }
 
   h3 {
-    font-size: 30px;
-  }
-
-  > :nth-last-child(2) {
     font-size: 20px;
   }
 
   > .box {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 80%;
-    padding-inline: 25px;
+    background: var(--light-lilac);
+    border-radius: 12px;
+    width: 238px;
+    font-size: 20px;
+    justify-self: center;
+    line-height: 21px;
+    padding: 37px 11px;
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  }
+
+  .price {
     font-size: 20px;
   }
 
   p:not(.box), h3 {
-    padding-inline-start: 33px;
-    text-align: start;
-  }
-
-  > figure {
-    position: relative;
-    place-items: center;
-
-    p {
-      position: absolute;
-    }
+    padding-inline-start: 18px;
+    width: fit-content;
   }
 }
