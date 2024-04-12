@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -32,4 +34,15 @@ public class IssuesEntity {
 
     @Enumerated(EnumType.STRING)
     private ECompensation compensation;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof IssuesEntity issues)){
+            return  false;
+        }
+        return this.issuesId != null && this.issuesId.equals(issues.getIssuesId());
+    }
+
+
 }

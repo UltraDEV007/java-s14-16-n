@@ -51,7 +51,7 @@ public class IssuesServiceImpl implements IssuesService {
                 .user(user)
                 .store(store)
                 .issueType(EIssueType.valueOf(issuesRequest.getIssueType().toUpperCase()))
-                .compensation(ECompensation.valueOf(issuesRequest.getIssueType().toUpperCase()))
+                .compensation(ECompensation.valueOf(issuesRequest.getCompensation().toUpperCase()))
                 .build());
 
     }
@@ -61,10 +61,13 @@ public class IssuesServiceImpl implements IssuesService {
     public void deleteIssues(Long issuesId, Long userId) {
         IssuesEntity issuesDB = issuesRepository.findById(issuesId)
                 .orElseThrow(()-> new ResourceNotFoundException("Issues not found with id " + issuesId));
-        if(issuesDB.getUser().getUserId().equals(userId)){
-            issuesRepository.delete(issuesDB);
+        userRepository.findById(userId)
+                .orElseThrow(()-> new ResourceNotFoundException("User not fount with id " + userId));
+        if(!Objects.equals(issuesDB.getUser().getUserId(), userId)){
+            throw new ResourceNotFoundException("Denied permissions");
+
         }
-        throw new ResourceNotFoundException("Denied permissions");
+        issuesRepository.delete(issuesDB);
     }
     @Transactional(readOnly = true)
     @Override

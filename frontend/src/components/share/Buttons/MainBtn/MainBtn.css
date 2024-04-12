@@ -1,5 +1,12 @@
 .main-btn {
-  padding: 2px 10px;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px 1px black;
+  padding: 14px 0px;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: white;
+  font-size: 24px;
+  height: max-content;
+
+  &:disabled {
+    background-color: var(--gray);
+  }
 }

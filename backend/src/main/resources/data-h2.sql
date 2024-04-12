@@ -1,8 +1,9 @@
 -- Datos de ejemplo para la tabla user_tbl
 INSERT INTO user_tbl (name, email, password, coords, phone_number)
-VALUES ('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', 123-456-7890),
-       ('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', 987-654-3210),
-       ('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', 555-555-5555);
+VALUES
+('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', 1234567890),
+('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', 9876543210),
+('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', 5555555555);
 
 -- Datos de ejemplo para la tabla store
 INSERT INTO store (store_id,name, address, phone_number, store_image_url)
@@ -22,7 +23,7 @@ VALUES ('Hamburguesas'),
        ('Comida Internacional');
 
 -- Datos de ejemplo para la tabla calification
-INSERT INTO calification (user_id, store_id, value)
+INSERT INTO calification_tbl (user_id, store_id, value_qualification)
 VALUES (1, 1, 4),
        (2, 2, 5),
        (3, 3, 3);
