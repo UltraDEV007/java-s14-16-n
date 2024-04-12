@@ -29,7 +29,7 @@ function CardProduct({ products }) {
     
     return (
         <>
-            {products.map((item) => (
+            {products.slice(0,4).map((item) => (
 
                 // const store = getStoreInfo(item.productId);
                 // return (
