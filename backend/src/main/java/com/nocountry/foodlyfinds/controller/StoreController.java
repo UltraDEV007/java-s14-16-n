@@ -5,6 +5,7 @@ import com.nocountry.foodlyfinds.exception.NotFoundException;
 import com.nocountry.foodlyfinds.model.dto.StoreDTO;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
 import com.nocountry.foodlyfinds.model.service.impl.StoreServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +25,9 @@ public class StoreController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody StoreEntity store) {
-        try{
-            storeService.create(store);
-            return ResponseEntity.status(HttpStatus.CREATED).body("The Store was successfully created");
-        }catch (BadRequestException e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
+    public ResponseEntity<?> create(@Valid @RequestBody StoreEntity store) {
+        storeService.create(store);
+        return ResponseEntity.status(HttpStatus.CREATED).body("The Store was successfully created");
     }
 
     @GetMapping("/{id}")
