@@ -20,8 +20,9 @@ import Arrival from "./components/Arrival/Arrival";
 import SearchResult from "./components/SearchResult/SearchResult";
 
 // conexion al json
-import { products } from "./data/products";
-import { stores } from "./data/stores";
+import {data} from './data/findall';
+// import { products } from "./data/products";
+// import { stores } from "./data/stores";
 import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
 import FinalClaim from "./components/FinalClaim/FinalClaim";
@@ -30,18 +31,17 @@ import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
-  const [dataStores, setDataStores] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // codigo para obtener los productos de la api
     // axios
-    //   .get(`${API_BASE_URL}/products`)
+    //   .get(`${API_BASE_URL}`)
     //   .then((response) => {
     //     console.log('respuesta de la api:response.data')
     //     console.log(response.data)
-    //     setDataProducts(response.data.content);
+    //     // setDataProducts(response.data.content);
     //     setLoading(false);
     //   })
     //   .catch(error => {
@@ -49,8 +49,7 @@ function App() {
     //     setLoading(false);
     //   });
 
-    setDataProducts(products);
-    setDataStores(stores);
+    setDataProducts(data);
     setLoading(false);
   }, []);
 
@@ -59,7 +58,6 @@ function App() {
       <AppContext.Provider
         value={{
           dataProducts,
-          dataStores,
           selectedProduct,
           setSelectedProduct,
         }}

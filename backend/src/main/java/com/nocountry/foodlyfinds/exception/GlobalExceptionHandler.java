@@ -14,7 +14,6 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -65,9 +64,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handlerMethodArgumentNotValidException(HttpServletRequest request, BindingResult result) {
 
         Map<String, Object> errors = new HashMap<>();
-        result.getFieldErrors().forEach( error ->{
-            errors.put(error.getField(), "The field " + error.getField() + " " + error.getDefaultMessage());
-        });
+        result.getFieldErrors().forEach( error -> errors.put(error.getField(), "The field " + error.getField() + " " + error.getDefaultMessage()));
 
         ApiErrorResponse errorResponse = new ApiErrorResponse();
         errorResponse.setType("MethodArgumentNotValidException");
@@ -142,6 +139,9 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
-
+    public ResponseEntity<String> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {
+        String message = "Only numbers are allowed for the parameter: " + ex.getName() + " with value: " + ex.getValue() + ". Please, try again.";
+        return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
+    }
 
 }

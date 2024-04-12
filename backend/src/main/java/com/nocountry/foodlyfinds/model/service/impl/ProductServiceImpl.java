@@ -1,5 +1,6 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
+import com.nocountry.foodlyfinds.exception.ResourceNotFoundException;
 import com.nocountry.foodlyfinds.model.dto.response.ProductResponse;
 import com.nocountry.foodlyfinds.model.dto.response.ProductWithIdResponse;
 import com.nocountry.foodlyfinds.model.entity.ProductEntity;
@@ -29,13 +30,19 @@ public class ProductServiceImpl implements ProductService {
     //Buscar por id de producto
     @Override
     public ProductEntity findById(Long id) {
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("The product with ID " + id + " was not found or the ID is invalid. Please try again."));
     }
 
     //Buscar por id de categoria
     @Override
     public List<ProductWithIdResponse> findByCategoryIdCategoryId(Long categoryId) {
-        return productRepository.findByCategoryIdCategoryId(categoryId).stream().map(product -> modelMapper.map(product, ProductWithIdResponse.class)).toList();
+        List<ProductEntity> products = productRepository.findByCategoryIdCategoryId(categoryId);
+        if (products.isEmpty()) {
+            throw new ResourceNotFoundException("Not products found for the category with ID " + categoryId + " or the ID is invalid. Please try again.");
+        }
+        return products.stream()
+                .map(product -> modelMapper.map(product, ProductWithIdResponse.class))
+                .toList();
     }
 
     //Buscar por nombre de producto
@@ -45,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     //Buscar por id de tienda
-@Override
+    @Override
     public List<ProductWithIdResponse> findByStoreIdStoreId(Long id) {
         return productRepository.findByStoreIdStoreId(id).stream().map(product -> modelMapper.map(product, ProductWithIdResponse.class)).toList();
     }
