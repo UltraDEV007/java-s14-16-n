@@ -23,41 +23,17 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> handlerResourceNotFoundException(ResourceNotFoundException ex, HttpServletRequest request) {
-
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("ResourceNotFoundException");
-        errorResponse.setErrors(ex.getMessage());
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+        return createErrorResponse("ResourceNotFoundException", ex.getMessage(), request, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(InvalidImageException.class)
     public ResponseEntity<?> handlerInvalidImageException(InvalidImageException ex, HttpServletRequest request) {
-
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("InvalidImageException");
-        errorResponse.setErrors(ex.getMessage());
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+        return createErrorResponse("InvalidImageException", ex.getMessage(), request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(BabCredentialsException.class)
     public ResponseEntity<?> handlerBabCredentialsException(BabCredentialsException ex, HttpServletRequest request) {
-
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("BabCredentialsException");
-        errorResponse.setErrors(ex.getMessage());
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.FORBIDDEN.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(errorResponse);
+        return createErrorResponse("BabCredentialsException", ex.getMessage(), request, HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -79,64 +55,29 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<?> handlerMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex, HttpServletRequest request) {
-
         String paramName = ex.getName();
         String expectedType = Objects.requireNonNull(ex.getRequiredType()).getSimpleName();
         String errorMessage = "Invalid value for parameter '" + paramName + "'. Expected a value of type '" + expectedType + "'.";
-
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("MethodArgumentTypeMismatchException");
-        errorResponse.setErrors(errorMessage);
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.BAD_REQUEST.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+        return createErrorResponse("MethodArgumentTypeMismatchException", errorMessage, request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handlerGenericException(HttpServletRequest request, Exception ex) {
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("GenericException");
-        errorResponse.setErrors(ex.getMessage());
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        return createErrorResponse("GenericException", ex.getMessage(), request, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<?> handlerMethodNotAllowedException(HttpServletRequest request, HttpRequestMethodNotSupportedException ex) {
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("HttpRequestMethodNotSupportedException");
-        errorResponse.setErrors(ex.getMessage());
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+        return createErrorResponse("HttpRequestMethodNotSupportedException", ex.getMessage(), request, HttpStatus.METHOD_NOT_ALLOWED);
     }
 
 
     @ExceptionHandler(NumberFormatException.class)
     public ResponseEntity<?> handlerNumberFormatException(HttpServletRequest request, NumberFormatException ex) {
-
         String inputString = ex.getMessage();
         inputString = inputString.substring(inputString.indexOf("\"") + 1, inputString.lastIndexOf("\""));
         String errorMessage = "The value provided " + inputString + " is not a valid number. Please make sure to enter a numeric value.";
-
-        ApiErrorResponse errorResponse = new ApiErrorResponse();
-        errorResponse.setType("NumberFormatException");
-        errorResponse.setErrors(errorMessage);
-        errorResponse.setUrl(request.getRequestURL().toString());
-        errorResponse.setMethod(request.getMethod());
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.toString());
-        errorResponse.setTimestamp(LocalDateTime.now());
-
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+        return createErrorResponse("NumberFormatException", errorMessage, request, HttpStatus.BAD_REQUEST);
     }
 
     public ResponseEntity<String> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {
@@ -144,4 +85,14 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
 
+    private ResponseEntity<?> createErrorResponse(String type, String message, HttpServletRequest request, HttpStatus status) {
+        ApiErrorResponse errorResponse = new ApiErrorResponse();
+        errorResponse.setType(type);
+        errorResponse.setErrors(message);
+        errorResponse.setUrl(request.getRequestURL().toString());
+        errorResponse.setMethod(request.getMethod());
+        errorResponse.setStatus(status.toString());
+        errorResponse.setTimestamp(LocalDateTime.now());
+        return ResponseEntity.status(status).body(errorResponse);
+    }
 }

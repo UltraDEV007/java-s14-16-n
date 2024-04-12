@@ -9,10 +9,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Table(name = "user_tbl")
 public class UserTblEntity {
@@ -33,9 +35,25 @@ public class UserTblEntity {
     private Long phoneNumber;
 
     @Lob
-//    @Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
+    @Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
     @JsonIgnore
     private byte[] photo;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderEntity> orders;
+
+    public UserTblEntity() {
+        this.orders = new ArrayList<>();
+    }
+
+    public void addOrder(OrderEntity order){
+        this.orders.add(order);
+        order.setUser(this);
+    }
+
+    public void removeOrder(OrderEntity order){
+        this.orders.remove(order);
+        order.setUser(null);
+    }
 
 }
