@@ -2,6 +2,7 @@ package com.nocountry.foodlyfinds.model.repository;
 
 import com.nocountry.foodlyfinds.model.entity.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     List<ProductEntity> findByNameIgnoreCaseContaining(String name);
     List<ProductEntity> findByStoreIdStoreId(Long id);
     List<ProductEntity> findByIngredientsIgnoreCaseContaining(String replace);
+    @Query("SELECT p FROM ProductEntity p WHERE p.id IN :ids")
+    List<ProductEntity> findAllByIdIn(List<Long> ids);
 }
