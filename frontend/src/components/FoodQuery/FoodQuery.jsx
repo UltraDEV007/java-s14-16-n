@@ -9,7 +9,7 @@ export default function FoodQuery() {
     <>
       <Form className={'food-query'}>
         <Search />
-        <ToggleButton options={['Retiro en el local','Envío a Domicilio']}/>
+        <ToggleButton options={['Delivery','Retiro en Local']}/>
       </Form>
     </>
   )

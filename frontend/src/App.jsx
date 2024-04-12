@@ -18,9 +18,11 @@ import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
 import Arrival from "./components/Arrival/Arrival";
 import SearchResult from "./components/SearchResult/SearchResult";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 // conexion al json
-import {data} from './data/findall';
+import { data } from './data/findall';
 // import { products } from "./data/products";
 // import { stores } from "./data/stores";
 import Main from "./pages/Main";
@@ -43,15 +45,16 @@ function App() {
     //     console.log(response.data)
     //     // setDataProducts(response.data.content);
     //     setLoading(false);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error getting data:', error);
-    //     setLoading(false);
-    //   });
+      // })
+      // .catch(error => {
+      //   console.error('Error getting data:', error);
+      //   setLoading(false);
+      // });
 
     setDataProducts(data);
     setLoading(false);
   }, []);
+
 
   return (
     <>
@@ -62,13 +65,14 @@ function App() {
           setSelectedProduct,
         }}
       >
+        {/* <Navbar /> */}
         <Routes>
           <Route
             path="/"
             element={<Welcome />}
           />
           <Route
-            path="/*"
+            // path="/*"
             element={<Main />}
           >
             <Route
@@ -91,62 +95,64 @@ function App() {
               path="pagos"
               element={<Payment />}
             />
-          </Route>
-          <Route path="/busqueda">
-            <Route path=":mealId" />
-            <Route path="pagar">
-              <Route
-                path="confirmar"
-                element={<ConfirmOrder />}
-              />
-              <Route
-                path="medio-de-pago"
-                element={<PaymentMethod />}
-              />
-              <Route
-                path="monto-de-efectivo"
-                element={<Payout />}
-              />
-              <Route
-                path="procesando-pago"
-                element={<ConfirmPayment />}
-              />
-              <Route
-                path="pedido-aprobado"
-                element={<Approved />}
-              />
-              <Route
-                path="detalles-de-entrega"
-                element={<Summary />}
-              />
-              <Route
-                path="compensacion"
-                element={<Compensation />}
-              />
-              <Route
-                path="final-con-reclamo"
-                element={<FinalClaim />}
-              />
-              <Route
-                path="final-exitoso"
-                element={<FinalSuccess />}
-              />
-              <Route
-                path="producto-elegido"
-                element={<ChosenProduct />}
-              />
+            <Route path="/busqueda/*">
+              <Route path=":mealId" />
+              <Route path="pagar">
+                <Route
+                  path="confirmar"
+                  element={<ConfirmOrder />}
+                />
+                <Route
+                  path="medio-de-pago"
+                  element={<PaymentMethod />}
+                />
+                <Route
+                  path="monto-de-efectivo"
+                  element={<Payout />}
+                />
+                <Route
+                  path="procesando-pago"
+                  element={<ConfirmPayment />}
+                />
+                <Route
+                  path="pedido-aprobado"
+                  element={<Approved />}
+                />
+                <Route
+                  path="detalles-de-entrega"
+                  element={<Summary />}
+                />
+                <Route
+                  path="compensacion"
+                  element={<Compensation />}
+                />
+                <Route
+                  path="final-con-reclamo"
+                  element={<FinalClaim />}
+                />
+                <Route
+                  path="final-exitoso"
+                  element={<FinalSuccess />}
+                />
+                <Route
+                  path="producto-elegido"
+                  element={<ChosenProduct />}
+                />
 
-              <Route
-                path="aviso-de-llegada"
-                element={<Arrival />}
-              />
-              <Route
-                path="resultado-de-busqueda"
-                element={<SearchResult />}
-              />
+                <Route
+                  path="aviso-de-llegada"
+                  element={<Arrival />}
+                />
+                <Route
+                  path="resultado-de-busqueda"
+                  element={<SearchResult />}
+                />
+              </Route>
             </Route>
           </Route>
+
         </Routes>
+        {/* <Footer /> */}
       </AppContext.Provider>
     </>
   );
