@@ -16,6 +16,9 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     List<ProductEntity> findByStoreIdStoreId(Long id);
     List<ProductEntity> findByIngredientsIgnoreCaseContaining(String replace);
 
+    @Query("SELECT p FROM ProductEntity p WHERE p.productId IN :ids")
+    List<ProductEntity> findAllByIdIn(List<Long> ids);
+
     @Query("SELECT p FROM ProductEntity p " +
             "WHERE (:id IS NULL OR p.productId = :id) " +
             "AND (:categoryId IS NULL OR p.categoryId.categoryId = :categoryId) " +
