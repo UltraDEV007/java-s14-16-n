@@ -4,8 +4,6 @@ import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import HamburgerBtn from '../share/Buttons/HamburgerBtn/HamburgerBtn';
-// import ToggleButton from '../ToggleButton/ToggleButton';
-// import Search from "../share/Search/Search";
 import FoodQuery from '../FoodQuery/FoodQuery';
 import BackArrow from '../BackArrow/BackArrow'
 
@@ -17,8 +15,8 @@ function Navbar() {
   let paginaActual;
 
   switch (location.pathname) {
-    case '/':
-      paginaActual = 'Mi ubicación';
+    case '/inicio':
+      paginaActual = 'Av. Rivadavia 2360';
       break;
     case '/perfil':
       paginaActual = 'Perfil';
@@ -41,17 +39,22 @@ function Navbar() {
     case '/busqueda/pagar/medio-de-pago':
       paginaActual = 'Método de Pago';
       break;
+      case '/busqueda/pagar/monto-de-efectivo':
+      paginaActual = 'Método de Pago';
+      break;
     default:
-      paginaActual = 'Mi ubicación';
+      paginaActual = 'Av. Rivadavia 2360';
   }
 
   const hideBackArrow = location.pathname === '/inicio';
   const isMinHeader = location.pathname.startsWith('/busqueda/pagar') && !location.pathname.includes('/busqueda/pagar/producto-elegido');;
   const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido' ;
+  const showHeader = location.pathname === '/inicio' || location.pathname === '/busqueda/mealId' || location.pathname === '/busqueda/pagar/producto-elegido' 
+  || location.pathname === '/busqueda/pagar/confirmar' || location.pathname === '/busqueda/pagar/medio-de-pago' || location.pathname === '/busqueda/pagar/monto-de-efectivo'
 
   return (
     <>
-      <header className={`header ${isMinHeader ? 'headerMin' : ''} ${isMediumHeader ? 'headerMedium' : ''}`}>
+      {showHeader && <header className={`header ${isMinHeader ? 'headerMin' : ''} ${isMediumHeader ? 'headerMedium' : ''}`}>
         <div className='headerH'>
            {!hideBackArrow && <BackArrow />}
           <address>
@@ -62,14 +65,11 @@ function Navbar() {
             <div className='hamburger-btn-container'>
             <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{ color: '#D57FFF', fontSize: '21px', width: '32px' }} /></LinkRouter>
             </div>
-            
-            {/* <FontAwesomeIcon icon={faBars} /> */}
             <HamburgerBtn />
           </div>
-
         </div>
         <FoodQuery />
-      </header>
+      </header>}
     </>
   )
 }

@@ -1,5 +1,4 @@
 import React from "react";
-
 import Search from "../share/Search/Search";
 import Form from "../share/Form/Form";
 import './FoodQuery.css'
