@@ -46,10 +46,12 @@ function Navbar() {
   }
 
   const hideBackArrow = location.pathname === '/inicio';
+  const isMinHeader = location.pathname.startsWith('/busqueda/pagar') && !location.pathname.includes('/busqueda/pagar/producto-elegido');;
+  const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido' ;
 
   return (
     <>
-      <header>
+      <header className={`header ${isMinHeader ? 'headerMin' : ''} ${isMediumHeader ? 'headerMedium' : ''}`}>
         <div className='headerH'>
            {!hideBackArrow && <BackArrow />}
           <address>
@@ -57,7 +59,10 @@ function Navbar() {
             <p style={{ fontSize: '16px', lineHeight: '21px', fontWeight: '500' }}>{paginaActual}</p>
           </address>
           <div className='headerLinks'>
+            <div className='hamburger-btn-container'>
             <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{ color: '#D57FFF', fontSize: '21px', width: '32px' }} /></LinkRouter>
+            </div>
+            
             {/* <FontAwesomeIcon icon={faBars} /> */}
             <HamburgerBtn />
           </div>

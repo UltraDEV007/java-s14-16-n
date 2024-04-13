@@ -34,9 +34,13 @@ const pages = [
 
 function Footer() {
   const location = useLocation();
-  console.log(location.pathname)
+  
+  const showFooter = location.pathname === '/inicio' ||
+   location.pathname === '/busqueda/mealId' || 
+   location.pathname === '/busqueda/pagar/producto-elegido'
   return (
     <>
+      {showFooter && 
       <footer className="footer">
         <nav style={{ width: "100%", height:'100%'}}>
           <ul
@@ -68,7 +72,7 @@ function Footer() {
             ))}
           </ul>
         </nav>
-      </footer>
+      </footer>}
     </>
   );
 }
