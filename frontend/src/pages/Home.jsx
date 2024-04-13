@@ -1,10 +1,13 @@
-import React from 'react'
 
+
+import FoodQuery from '../components/FoodQuery/FoodQuery'
 
 function Home() {
   return (
     <>
+    <FoodQuery />
     <p>Home Page</p>
+    
     </>
   )
 }

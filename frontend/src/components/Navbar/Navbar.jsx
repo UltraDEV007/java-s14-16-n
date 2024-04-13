@@ -1,10 +1,10 @@
-import React from 'react'
+
 import { Link as LinkRouter } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBell, faCartShopping, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import HamburgerBtn from '../share/Buttons/HamburgerBtn/HamburgerBtn';
-import FoodQuery from '../FoodQuery/FoodQuery';
+
 
 const pages = [{
   name: 'Carrito',
@@ -20,6 +20,7 @@ const pages = [{
 function Navbar() {
   return (
     <>
+    
       <header>
         <HamburgerBtn />
         <address>
@@ -34,8 +35,9 @@ function Navbar() {
               </li>))}
           </ul>
         </nav>
-        <FoodQuery />
+        
       </header>
+     
     </>
   )
 }
