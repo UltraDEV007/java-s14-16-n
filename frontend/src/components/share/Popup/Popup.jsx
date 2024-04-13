@@ -7,6 +7,7 @@ export default function Popup({
   children, 
   fn, 
   param = 'popup',
+  ...props
 }) {
   const dialog = useRef(<></>)
   const [params, setParams] = useSearchParams()
@@ -38,7 +39,7 @@ export default function Popup({
 
   if (fn) fn.current = close
 
-  return <dialog ref={dialog}>
+  return <dialog ref={dialog} {...props}>
     {children}
   </dialog>
 }
