@@ -1,10 +1,10 @@
 .final-claim {
   display: flex;
   flex-direction: column;
-  /* row-gap: 30px; */
   padding: 0 25px 0 25px;
   min-height: 100dvh;
   color: black;
+  text-align: center;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -20,6 +20,7 @@
     > img {
       width: 8em;
       margin-top: 3dvh;
+      margin: auto;
     }
   }
 }

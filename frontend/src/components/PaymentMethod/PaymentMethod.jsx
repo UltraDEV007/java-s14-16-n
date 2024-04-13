@@ -1,48 +1,68 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDollarSign, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Form from "../share/Form/Form";
-import { Link } from "react-router-dom";
 import "./PaymentMethod.css";
 import MainBtn from "../share/Buttons/MainBtn/MainBtn";
-import PaymentCard from "./PaymentCard/PaymentCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function PaymentMethod() {
   const [active, setActive] = useState(false);
+  const [value, setValue] = useState(0);
+
+  const handleOnClick = () => setActive(!active);
+
+  const handleOValueChange = (num) => {
+    setValue(num);
+    console.log("value: ", value);
+  };
+
   return (
     <>
       <Form className={"payment-method"}>
-        <Link to="..">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </Link>
-        <h4>Elegí tu medio de pago</h4>
+        <div className="total-bar">
+          <h4>Total a pagar</h4>
+          <h4>
+            <span>$ </span>17.000
+          </h4>
+        </div>
+
+        <h5>Seleccione un método de pago</h5>
 
         <div>
           <label
             htmlFor="switch-method"
-            style={{ fontWeight: !active ? "600" : "100"}}
+            className={!active ? "label-active" : ""}
           >
-            Pago on-line
+            Efectivo
           </label>
           <input
             type="checkbox"
             value={active}
             name="switch-method"
-            onChange={() => setActive(!active)}
-            />
+            onChange={handleOnClick}
+          />
           <label
             htmlFor="switch-method"
-            style={{ fontWeight: active ? "600" : "100"}}
+            className={active ? "label-active" : ""}
           >
-            Efectivo u otros
+            Pago Online
           </label>
         </div>
 
-        <ul>
-          <PaymentCard />
-        </ul>
+        <h5>¿Con qué monto en efectivo desea pagar?</h5>
+        <input
+          type="number"
+          placeholder="Ingresar monto en efectivo"
+          className="input-cash"
+          name="cash"
+          onChange={(e) => handleOValueChange(e.target.value)}
+        />
 
-        <MainBtn>Ingresar otro medio de pago</MainBtn>
+        {/* <ul>
+          <PaymentCard />
+        </ul> */}
+
+        <MainBtn className={value > 500 ? "button-enabled" : ""}>
+          Confirmar
+        </MainBtn>
       </Form>
     </>
   );

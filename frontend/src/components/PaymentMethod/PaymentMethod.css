@@ -1,12 +1,29 @@
 .payment-method {
   display: grid;
-  row-gap: 30px;
+  row-gap: 10px;
   grid-template-columns: 25px 1fr 25px;
   grid-auto-rows: max-content;
-  min-height: 100dvh;
+  min-height: 100%;
   color: black;
   background-color: white;
   z-index: 10;
+
+  > .total-bar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+
+    > h4 > span {
+      color: rgb(60,156,252);
+    }
+  }
+
+  > h5 {
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+    font-weight: 400;
+  }
 
   > a {
     justify-self: start;
@@ -19,9 +36,9 @@
   }
 
   > div {
-    display: flex;
-    justify-items: center;
-    margin-top: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
 
     > input {
       appearance: none;
@@ -58,7 +75,25 @@
 
     > label {
       transition: 0.5s;
+      text-align: center;
+      background-color: rgb(145, 145, 146);
+      color: white;
+      padding: 1dvh;
+      border-radius: 5px;
+      transition: all .5s;
     }
+
+    > .label-active {
+      font-weight: 600;
+      background-color: rgb(60,156,252);
+    }
+  }
+
+  > .input-cash {
+    border-radius: 5px;
+    border: 1px solid rgb(142, 142, 142);
+    text-align: center;
+    padding: .5dvh 0;
   }
 
   > * {
@@ -69,15 +104,28 @@
     margin-top: 20px;
   }
 
-  button {
+  > button {
     position: absolute;
     bottom: 40px;
     left: 0;
     right: 0;
+    color: white;
+    box-shadow: none;
+    border-radius: 5px;
     margin: 0 25px 0 25px;
     font-size: 18px;
     padding: 15px 0 15px 0;
     font-weight: 500;
-    color: inherit;
+    background-color: rgb(129, 129, 129);
+    transition: all .5s;
   }
+
+  > button:active {
+    scale: .8;
+  }
+
+  > .button-enabled {
+    background-color: rgb(60,156,252);
+  }
+
 }
