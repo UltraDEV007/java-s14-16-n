@@ -31,11 +31,25 @@ public class StoreController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getById(@PathVariable Long id) {
-        try{
-            StoreDTO storeDTO = storeService.getById(id);
+    public ResponseEntity<?> getById(@PathVariable String id) {
+        try {
+            if (id == null || id.trim().isEmpty()) {
+                throw new IllegalArgumentException("Please provide a valid ID.");
+            }
+            if (!id.matches("-?\\d+")) {
+                throw new IllegalArgumentException("The provided ID contains non-numeric characters. Please provide a valid numeric ID.");
+            }
+            Long parsedId = Long.parseLong(id);
+            if (parsedId <= 0) {
+                throw new IllegalArgumentException("The ID must be a positive number. ID provided: " + parsedId);
+            }
+            StoreDTO storeDTO = storeService.getById(parsedId);
             return ResponseEntity.status(HttpStatus.OK).body(storeDTO);
-        }catch (NotFoundException e){
+        } catch (NumberFormatException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("The provided ID is not a valid number.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        } catch (NotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
     }
