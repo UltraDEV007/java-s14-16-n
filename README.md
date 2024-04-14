@@ -257,7 +257,7 @@
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/florencia-weingartner.jpeg" width=200>| 
 |:-:|
 | **Florencia Weingartner - PM**| 
-| <a href="https://github.com/GitMangus/"><img src="https://img.shields.io/badge/Behance-%2320232a.svg?style=for-the-badge&logo=Behance&logoColor=%%2361DAFB"/></a> <a href="https://www.linkedin.com/in/florencia-weingartner"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| <a href="https://github.com/GitMangus/"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/florencia-weingartner"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 | <img src="https://github.com/No-Country/c16-132-n-nocode/blob/main/esthetic_school/assets/NCimg/NC%20img/a%20eli.png" width=200>| 
 |:-:|
