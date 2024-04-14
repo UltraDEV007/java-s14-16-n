@@ -26,6 +26,14 @@
   align-items: center;
   justify-content: left;
 }
+
+.imageRestaurant {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* o "contain" o cualquier otro valor deseado */
+  object-position: center; /* o cualquier otra posición deseada */
+}
+
 .infoRestaurant p {
   margin-top: 7px;
   font-size: 12px;

@@ -3,10 +3,7 @@ import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
 
 const ChosenProduct = () => {
@@ -48,16 +45,9 @@ const ChosenProduct = () => {
 
   return (
     <main className="mainWrapper">
-      <section className="backward">
-        <Link to="/busqueda/pagar/resultado-de-busqueda">
-          <FontAwesomeIcon
-            className="pointer sizeUp"
-            icon={faArrowLeft}
-          />
-        </Link>
-      </section>
       <section className="infoRestaurant">
         <img
+          className="imageRestaurant"
           src={selectedProductData.storeId.storeImageUrl}
           alt="imagen Pizzeria"
         />
