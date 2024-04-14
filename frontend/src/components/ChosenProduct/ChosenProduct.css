@@ -21,23 +21,22 @@
 }
 
 .infoRestaurant {
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: left;
+  align-items: start;
 }
 
 .imageRestaurant {
   width: 100%;
-  height: 150px;
+  height: 120px;
   object-fit: cover; /* o "contain" o cualquier otro valor deseado */
   object-position: center; /* o cualquier otra posición deseada */
 }
-
-.infoRestaurant p {
-  margin-top: 7px;
-  font-size: 12px;
-  padding-right: 2rem;
+.storeLogo {
+  width: 45px;
+  height: 45px;
+  margin: 3px;
 }
 .infoFood {
   display: flex;
@@ -45,6 +44,7 @@
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
+  outline: 1px solid red;
 }
 
 .imageFood > img {
@@ -65,6 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  outline: 1px solid red;
 }
 
 .row p {
@@ -83,6 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  outline: 1px solid red;
 }
 .MyButton {
   margin-top: 1rem;
@@ -102,6 +104,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  outline: 1px solid red;
 }
 
 h4 {
@@ -121,7 +124,7 @@ h4 {
   font-size: 15px;
   font-weight: 600;
   border-radius: 20px;
-  background-color: white;
+  background-color: #3f9bff;
   cursor: pointer;
   box-shadow: 2px 5px 5px grey;
 }
@@ -132,7 +135,7 @@ h4 {
   font-size: 15px;
   font-weight: 600;
   border-radius: 20px;
-  background-color: white;
+  background-color: #3f9bff;
   cursor: pointer;
   box-shadow: 2px 5px 5px grey;
 }
@@ -142,7 +145,53 @@ h4 {
   font-size: 24px;
   font-weight: 600;
   border-radius: 20px;
-  background-color: white;
+  background-color: #3f9bff;
   cursor: pointer;
   box-shadow: 2px 5px 5px grey;
+}
+
+.storeName {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+.storeAddres {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
+.infoStore {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.child1 {
+  flex: 1; /* Ocupa 1/4 del ancho total */
+}
+
+.child2 {
+  flex: 2; /* Ocupa la mitad del ancho total */
+  display: flex;
+  flex-direction: column;
+  padding-right: 6rem;
+}
+
+.child3 {
+  flex: 1; /* Ocupa 1/4 del ancho total */
+  font-size: 1.2rem;
+  color: #d57fff;
+}
+.listTitle {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 10px;
 }

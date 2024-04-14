@@ -3,7 +3,7 @@ import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faShop } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
 
 const ChosenProduct = () => {
@@ -49,35 +49,50 @@ const ChosenProduct = () => {
         <img
           className="imageRestaurant"
           src={selectedProductData.storeId.storeImageUrl}
-          alt="imagen Pizzeria"
+          alt={selectedProductData.storeId.name}
         />
-        <p>{selectedProductData.storeId.address}</p>
-        <p>
-          30 minutos luego del pago
-          <FontAwesomeIcon
-            className="sizeUp pointer"
-            icon={faUpRightFromSquare}
-          />
-        </p>
+        <section className="infoStore">
+          <div className="child1">
+            <img
+              className="storeLogo"
+              src={selectedProductData.storeId.storeImageUrl}
+              alt={selectedProductData.storeId.name}
+            />
+          </div>
+          <div className="child2">
+            <p className="storeName">{selectedProductData.storeId.name}</p>
+
+            <p className="storeAddres">{selectedProductData.storeId.address}</p>
+          </div>
+          <div className="child3 pointer">
+            <FontAwesomeIcon icon={faShop} />
+          </div>
+        </section>
       </section>
+      <h4 className="listTitle">Lista del pedido</h4>
       <section className="infoFood">
-        <article className="nameFood">
-          <h2>{selectedProductData.name}</h2>
-          <h2>$ {selectedProductData.price}</h2>
-        </article>
         <article className="imageFood">
           <img
             src={selectedProductData.productImageUrl}
             alt="imagen comida"
           />
         </article>
+        <article className="nameFood">
+          <h2>{selectedProductData.name}</h2>
+          <h2>$ {selectedProductData.price}</h2>
+        </article>
       </section>
-      <h4>Ingredientes: {selectedProductData.ingredients}</h4>
+      {/* <h4>Ingredientes: {selectedProductData.ingredients}</h4> */}
       <div className="row">
-        <p>Aclaraciones</p>
         <input
-          className="inputText"
-          type="text"
+          className="btnAdd"
+          type="button"
+          value="Ingredientes"
+        />
+        <input
+          className="btnAdd"
+          type="button"
+          value="Aclaraciones"
         />
       </div>
       <div className="rowBtns">
@@ -93,11 +108,10 @@ const ChosenProduct = () => {
         />
       </div>
       <div className="columnBtns">
-        <h2>¿Quieres sumar algo más?</h2>
         <input
           className="btnMenu"
           type="button"
-          value="Ver más menus"
+          value="Agregar más al pedido"
           onClick={handleBackToMenu}
         />
         <input
