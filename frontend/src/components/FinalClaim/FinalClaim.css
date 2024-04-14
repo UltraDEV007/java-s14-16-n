@@ -1,16 +1,18 @@
 .final-claim {
   display: flex;
   flex-direction: column;
-  /* row-gap: 30px; */
   padding: 0 25px 0 25px;
   min-height: 100dvh;
   color: black;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background: center / 120% 100% url(../../assets/background-final-claim.svg);
+  background-color: rgb(60, 140, 256);
 
   > h5 {
     margin-top: 2dvh;
+    font-weight: 400;
     font-size: x-large;
   }
 
@@ -18,8 +20,9 @@
     margin-top: 3dvh;
 
     > img {
-      width: 8em;
-      margin-top: 3dvh;
+      width: 20em;
+      margin: auto;
+      margin-top: 5dvh;
     }
   }
 }
