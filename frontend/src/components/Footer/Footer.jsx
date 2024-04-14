@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as LinkRouter, useLocation } from 'react-router-dom';
+import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faUser, faPercent, faCartShopping } from '@fortawesome/free-solid-svg-icons'
@@ -33,10 +33,13 @@ const pages = [
 
 function Footer() {
   const location = useLocation();
+  const { mealName } = useParams();
   
   const showFooter = location.pathname === '/inicio' ||
    location.pathname === '/busqueda/mealId' || 
-   location.pathname === '/busqueda/pagar/producto-elegido'
+   location.pathname === '/busqueda/pagar/producto-elegido' ||
+   location.pathname === '/inicio/' + mealName
+
   return (
     <>
       {showFooter && 

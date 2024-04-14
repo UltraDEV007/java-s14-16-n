@@ -13,24 +13,16 @@ public interface StoreService {
      *
      * @param store The StoreEntity object containing the details of the new Store.
      */
-    void create(StoreEntity store);
+    void save(StoreEntity store);
 
     /**
      * Returns a StoreDTO corresponding to the provided ID if the Store exists.
      *
      * @param id The ID of the Store to be retrieved.
-     * @return The StoreDTO corresponding to the provided ID.
+     * @return The StoreEntity corresponding to the provided ID.
      * @throws NotFoundException If no Store with the provided ID is found.
      */
-    StoreDTO getById(Long id) throws NotFoundException;
-
-    /**
-     * Updates an existing Store with the provided data in the store object.
-     *
-     * @param store The StoreEntity object with the updated data.
-     * @throws NotFoundException If no Store with the provided ID is found.
-     */
-    void update(StoreEntity store) throws NotFoundException;
+    StoreEntity getById(Long id) throws NotFoundException;
 
     /**
      * Deletes an existing Store with the provided ID.
