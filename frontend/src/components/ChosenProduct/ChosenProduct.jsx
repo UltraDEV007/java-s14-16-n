@@ -1,79 +1,97 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// codigo del componente
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShop } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
-import ImageComida from "../../assets/ImageComida.svg";
-import ImagePizzeria from "../../assets/ImagePizzeria.svg";
 
 const ChosenProduct = () => {
-  // traer el id del producto seleccionado
-  //   const {selectedProduct}=useContext(AppContext);
-  // const id=selectedProduct
+  const { selectedProduct, dataProducts } = useContext(AppContext);
   const [confirmOrder, setConfirmOrder] = useState(false);
   const [goToMenu, setGoToMenu] = useState(false);
+  const [selectedProductData, setSelectedProductData] = useState(null);
+
+  useEffect(() => {
+    // Buscar el producto correspondiente usando el ID del producto seleccionado
+    if (selectedProduct) {
+      const product = dataProducts.find(
+        (item) => item.productId === selectedProduct
+      );
+      setSelectedProductData(product);
+    }
+  }, [selectedProduct, dataProducts]);
 
   const handleConfirmar = () => {
     setConfirmOrder(true);
   };
+
   const handleBackToMenu = () => {
     setGoToMenu(true);
   };
+
   if (confirmOrder) {
     return <Navigate to={"/busqueda/pagar/confirmar"} />;
   }
+
   if (goToMenu) {
     return <Navigate to={"/inicio"} />;
   }
 
+  if (!selectedProductData) {
+    return <p>Cargando...</p>; // O cualquier otra lógica de carga que prefieras
+  }
+
   return (
     <main className="mainWrapper">
-      <section className="backward">
-        <Link to="/busqueda/pagar/resultado-de-busqueda">
-          <FontAwesomeIcon
-            className="pointer sizeUp"
-            icon={faArrowLeft}
-          />
-        </Link>
-      </section>
       <section className="infoRestaurant">
         <img
-          src={ImagePizzeria}
-          alt="imagen Pizzeria"
+          className="imageRestaurant"
+          src={selectedProductData.storeId.storeImageUrl}
+          alt={selectedProductData.storeId.name}
         />
-        <p>Av. Córdoba 3120 Montevideo</p>
-        <p>
-          30 minutos luego del pago
-          <FontAwesomeIcon
-            className="sizeUp pointer"
-            icon={faUpRightFromSquare}
-          />
-        </p>
+        <section className="infoStore">
+          <div className="child1">
+            <img
+              className="storeLogo"
+              src={selectedProductData.storeId.storeImageUrl}
+              alt={selectedProductData.storeId.name}
+            />
+          </div>
+          <div className="child2">
+            <p className="storeName">{selectedProductData.storeId.name}</p>
+
+            <p className="storeAddres">{selectedProductData.storeId.address}</p>
+          </div>
+          <div className="child3 pointer">
+            <FontAwesomeIcon icon={faShop} />
+          </div>
+        </section>
       </section>
+      <h4 className="listTitle">Lista del pedido</h4>
       <section className="infoFood">
-        <article className="nameFood">
-          <h2>Pizza B</h2>
-          <h2>$ 7000</h2>
-        </article>
         <article className="imageFood">
           <img
-            src={ImageComida}
+            src={selectedProductData.productImageUrl}
             alt="imagen comida"
           />
         </article>
+        <article className="nameFood">
+          <h2>{selectedProductData.name}</h2>
+          <h2>$ {selectedProductData.price}</h2>
+        </article>
       </section>
-      <h4>Ingredientes: A, B, C, D, E </h4>
+      {/* <h4>Ingredientes: {selectedProductData.ingredients}</h4> */}
       <div className="row">
-        <p>Aclaraciones</p>
         <input
-          className="inputText"
-          type="text"
+          className="btnAdd"
+          type="button"
+          value="Ingredientes"
+        />
+        <input
+          className="btnAdd"
+          type="button"
+          value="Aclaraciones"
         />
       </div>
       <div className="rowBtns">
@@ -89,11 +107,10 @@ const ChosenProduct = () => {
         />
       </div>
       <div className="columnBtns">
-        <h2>¿Quieres sumar algo más?</h2>
         <input
           className="btnMenu"
           type="button"
-          value="Ver más menus"
+          value="Agregar más al pedido"
           onClick={handleBackToMenu}
         />
         <input

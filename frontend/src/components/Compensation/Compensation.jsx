@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import MainBtn from "../share/Buttons/MainBtn/MainBtn";
 import Form from "../share/Form/Form";
 import "./Compensation.css";
@@ -35,6 +36,9 @@ const compensationList = {
 };
 
 export default function Compensation() {
+  const navigate = useNavigate()
+
+  const handleOnBtnClick = () => setTimeout(navigate, 1e3, '../final-con-reclamo')
   return (
     <>
       <Form className="compensation">
@@ -58,7 +62,7 @@ export default function Compensation() {
           </section>
         </div>
 
-        <MainBtn>Aceptar</MainBtn>
+        <MainBtn onClick={handleOnBtnClick}>Aceptar</MainBtn>
       </Form>
     </>
   );
