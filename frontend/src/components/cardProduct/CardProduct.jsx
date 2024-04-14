@@ -24,7 +24,7 @@ function CardProduct({ products }) {
         <>
             {products.slice(0,4).map((item) => (
 
-                    <div className='cardProduct' key={item.productId} onClick={() => handleCardProduct(item.productId)}>
+                    <li className='cardProduct' key={item.productId} onClick={() => handleCardProduct(item.productId)}>
                         <div className='cardImage'>
                             <img src={item.productImageUrl} alt={item.name + ' imagen'} ></img>
                         </div>
@@ -50,7 +50,7 @@ function CardProduct({ products }) {
                             </div>
                         </div>
 
-                    </div>)
+                    </li>)
             )}
             
 
