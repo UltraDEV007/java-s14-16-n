@@ -4,6 +4,8 @@ import './home.css'
 import CardProduct from '../components/cardProduct/CardProduct'
 
 
+import FoodQuery from '../components/FoodQuery/FoodQuery'
+
 function Home() {
   const { dataProducts } = useContext(AppContext);
   return (
