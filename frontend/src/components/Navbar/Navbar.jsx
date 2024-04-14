@@ -28,7 +28,7 @@ function Navbar() {
       paginaActual = 'Mi Pedido';
       break;
     case '/busqueda/mealId':
-      paginaActual = 'Resultados de Búsqueda';
+      paginaActual = 'Av. Rivadavia 2360';
       break;
     case '/busqueda/pagar/producto-elegido':
       paginaActual = 'Tu pedido';
@@ -47,6 +47,7 @@ function Navbar() {
   }
 
   const hideBackArrow = location.pathname === '/inicio';
+  const hideLocationIcon = location.pathname.startsWith('/busqueda/pagar')
   const isMinHeader = location.pathname.startsWith('/busqueda/pagar') && !location.pathname.includes('/busqueda/pagar/producto-elegido');;
   const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido' ;
   const showHeader = location.pathname === '/inicio' || location.pathname === '/busqueda/mealId' || location.pathname === '/busqueda/pagar/producto-elegido' 
@@ -58,7 +59,7 @@ function Navbar() {
         <div className='headerH'>
            {!hideBackArrow && <BackArrow />}
           <address>
-            <FontAwesomeIcon icon={faLocationDot} style={{ color: '#D57FFF', fontSize: '21px' }} />
+            {!hideLocationIcon && <FontAwesomeIcon icon={faLocationDot} style={{ color: '#D57FFF', fontSize: '21px' }} />}
             <p style={{ fontSize: '16px', lineHeight: '21px', fontWeight: '500' }}>{paginaActual}</p>
           </address>
           <div className='headerLinks'>
