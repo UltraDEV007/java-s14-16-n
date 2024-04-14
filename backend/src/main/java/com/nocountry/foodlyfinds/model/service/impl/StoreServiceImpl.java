@@ -1,6 +1,5 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
-import com.nocountry.foodlyfinds.exception.BadRequestException;
 import com.nocountry.foodlyfinds.exception.NotFoundException;
 import com.nocountry.foodlyfinds.model.dto.StoreDTO;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
@@ -21,40 +20,31 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public void create(StoreEntity store) {
+    public void save(StoreEntity store) {
         storeRepository.save(store);
     }
 
     @Override
-    public StoreDTO getById(Long id) throws NotFoundException {
-
+    public StoreEntity getById(Long id) throws NotFoundException {
+        if(id <= 0){
+            throw new IllegalArgumentException("The ID must be a positive number: ID " +id);
+        }
         Optional<StoreEntity> optionalStore = storeRepository.findById(id);
-
         if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with id: " + id + "does not exist");
+            throw new NotFoundException("The store with ID: " + id + "NOT FOUND");
         }else{
-            return StoreDTO.convertTo(optionalStore.get());
+            return optionalStore.get();
         }
-    }
-
-    @Override
-    public void update(StoreEntity store) throws BadRequestException, NotFoundException {
-        Long storeId = store.getId();
-
-        Optional<StoreEntity> optionalStore = storeRepository.findById(storeId);
-
-        if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with id: " + storeId + "does not exist");
-        }
-
-        storeRepository.save(store);
     }
 
     @Override
     public void deleteById(Long id) throws NotFoundException {
+        if(id <= 0){
+            throw new IllegalArgumentException("The ID must be a positive number: ID " +id);
+        }
         Optional<StoreEntity> optionalStore = storeRepository.findById(id);
         if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with: " + id + " does not exist");
+            throw new NotFoundException("The store with ID: " + id + " NOT FOUND");
         }else{
             storeRepository.deleteById(id);
         }
