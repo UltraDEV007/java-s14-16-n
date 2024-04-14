@@ -1,0 +1,24 @@
+.searched-meal {
+  flex-grow: 1;
+  display: grid;
+  justify-items: start;
+  padding: 8px 16px;
+  grid-template-rows: auto 1fr;
+  gap: 3px;
+
+  > h3 {
+    color: var(--blue);
+    font-size: 14px;
+  }
+
+  > ul {
+    display: grid;
+    justify-self: stretch;
+    align-content: space-evenly;
+    gap: 20px;
+
+    li {
+      width: 100%;
+    }
+  }
+}
