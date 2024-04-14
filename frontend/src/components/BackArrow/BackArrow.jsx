@@ -25,9 +25,7 @@ function BackArrow() {
 
     return (
         <>
-            <Link
-                to={previousPage()}
-            >
+            <Link to={previousPage()}>
                 <FontAwesomeIcon className="pointer goBack" icon={faChevronLeft} />
             </Link>
         </>

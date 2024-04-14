@@ -65,7 +65,7 @@ function App() {
           setSelectedProduct,
         }}
       >
-        {/* <Navbar /> */}
+      
         <Routes>
           <Route
             path="/"
@@ -152,7 +152,7 @@ function App() {
           </Route>
 
         </Routes>
-        {/* <Footer /> */}
+        
       </AppContext.Provider>
     </>
   );

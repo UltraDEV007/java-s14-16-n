@@ -9,30 +9,21 @@ function CardProduct({ products }) {
     const [goToItem, setGoToItem] = useState(false)
 
     const handleCardProduct = (id) => {
-        console.log('elegi el producto con id' + id)
         if (id !== selectedProduct) {
             setSelectedProduct(id);
             setGoToItem(true)
         }
     }
-    console.log(selectedProduct)
+    
     // dirigir la navegacion al detalle de producto actualizar path segun endopoint de API
     if (goToItem) {
         return <Navigate to={'/busqueda/pagar/producto-elegido'} />
     }
-
-    // const getStoreInfo = (id) => {
-    //     console.log(id)
-    //     const store = stores.find(store => store.id === storeId);
-    //     return store ? { name: store.name, logo: store.image } : { name: '', logo: '' };
-    // };
     
     return (
         <>
             {products.slice(0,4).map((item) => (
 
-                // const store = getStoreInfo(item.productId);
-                // return (
                     <div className='cardProduct' key={item.productId} onClick={() => handleCardProduct(item.productId)}>
                         <div className='cardImage'>
                             <img src={item.productImageUrl} alt={item.name + ' imagen'} ></img>

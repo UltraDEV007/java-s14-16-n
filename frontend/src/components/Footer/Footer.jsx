@@ -19,7 +19,6 @@ const pages = [
   {
     name: 'Mi Pedido',
     paths: [
-      // '/pedidos', 
       '/busqueda/pagar/producto-elegido',
       '/busqueda/pagar/detalles-de-entrega'
     ],
