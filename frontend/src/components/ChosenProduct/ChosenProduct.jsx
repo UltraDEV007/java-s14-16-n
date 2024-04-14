@@ -1,36 +1,49 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// codigo del componente
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
   faUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
-import ImageComida from "../../assets/ImageComida.svg";
-import ImagePizzeria from "../../assets/ImagePizzeria.svg";
 
 const ChosenProduct = () => {
-  // traer el id del producto seleccionado
-  //   const {selectedProduct}=useContext(AppContext);
-  // const id=selectedProduct
+  const { selectedProduct, dataProducts } = useContext(AppContext);
   const [confirmOrder, setConfirmOrder] = useState(false);
   const [goToMenu, setGoToMenu] = useState(false);
+  const [selectedProductData, setSelectedProductData] = useState(null);
+
+  useEffect(() => {
+    // Buscar el producto correspondiente usando el ID del producto seleccionado
+    if (selectedProduct) {
+      const product = dataProducts.find(
+        (item) => item.productId === selectedProduct
+      );
+      setSelectedProductData(product);
+    }
+  }, [selectedProduct, dataProducts]);
 
   const handleConfirmar = () => {
     setConfirmOrder(true);
     console.log("hice clic en confirmar");
   };
+
   const handleBackToMenu = () => {
     setGoToMenu(true);
   };
+
   if (confirmOrder) {
     return <Navigate to={"/busqueda/pagar/confirmar"} />;
   }
+
   if (goToMenu) {
     return <Navigate to={"/inicio"} />;
+  }
+
+  if (!selectedProductData) {
+    return <p>Cargando...</p>; // O cualquier otra lógica de carga que prefieras
   }
 
   return (
@@ -45,10 +58,10 @@ const ChosenProduct = () => {
       </section>
       <section className="infoRestaurant">
         <img
-          src={ImagePizzeria}
+          src={selectedProductData.storeId.storeImageUrl}
           alt="imagen Pizzeria"
         />
-        <p>Av. Córdoba 3120 Montevideo</p>
+        <p>{selectedProductData.storeId.address}</p>
         <p>
           30 minutos luego del pago
           <FontAwesomeIcon
@@ -59,17 +72,17 @@ const ChosenProduct = () => {
       </section>
       <section className="infoFood">
         <article className="nameFood">
-          <h2>Pizza B</h2>
-          <h2>$ 7000</h2>
+          <h2>{selectedProductData.name}</h2>
+          <h2>$ {selectedProductData.price}</h2>
         </article>
         <article className="imageFood">
           <img
-            src={ImageComida}
+            src={selectedProductData.productImageUrl}
             alt="imagen comida"
           />
         </article>
       </section>
-      <h4>Ingredientes: A, B, C, D, E </h4>
+      <h4>Ingredientes: {selectedProductData.ingredients}</h4>
       <div className="row">
         <p>Aclaraciones</p>
         <input
