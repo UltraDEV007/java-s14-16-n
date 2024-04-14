@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/pizza.jpg'
 import './Summary.css'
+import Tooltip from '../Tooltip/Tooltip'
 
 export default function Summary() {
   const navigate = useNavigate()
@@ -26,7 +27,7 @@ export default function Summary() {
         </address>
         <hr />
         <p className='price'>TOTAL PAGADO ${17000}</p>
-        <p className='box'>Cuando llegue el pedido confirma que todo está bien</p>
+        <Tooltip >Cuando llegue el pedido confirma que todo está bien</Tooltip>
       </main>
     </>
   )

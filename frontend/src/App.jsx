@@ -30,6 +30,7 @@ import Summary from "./components/Summary/Summary";
 import FinalClaim from "./components/FinalClaim/FinalClaim";
 import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
+import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -65,20 +66,28 @@ function App() {
           setSelectedProduct,
         }}
       >
-        {/* <Navbar /> */}
+      
         <Routes>
           <Route
             path="/"
             element={<Welcome />}
           />
           <Route
-            // path="/*"
+            path="/*"
             element={<Main />}
           >
             <Route
               path="inicio"
-              element={<Home />}
-            />
+            >
+              <Route 
+                path=':mealName'
+                element={<SearchedMeal />}
+              />
+              <Route 
+                index 
+                element={<Home />}
+              />
+            </Route>
             <Route
               path="perfil"
               element={<Profile />}
@@ -95,7 +104,7 @@ function App() {
               path="pagos"
               element={<Payment />}
             />
-            <Route path="/busqueda/*">
+            <Route path="busqueda/*">
               <Route path=":mealId" />
               <Route path="pagar">
                 <Route
@@ -138,7 +147,6 @@ function App() {
                   path="producto-elegido"
                   element={<ChosenProduct />}
                 />
-
                 <Route
                   path="aviso-de-llegada"
                   element={<Arrival />}
@@ -150,9 +158,7 @@ function App() {
               </Route>
             </Route>
           </Route>
-
         </Routes>
-        {/* <Footer /> */}
       </AppContext.Provider>
     </>
   );

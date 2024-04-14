@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './toggleButton.css'
 
-
-
 function ToggleButton({ options }) {
 
     const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
@@ -10,13 +8,9 @@ function ToggleButton({ options }) {
         setSelectedOptionIndex(0);
     }, []);
     const handleChange = () => {
-
-
         setSelectedOptionIndex(prevIndex => (prevIndex === 0 ? 1 : 0));
-
-
     };
-    console.log('Opción seleccionada:', options[selectedOptionIndex]);
+
     return (
         <>
             <div className='toggleContainer'>

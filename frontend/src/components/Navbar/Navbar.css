@@ -51,3 +51,33 @@ header {
     margin-right: 2%;
   }
 }
+
+
+.headerMedium{
+  width: 100%;
+  height: 80px;
+  padding:5% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  border: 0.5px solid #D9D9D9;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.headerMin{
+  width: 100%;
+  height: 46px;
+  padding:5% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  border: 0.5px solid #D9D9D9;
+  position: sticky;
+  top: 0;
+  left: 0;
+}

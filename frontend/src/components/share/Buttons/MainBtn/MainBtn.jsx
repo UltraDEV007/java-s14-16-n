@@ -1,7 +1,7 @@
 import './MainBtn.css'
 
 export default function MainBtn({
-  children,
+  children = 'Aceptar',
   type = 'button',
   className,
   ...props
