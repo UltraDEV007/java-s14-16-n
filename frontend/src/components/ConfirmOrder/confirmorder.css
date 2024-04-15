@@ -47,6 +47,7 @@
     height: 100%;
     box-sizing: border-box;
     object-fit: cover;
+    margin: 0;
 }
 
 .storeDataConfirmar {
@@ -130,6 +131,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    margin: 0;
 
 }
 
