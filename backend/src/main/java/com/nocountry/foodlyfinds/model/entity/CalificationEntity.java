@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "calification")
+@Table(name = "calification_tbl")
 public class CalificationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
