@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingPathVariableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -78,6 +79,11 @@ public class GlobalExceptionHandler {
         inputString = inputString.substring(inputString.indexOf("\"") + 1, inputString.lastIndexOf("\""));
         String errorMessage = "The value provided " + inputString + " is not a valid number. Please make sure to enter a numeric value.";
         return createErrorResponse("NumberFormatException", errorMessage, request, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(MissingPathVariableException.class)
+    public ResponseEntity<String> handleMissingPathVariable(MissingPathVariableException ex) {
+        return ResponseEntity.badRequest().body("ID in the URL cannot be empty");
     }
 
     public ResponseEntity<String> handleTypeMismatch(MethodArgumentTypeMismatchException ex) {

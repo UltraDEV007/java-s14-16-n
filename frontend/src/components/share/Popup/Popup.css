@@ -1,0 +1,46 @@
+@keyframes fade-in {
+  from {
+    display: none;
+    opacity: 0;
+    transform: translateY(100%);
+  } to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  form {
+    display: block;
+    opacity: 1;
+  } to {
+    display: none;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+dialog {
+  border: 1px solid black;
+  border-radius: 12px;
+  transition: visibility 200ms ease-in-out;
+  margin: auto;
+  position: absolute;
+  animation: 200ms forwards ease-out;
+  transform: translateY(50%);
+  
+  &[open] {
+    visibility: visible;
+    animation-name: fade-in;
+  }
+
+  &:not([open]) {
+    display: block;
+    visibility: hidden;
+    animation-name: fade-out;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

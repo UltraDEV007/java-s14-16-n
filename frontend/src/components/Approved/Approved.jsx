@@ -11,7 +11,7 @@ export default function Approved() {
     setGoToDeliveryDetail(true)
   }
   if(goToDeliveryDetail){
-    return <Navigate to={'/busqueda/pagar/detalles-de-entrega'} />
+    return <Navigate to={'/busqueda/pagar/detalles-de-entrega?popup=tooltip'} />
   }
   return (
     <>

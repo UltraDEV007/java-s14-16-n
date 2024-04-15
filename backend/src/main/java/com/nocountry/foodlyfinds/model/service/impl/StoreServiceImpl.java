@@ -1,6 +1,5 @@
 package com.nocountry.foodlyfinds.model.service.impl;
 
-import com.nocountry.foodlyfinds.exception.BadRequestException;
 import com.nocountry.foodlyfinds.exception.NotFoundException;
 import com.nocountry.foodlyfinds.model.dto.StoreDTO;
 import com.nocountry.foodlyfinds.model.entity.StoreEntity;
@@ -21,44 +20,31 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public void create(StoreEntity store) throws BadRequestException {
-        if(isValid(store)){
-            storeRepository.save(store);
-        }
+    public void save(StoreEntity store) {
+        storeRepository.save(store);
     }
 
     @Override
-    public StoreDTO getById(Long id) throws NotFoundException {
-
+    public StoreEntity getById(Long id) throws NotFoundException {
+        if(id <= 0){
+            throw new IllegalArgumentException("The ID must be a positive number: ID " +id);
+        }
         Optional<StoreEntity> optionalStore = storeRepository.findById(id);
-
         if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with id: " + id + "does not exist");
+            throw new NotFoundException("The store with ID: " + id + "NOT FOUND");
         }else{
-            return StoreDTO.convertTo(optionalStore.get());
-        }
-    }
-
-    @Override
-    public void update(StoreEntity store) throws BadRequestException, NotFoundException {
-        Long storeId = store.getStoreId();
-
-        Optional<StoreEntity> optionalStore = storeRepository.findById(storeId);
-
-        if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with id: " + storeId + "does not exist");
-        }
-
-        if(isValid(store)){
-            storeRepository.save(store);
+            return optionalStore.get();
         }
     }
 
     @Override
     public void deleteById(Long id) throws NotFoundException {
+        if(id <= 0){
+            throw new IllegalArgumentException("The ID must be a positive number: ID " +id);
+        }
         Optional<StoreEntity> optionalStore = storeRepository.findById(id);
         if(optionalStore.isEmpty()){
-            throw new NotFoundException("The store with: " + id + " does not exist");
+            throw new NotFoundException("The store with ID: " + id + " NOT FOUND");
         }else{
             storeRepository.deleteById(id);
         }
@@ -67,24 +53,5 @@ public class StoreServiceImpl implements StoreService {
     @Override
     public List<StoreDTO> findAll() {
         return StoreDTO.convertList(storeRepository.findAll());
-    }
-
-    private boolean isValid(StoreEntity store){
-        if(store.getName()==null){
-            throw new BadRequestException("Store name cannot be null.");
-        }
-        if(store.getAddress()==null){
-            throw new BadRequestException("Store address cannot be null.");
-        }
-
-        String phoneNumber = store.getPhoneNumber();
-
-        if(phoneNumber == null ){
-            throw new BadRequestException("Store phoneNumber cannot be null.");
-        }
-        if(phoneNumber.length() < 10 || phoneNumber.length() > 20){
-            throw new BadRequestException("The store phoneNumber must be between 10 and 20 characters long.");
-        }
-        return true;
     }
 }

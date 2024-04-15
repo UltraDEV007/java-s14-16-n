@@ -18,6 +18,8 @@ function BackArrow() {
                 return '/busqueda/pagar/producto-elegido';
             case '/busqueda/pagar/medio-de-pago':
                 return '/busqueda/pagar/confirmar';
+            case '/busqueda/pagar/monto-de-efectivo':
+                return '/busqueda/pagar/medio-de-pago';
             default:
                 return '/';
         }
@@ -25,9 +27,7 @@ function BackArrow() {
 
     return (
         <>
-            <Link
-                to={previousPage()}
-            >
+            <Link to={previousPage()}>
                 <FontAwesomeIcon className="pointer goBack" icon={faChevronLeft} />
             </Link>
         </>

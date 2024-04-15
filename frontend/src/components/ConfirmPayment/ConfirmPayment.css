@@ -3,7 +3,8 @@
   display: grid;
   place-items: center;
   background: var(--half-gradient);
-  object-fit: fill;
+  -o-object-fit: fill;
+     object-fit: fill;
   position: relative;
 
   > h3 {
@@ -13,7 +14,7 @@
     z-index: 1;
     max-width: 60%;
     letter-spacing: -.32px;
-    opacity: .7;
+    opacity: .8;
   }
 
   > svg {
