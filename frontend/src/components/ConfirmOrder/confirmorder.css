@@ -90,14 +90,18 @@
 .articlesContent {
     width: 100%;
     height: auto;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     border: 0.5px solid #D9D9D9;
     row-gap: 5px;
+    display: none;
 }
 
+.active{
+    display: flex;
+}
 .itemContent {
     margin-top: 3%;
     width: 95%;
@@ -166,7 +170,7 @@
 
 }
 
-.btn-confirmar {
+.info-item-confirm {
     width: 98%;
     height: 100%;
     border: 0.5px solid #D9D9D9;
@@ -208,7 +212,7 @@
     column-gap: 2px;
 }
 
-.btn-pagar {
+.btn-confirm-goPay {
     width: 328px;
     height: 48px;
     border-radius: 5px;
@@ -221,7 +225,9 @@
     bottom: 20px;
 
 }
-
+.btn-noConfirm{
+    background-color: #D9D9D9;
+}
 @media screen and (orientation: landscape) {
     .btn-pagar {
         position: inherit;

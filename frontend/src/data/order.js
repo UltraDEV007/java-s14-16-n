@@ -1,4 +1,5 @@
-export const order = [{
+export const order = [
+  {
     "productId": 1,
     "name": "Hamburguesa clásica",
     "storeId": {
@@ -15,6 +16,7 @@ export const order = [{
     "productImageUrl": "https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg",
   "productCant":1,
   "productTotal":15000,
+"entrega":0,
   }, 
   // {
   //   "productId": 2,
@@ -33,5 +35,6 @@ export const order = [{
   //   "productImageUrl": "https://i.postimg.cc/j58qsk74/Pizza-Margarita.jpg",
   //   "productCant":2,
   //   "productTotal":10000,
+  //   "entrega":0,
   // },
 ]
