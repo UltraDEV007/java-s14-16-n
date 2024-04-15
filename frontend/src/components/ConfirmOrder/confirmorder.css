@@ -221,3 +221,19 @@
     bottom: 20px;
 
 }
+
+@media screen and (orientation: landscape) {
+    .btn-pagar {
+        position: inherit;
+        margin-top: 120px;
+    }
+    
+    
+ 
+}
+
+@media screen and (max-width: 359px) {
+    .btn-pagar {
+        width: 90%;
+    }
+   }
