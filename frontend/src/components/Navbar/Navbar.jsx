@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom';
+import { Link as LinkRouter, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faLocationDot } from '@fortawesome/free-solid-svg-icons'
@@ -11,7 +11,6 @@ import BackArrow from '../BackArrow/BackArrow'
 
 function Navbar() {
   const location = useLocation();
-  const { mealName } = useParams()
 
   let paginaActual;
 
@@ -51,14 +50,18 @@ function Navbar() {
   const hideLocationIcon = location.pathname.startsWith('/busqueda/pagar')
   const isMinHeader = location.pathname.startsWith('/busqueda/pagar') && !location.pathname.includes('/busqueda/pagar/producto-elegido');;
   const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido' ;
-  const showHeader = location.pathname === '/inicio' || location.pathname === '/busqueda/mealId' || location.pathname === '/busqueda/pagar/producto-elegido' || location.pathname === '/inicio/' + mealName
-  || location.pathname === '/busqueda/pagar/confirmar' || location.pathname === '/busqueda/pagar/medio-de-pago' || location.pathname === '/busqueda/pagar/monto-de-efectivo'
+  const showHeader = hideBackArrow || isMediumHeader || [
+    'busqueda',
+    'busqueda/pagar/confirmar', 
+    'busqueda/pagar/medio-de-pago', 
+    'busqueda/pagar/monto-de-efectivo',
+  ].some(path => `/${path}` === location.pathname)
 
   return (
     <>
       {showHeader && <header className={`header ${isMinHeader ? 'headerMin' : ''} ${isMediumHeader ? 'headerMedium' : ''}`}>
         <div className='headerH'>
-           {!hideBackArrow && <BackArrow />}
+          {!hideBackArrow && <BackArrow />}
           <address>
             {!hideLocationIcon && <FontAwesomeIcon icon={faLocationDot} style={{ color: '#D57FFF', fontSize: '21px' }} />}
             <p style={{ fontSize: '16px', lineHeight: '21px', fontWeight: '500' }}>{paginaActual}</p>

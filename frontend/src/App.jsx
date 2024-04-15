@@ -76,15 +76,8 @@ function App() {
           >
             <Route
               path="inicio"
+              element={<Home />}
             >
-              <Route 
-                path=':mealName'
-                element={<SearchedMeal />}
-              />
-              <Route 
-                index 
-                element={<Home />}
-              />
             </Route>
             <Route
               path="perfil"
@@ -102,7 +95,10 @@ function App() {
               path="pagos"
               element={<Payment />}
             />
-            <Route path="busqueda/*">
+            <Route 
+              path="busqueda" 
+              element={<SearchedMeal />} 
+            >
               <Route path=":mealId" />
               <Route path="pagar">
                 <Route

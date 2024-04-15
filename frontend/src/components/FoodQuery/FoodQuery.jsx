@@ -4,13 +4,19 @@ import Form from "../share/Form/Form";
 import './FoodQuery.css'
 import '../share/ToggleButton/ToggleButton'
 import ToggleButton from "../share/ToggleButton/ToggleButton";
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 export default function FoodQuery() {
-  const location = useLocation();
+  const { pathname } = useLocation();
+  const { mealId } = useParams();
 
-  const showSearch = location.pathname === '/inicio' || location.pathname === '/busqueda/mealId';
-  const showToggleButton = location.pathname === '/inicio' || location.pathname === '/busqueda/pagar/producto-elegido' || location.pathname === '/busqueda/mealId';
+  const showSearch = [
+    'inicio', 
+    'busqueda', 
+    `busqueda/${mealId}`,
+  ].some(path => pathname === `/${path}`);
+  const showToggleButton = showSearch || '/busqueda/pagar/producto-elegido' === pathname;
+
   return (
     <>
       <Form className={'food-query'}>
@@ -20,7 +26,6 @@ export default function FoodQuery() {
         <div style={{width:'100%', visibility: showToggleButton ? 'visible' : 'hidden' }}>
         {showToggleButton && <ToggleButton options={['Delivery','Retiro en Local']}/>}
         </div>
-       
       </Form>
     </>
   )

@@ -33,12 +33,14 @@ const pages = [
 
 function Footer() {
   const location = useLocation();
-  const { mealName } = useParams();
+  const { mealId } = useParams();
   
-  const showFooter = location.pathname === '/inicio' ||
-   location.pathname === '/busqueda/mealId' || 
-   location.pathname === '/busqueda/pagar/producto-elegido' ||
-   location.pathname === '/inicio/' + mealName
+  const showFooter = [
+    'inicio', 
+    'busqueda',
+    `busqueda/${mealId}`,
+    'busqueda/pagar/producto-elegido',
+  ].some(path => `/${path}` === location.pathname)
 
   return (
     <>
