@@ -18,7 +18,7 @@ public class StoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty("id")
-    private Long id;
+    private Long storeId;
 
     @NotEmpty(message = "Name cannot be empty")
     @NotNull(message = "Name cannot be null")
