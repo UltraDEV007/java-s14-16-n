@@ -18,19 +18,18 @@ import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
 import Arrival from "./components/Arrival/Arrival";
 import SearchResult from "./components/SearchResult/SearchResult";
-
-// conexion al json
-import {data} from './data/findall';
-// import { products } from "./data/products";
-// import { stores } from "./data/stores";
 import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
 import FinalClaim from "./components/FinalClaim/FinalClaim";
 import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
+import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
+import { data } from './data/findall';
+import {order} from './data/order'
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [dataOrder, setDataOrder ] = useState ([])
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -43,25 +42,29 @@ function App() {
     //     console.log(response.data)
     //     // setDataProducts(response.data.content);
     //     setLoading(false);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error getting data:', error);
-    //     setLoading(false);
-    //   });
+    // })
+    // .catch(error => {
+    //   console.error('Error getting data:', error);
+    //   setLoading(false);
+    // });
 
     setDataProducts(data);
+    setDataOrder(order)
     setLoading(false);
   }, []);
+
 
   return (
     <>
       <AppContext.Provider
         value={{
           dataProducts,
+          dataOrder,
           selectedProduct,
           setSelectedProduct,
         }}
       >
+
         <Routes>
           <Route
             path="/"
@@ -74,7 +77,8 @@ function App() {
             <Route
               path="inicio"
               element={<Home />}
-            />
+            >
+            </Route>
             <Route
               path="perfil"
               element={<Profile />}
@@ -91,59 +95,61 @@ function App() {
               path="pagos"
               element={<Payment />}
             />
-          </Route>
-          <Route path="/busqueda">
-            <Route path=":mealId" />
-            <Route path="pagar">
-              <Route
-                path="confirmar"
-                element={<ConfirmOrder />}
-              />
-              <Route
-                path="medio-de-pago"
-                element={<PaymentMethod />}
-              />
-              <Route
-                path="monto-de-efectivo"
-                element={<Payout />}
-              />
-              <Route
-                path="procesando-pago"
-                element={<ConfirmPayment />}
-              />
-              <Route
-                path="pedido-aprobado"
-                element={<Approved />}
-              />
-              <Route
-                path="detalles-de-entrega"
-                element={<Summary />}
-              />
-              <Route
-                path="compensacion"
-                element={<Compensation />}
-              />
-              <Route
-                path="final-con-reclamo"
-                element={<FinalClaim />}
-              />
-              <Route
-                path="final-exitoso"
-                element={<FinalSuccess />}
-              />
-              <Route
-                path="producto-elegido"
-                element={<ChosenProduct />}
-              />
-
-              <Route
-                path="aviso-de-llegada"
-                element={<Arrival />}
-              />
-              <Route
-                path="resultado-de-busqueda"
-                element={<SearchResult />}
-              />
+            <Route 
+              path="busqueda" 
+              element={<SearchedMeal />} 
+            >
+              <Route path=":mealId" />
+              <Route path="pagar">
+                <Route
+                  path="confirmar"
+                  element={<ConfirmOrder order={dataOrder}/>}
+                />
+                <Route
+                  path="medio-de-pago"
+                  element={<PaymentMethod />}
+                />
+                <Route
+                  path="monto-de-efectivo"
+                  element={<Payout />}
+                />
+                <Route
+                  path="procesando-pago"
+                  element={<ConfirmPayment />}
+                />
+                <Route
+                  path="pedido-aprobado"
+                  element={<Approved />}
+                />
+                <Route
+                  path="detalles-de-entrega"
+                  element={<Summary />}
+                />
+                <Route
+                  path="compensacion"
+                  element={<Compensation />}
+                />
+                <Route
+                  path="final-con-reclamo"
+                  element={<FinalClaim />}
+                />
+                <Route
+                  path="final-exitoso"
+                  element={<FinalSuccess />}
+                />
+                <Route
+                  path="producto-elegido"
+                  element={<ChosenProduct />}
+                />
+                <Route
+                  path="aviso-de-llegada"
+                  element={<Arrival />}
+                />
+                <Route
+                  path="resultado-de-busqueda"
+                  element={<SearchResult />}
+                />
+              </Route>
             </Route>
           </Route>
         </Routes>

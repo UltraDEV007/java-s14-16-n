@@ -2,33 +2,11 @@
   height: 100dvh;
   display: grid;
   place-items: center;
-  background: linear-gradient(#3f9bff 40%, #d57fff 0%);
-  overflow: hidden;
-  position: relative;
-
-  > svg {
-    position: absolute;
-    translate: -50px 20px;
-    width: 120%;
-    height: 100%;
-    fill: white;
-    stroke: white;
-    rotate: 2deg;
-  }
+  background: center / 100% 100% url(../../assets/Vector-welcome.svg);
+  width: 100%;
 
   > img {
     max-width: 509px;
     width: 90%;
-    z-index: 1;
-  }
-
-  @media screen and (width < 760px) {
-    background: linear-gradient(#3f9bff 50%, #d57fff 0%);
-
-    > svg {
-      rotate: 12deg;
-      width: 150%;
-      translate: -20px;
-    }
   }
 }

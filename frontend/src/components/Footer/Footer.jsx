@@ -1,57 +1,71 @@
 import React from 'react'
-import { Link as LinkRouter } from 'react-router-dom';
+import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faUser, faPercent, faFileLines, faDollarSign } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faUser, faPercent, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const pages = [
   {
     name: 'Inicio',
-    path: '/inicio',
+    paths: ['/inicio', '/busqueda/mealId'],
     icon: faHouse
   },
+
   {
-    name: "Perfil",
-    path: "/perfil",
-    icon: faUser,
-  },
-  {
-    name: "Beneficios",
-    path: "/beneficios",
+    name: "Descuentos",
+    paths: ["/beneficios"],
     icon: faPercent,
   },
   {
-    name: 'Pedidos',
-    path: '/pedidos',
-    icon: faFileLines
+    name: 'Mi Pedido',
+    paths: [
+      '/busqueda/pagar/producto-elegido',
+      '/busqueda/pagar/detalles-de-entrega'
+    ],
+    icon: faCartShopping
   },
   {
-    name: 'Pagos',
-    path: '/pagos',
-    icon: faDollarSign
-  }
+    name: "Cuenta",
+    paths: ["/perfil"],
+    icon: faUser,
+  },
 ];
 
 function Footer() {
+  const location = useLocation();
+  const { mealId } = useParams();
+  
+  const showFooter = [
+    'inicio', 
+    'busqueda',
+    `busqueda/${mealId}`,
+    'busqueda/pagar/producto-elegido',
+  ].some(path => `/${path}` === location.pathname)
+
   return (
     <>
+      {showFooter && 
       <footer className="footer">
-        <nav style={{ width: "98%", marginLeft: "1%", marginRight: "1%" }}>
+        <nav style={{ width: "100%", height:'100%'}}>
           <ul
             style={{
               width: "100%",
+              height:'100%',
               display: "flex",
               flexDirection: "row",
-              columnGap: "20px",
-              justifyContent: "center",
+              alignItems:'center',
+              justifyContent: "space-evenly",
             }}
           >
             {pages.map((page) => (
               <li
-                key={page.path}
-                style={{ listStyleType: "none" }}
+                key={page.name}
+                style={{ listStyleType: "none"}}
+                className={isActive(page.paths, location.pathname) ? "activeOn" : ""}
               >
-                <LinkRouter to={page.path}>
+                <LinkRouter to={page.paths[0]}
+                 
+                  >
                   <FontAwesomeIcon
                     icon={page.icon}
                     style={{ fontSize: "20px" }}
@@ -62,9 +76,12 @@ function Footer() {
             ))}
           </ul>
         </nav>
-      </footer>
+      </footer>}
     </>
   );
 }
 
+function isActive(pagePaths, currentPath) {
+  return pagePaths.includes(currentPath);
+}
 export default Footer;

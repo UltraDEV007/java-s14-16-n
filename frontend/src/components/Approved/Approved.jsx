@@ -11,16 +11,14 @@ export default function Approved() {
     setGoToDeliveryDetail(true)
   }
   if(goToDeliveryDetail){
-    return <Navigate to={'/busqueda/pagar/detalles-de-entrega'} />
+    return <Navigate to={'/busqueda/pagar/detalles-de-entrega?popup=tooltip'} />
   }
   return (
     <>
       <main className="approved">
         <img src={check} alt="check" />
-        <hgroup>
-          <h3>¡Pedido realizado con éxito!</h3>
-          <p>Tu pago ha sido confirmado</p>
-        </hgroup>
+        <h3>¡Pedido realizado con éxito!</h3>
+        <p>Tu pago ha sido confirmado</p>
         <p>En breve un repartidor estará visitando tu domicilio con el pedido</p>
         <p>Al recibirlo debes confirmar si se ha cumplido el tiempo, producto y calidad</p>
         <MainBtn onClick={handleOrderApproved}>Aceptar</MainBtn>
