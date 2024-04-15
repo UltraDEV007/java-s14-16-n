@@ -7,12 +7,18 @@ import AppContext from '../../context/AppContex';
 import './confirmorder.css'
 
 function ConfirmOrder({ order }) {
+  const [goToPay, setGoToPay] = useState(false)
+  const [showOrderList, setShowOrderList] = useState(false)
+  const [newOrder, setNewOrder] = useState([...order]);
+  const [emptyList, setEmptyList] = useState(false);
 
   if (!order || order.length === 0) {
     return <div>No hay órdenes para confirmar</div>;
   }
 
-  const [goToPay, setGoToPay] = useState(false)
+  const subTotal = newOrder.reduce((total, item) => total + item.productTotal, 0);
+  const delivery = order[0].entrega === 0 ? 2000 : 0;
+
   const handlePagar = () => {
     setGoToPay(true)
   }
@@ -20,6 +26,18 @@ function ConfirmOrder({ order }) {
     return <Navigate to={'/busqueda/pagar/medio-de-pago'} />
   }
 
+  const handleToggleOrderList = () => {
+    setShowOrderList(!showOrderList);
+  }
+  const handleDeleteItem = (index) => {
+    const updateOrder = [...newOrder];
+    updateOrder.splice(index, 1); // Elimina el elemento segun el indice recibido
+    setNewOrder(updateOrder)
+    if (updateOrder.length === 0) {
+      setEmptyList(true)
+    }
+
+  }
 
   return (
     <>
@@ -38,55 +56,58 @@ function ConfirmOrder({ order }) {
 
         <div className="orderContent">
 
-          <section className="ListTitle">
+          <section className="ListTitle" onClick={handleToggleOrderList}>
             <div><FontAwesomeIcon icon={faAngleDown} /></div>
             <p style={{ fontWeight: '700', fontSize: '16px', lineHeight: '16px' }}>Lista del pedido</p>
             <div><FontAwesomeIcon icon={faAngleDown} /></div>
           </section>
-          <section className="articlesContent">
-            {order.map((item, index) =>
-              <div className="itemContent" key={index}>
-                <div className="mealData">
-                  <div className="mealDataImage"><img src={item.productImageUrl} alt="food image"></img></div>
-                  <div className="mealDataFood">
-                    <div className="mealDataFoodStore">
-                      <p style={{ fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>{item.name}</p>
-                      <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.categoryId.name}</p>
+          {emptyList ?
+            (<p>Su lista quedó vacía. Vuelva a armar su pedido</p>)
+            :
+            (<section className={showOrderList ? "articlesContent active" : "articlesContent"}>
+              {newOrder.map((item, index) =>
+                <div className="itemContent" key={index}>
+                  <div className="mealData">
+                    <div className="mealDataImage"><img src={item.productImageUrl} alt="food image"></img></div>
+                    <div className="mealDataFood">
+                      <div className="mealDataFoodStore">
+                        <p style={{ fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>{item.name}</p>
+                        <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.categoryId.name}</p>
+                      </div>
+                      <div onClick={() => handleDeleteItem(index)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
                     </div>
-                    <div><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
+                  </div>
+                  <div className="count">
+                    <p className="info-item-confirm">Cantidad: {item.productCant}</p>
+                    <p className="info-item-confirm">Total: $ {item.productTotal.toLocaleString()} </p>
                   </div>
                 </div>
-                <div className="count">
-                  <p className="btn-confirmar">Cantidad: {item.productCant}</p>
-                  <p className="btn-confirmar">Total: $ {item.productTotal.toLocaleString()} </p>
-                </div>
-              </div>
-            )}
+              )}
 
-          </section>
+            </section>)}
           <section className="totalCount">
             <div className="totalItem ">
               <div className="itemIcon">
                 <FontAwesomeIcon icon={faBox} />
                 <p>Pedido</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>15.000</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{subTotal.toLocaleString()}</p>
             </div>
-            <div className="totalItem">
+            {delivery !== 0 && <div className="totalItem">
               <div className="itemIcon">
                 <FontAwesomeIcon icon={faMotorcycle} />
                 <p>Envío</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>2.000</p>
-            </div>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery.toLocaleString()}</p>
+            </div>}
             <div className="totalItem ">
               <p>Total</p>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>17.000</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{(subTotal + delivery).toLocaleString()}</p>
             </div>
           </section>
         </div>
 
-        <button className="btn-pagar" onClick={handlePagar}>Ir a pagar</button>
+        <button className={`btn-confirm-goPay ${emptyList ? 'btn-noConfirm' : ''}`} onClick={handlePagar} disabled={emptyList}>Ir a pagar</button>
       </div>
 
 
