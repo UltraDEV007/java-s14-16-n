@@ -1,16 +1,14 @@
 import './MainBtn.css'
 
 export default function MainBtn({
-  children,
+  children = 'Aceptar',
   type = 'button',
   className,
-  disabled,
-  onClick,
+  ...props
 }) {
   return <button {...{
     className: `main-btn${className ? ' ' + className : ''}`,
     type, 
-    disabled,
-    onClick,
+    ...props
   }} >{children}</button>
 }

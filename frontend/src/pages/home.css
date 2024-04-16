@@ -1,4 +1,15 @@
-.cardProductContainer {
+
+.homeContent{
+width: 100%;
+height: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: left;
+margin-top: 15px;
+}
+.cardProductContainerHome {
     width: 100%;
     height: auto;
     display: flex;

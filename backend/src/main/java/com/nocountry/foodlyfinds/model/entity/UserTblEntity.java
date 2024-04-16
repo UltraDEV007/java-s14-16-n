@@ -2,17 +2,21 @@ package com.nocountry.foodlyfinds.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Arrays;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Table(name = "user_tbl")
 public class UserTblEntity {
@@ -28,13 +32,30 @@ public class UserTblEntity {
 
     private String coords;
 
-    private String phoneNumber;
+    @NotNull(message = "is required, must be between 10 and 15 digits")
+    @Digits(integer = 15, fraction = 0, message = "must be a numeric value with up to 15 digits")
+    private Long phoneNumber;
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
+    @Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
     @JsonIgnore
     private byte[] photo;
 
-    private String userImageUrl;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderEntity> orders;
+
+    public UserTblEntity() {
+        this.orders = new ArrayList<>();
+    }
+
+    public void addOrder(OrderEntity order){
+        this.orders.add(order);
+        order.setUser(this);
+    }
+
+    public void removeOrder(OrderEntity order){
+        this.orders.remove(order);
+        order.setUser(null);
+    }
 
 }

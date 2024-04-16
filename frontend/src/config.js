@@ -1,1 +1,1 @@
-export const API_BASE_URL = "url de la api"
+export const API_BASE_URL = "http://158.180.235.233:8080/api/product/findall"

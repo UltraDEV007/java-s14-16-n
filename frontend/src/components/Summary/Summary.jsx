@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import logo from '../../assets/Image.jpg'
+import logo from '../../assets/pizza.jpg'
 import './Summary.css'
+import Tooltip from '../Tooltip/Tooltip'
 
 export default function Summary() {
   const navigate = useNavigate()
@@ -11,22 +12,22 @@ export default function Summary() {
 
   return (
     <>
-      <main>
-        <figure>
-          <img src={logo} alt='comida'/>
-          <p>Comida</p>
-        </figure>
-        <h3>{'1 Pizza B'}</h3>
+      <main className='summary'>
+        <img src={logo} alt='comida'/>
+        <h3>{'1 Pizza Carbonara con huevo'}</h3>
         <hr />
-        <p>A llegar en tu domicilio en 30 minutos</p>
+        <div>
+          <p>A llegar en tu domicilio {'San Juan 206'}</p>
+          <p>En 30 minutos</p>
+        </div>
         <hr />
-        <hgroup>
-          <h3>{'Pizzería B'}</h3>
+        <address>
+          <h3>{'Fundamentos Pizza'}</h3>
           <p>{'Av. Córdoba 3120, Montevideo'}</p>
-        </hgroup>
+        </address>
         <hr />
-        <p>Total a pagar ${7000}</p>
-        <p className='box'>Cuando llegue el pedido confirma que todo está bien</p>
+        <p className='price'>TOTAL PAGADO ${17000}</p>
+        <Tooltip >Cuando llegue el pedido confirma que todo está bien</Tooltip>
       </main>
     </>
   )

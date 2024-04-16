@@ -11,19 +11,11 @@ import java.util.stream.Collectors;
 
 @Data
 public class StoreDTO {
-    @NotNull(message = "Store ID cannot be null")
+
     private Long storeId;
-
-    @NotBlank(message = "Store name cannot be blank")
     private String name;
-
-    @NotBlank(message = "Store address cannot be blank")
     private String address;
-
-    @NotBlank(message = "Store phone number cannot be blank")
-    @Size(min =10, max = 20)
     private String phoneNumber;
-
     private String storeImageUrl;
 
     public static StoreDTO convertTo(StoreEntity entity) {

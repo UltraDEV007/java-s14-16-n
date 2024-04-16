@@ -1,0 +1,12 @@
+.welcome {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: center / 100% 100% url(../../assets/Vector-welcome.svg);
+  width: 100%;
+
+  > img {
+    max-width: 509px;
+    width: 90%;
+  }
+}

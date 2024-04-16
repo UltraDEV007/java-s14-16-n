@@ -1,15 +1,25 @@
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import './Search.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-export default function Search() {
+export default function Search({
+  param = 'q',
+  setRoute = 'busqueda',
+}) {
+  const [params, setParams] = useSearchParams()
+  const navigate = useNavigate()
+
   return (
     <>
       <search className='search-bar'>
-        <button type="button">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
-        <input type="search" name="search" placeholder='Search'/>
+        <button className='magnifier' type="submit" onClick={() => navigate(setRoute, { state: params.get(param) })}/>
+        <input 
+          type="search" 
+          name="search" 
+          placeholder='Buscar' 
+          value={params.get(param) ?? ''} 
+          onChange={(e, value = e.target.value) => setParams(prev => (value ? prev.set(param, value) : prev.delete(param), prev), {replace: true})}
+        />
+        <button className='filter' type='button' />
       </search >
     </>
   )

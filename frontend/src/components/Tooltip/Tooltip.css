@@ -1,0 +1,19 @@
+.tooltip {
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+  gap: 13px;
+  padding: 20px 15px;
+  min-height: 193px;
+  width: 273px;
+
+  > p {
+    font-size: 20px;
+    margin-inline: 15px;
+  }
+
+  > button {
+    color: black;
+    width: 131px;
+  }
+}
