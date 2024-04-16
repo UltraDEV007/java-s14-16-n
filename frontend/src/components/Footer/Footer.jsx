@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as LinkRouter, useLocation, useParams } from 'react-router-dom';
+import { Link as LinkRouter, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faUser, faPercent, faCartShopping } from '@fortawesome/free-solid-svg-icons'
@@ -33,12 +33,16 @@ const pages = [
 
 function Footer() {
   const location = useLocation();
-  const { mealName } = useParams();
-  
-  const showFooter = location.pathname === '/inicio' ||
-   location.pathname === '/busqueda/mealId' || 
-   location.pathname === '/busqueda/pagar/producto-elegido' ||
-   location.pathname === '/inicio/' + mealName
+  const { mealId } = useParams();
+  const [params] = useSearchParams();
+
+  const showFooter = [
+    'inicio', 
+    'busqueda',
+    `busqueda/${mealId}`,
+    'busqueda/pagar/producto-elegido',
+    'busqueda/pagar/detalles-de-entrega',
+  ].some(path => `/${path}` === location.pathname) && !params.has('popup')
 
   return (
     <>

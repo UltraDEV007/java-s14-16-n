@@ -26,4 +26,5 @@ public class CalificationEntity {
     private StoreEntity store;
     @Column(name = "value_qualification")
     private Integer value;
+
 }

@@ -12,6 +12,11 @@
     background: right no-repeat url(../../../assets/Search-Icon.svg);
   }
 
+  .filter {
+    aspect-ratio: 9 / 10;
+    background: no-repeat url(../../../assets/Filter-Button.svg);
+  }
+
   [type='search'] {
     flex-grow: 1;
     background: inherit;
@@ -23,10 +28,5 @@
 
   ::placeholder {
     opacity: .6;
-  }
-
-  .filter {
-    aspect-ratio: 9 / 10;
-    background: no-repeat url(../../../assets/Filter-Button.svg);
   }
 }

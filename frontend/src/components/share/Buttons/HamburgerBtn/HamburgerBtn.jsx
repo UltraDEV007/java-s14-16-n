@@ -31,7 +31,7 @@ export default function HamburgerBtn() {
   return (
     <div className='hamburger-btn-container'>
       <button className="hamburger-btn" onClick={handleOpen}>
-        <FontAwesomeIcon icon={faBars} style={{ fontSize: '21px' }} />
+        <FontAwesomeIcon icon={faBars} style={{ fontSize: '21px', width:'100%'}} />
         {/* <svg viewBox='0 0 100 100'>
         <rect />
         <rect />

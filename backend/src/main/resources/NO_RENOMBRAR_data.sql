@@ -36,7 +36,7 @@ VALUES (1, 1, 'INCORRECT_ORDER', 'DISCOUNT'),
 -- Datos de ejemplo para la tabla product
 INSERT INTO product (product_id, name, category_id, product_image_url, ingredients, clarification, price, waiting_time, store_id)
 VALUES
-    (1, 'Hamburguesa clásica', 1, 'https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg', '"Carne de res, Queso cheddar, Lechuga Tomate, Pan de hamburguesa', '',5000.00, 10,2),
+    (1, 'Hamburguesa clásica', 1, 'https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg', 'Carne de res, Queso cheddar, Lechuga Tomate, Pan de hamburguesa', '',5000.00, 10,2),
     (2, 'Pizza Margarita', 2, 'https://i.postimg.cc/j58qsk74/Pizza-Margarita.jpg', 'Mozzarella, Tomate, Albahaca, Masa de pizza', '', 7000.00, 15,2),
     (3, 'Ensalada de atún', 3, 'https://i.postimg.cc/PJ9tDpKL/Ensalada-At-n.jpg', 'Lechuga, Atún, Huevo duro, Tomate, Aceitunas, Cebolla, Vinagreta', '', 2000.00, 10,2),
     (4, 'Pizza Hawaiana', 2, 'https://i.postimg.cc/gcSrdryb/Pizza-Hawaiana.jpg', 'Jamón, Piña, Mozzarella, Masa de pizza', '', 8000.00, 15,1),

@@ -3,7 +3,7 @@ import './Search.css'
 
 export default function Search({
   param = 'q',
-  setPath = '/inicio/',
+  setRoute = 'busqueda',
 }) {
   const [params, setParams] = useSearchParams()
   const navigate = useNavigate()
@@ -11,7 +11,7 @@ export default function Search({
   return (
     <>
       <search className='search-bar'>
-        <button className='magnifier' type="submit" onClick={() => navigate(setPath + params.get(param))}/>
+        <button className='magnifier' type="submit" onClick={() => navigate(setRoute, { state: params.get(param) })}/>
         <input 
           type="search" 
           name="search" 

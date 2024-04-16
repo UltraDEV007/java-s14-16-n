@@ -1,4 +1,4 @@
-.cardProduct {
+.cardProductHome {
     width: 90%;
     height: 120px;
     display: flex;
@@ -8,9 +8,11 @@
     color: black;
     border-radius: 5px;
     border: 0.5px solid #D9D9D9;
+    padding: 0;
+    column-gap: 0;
 }
 
-.cardImage {
+.cardImageHome {
     width: 40%;
     height: 100%;
     display: flex;
@@ -21,11 +23,12 @@
     border-radius: 5px 0px 0px 5px;
 }
 
-.cardImage>img {
+.cardImageHome>img {
     width: 100%;
     height: 100%;
     overflow: hidden;
     object-fit: cover;
+    margin: 0;
 }
 
 .cardInfo {
@@ -68,6 +71,7 @@ color: #322F37;}
     height: 100%;
     overflow: hidden;
     object-fit: cover;
+    margin: 0;
 }
 .contentTexStore{
     width: 80%;

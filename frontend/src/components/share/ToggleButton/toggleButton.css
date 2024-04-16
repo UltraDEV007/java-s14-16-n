@@ -12,6 +12,7 @@
   border-radius: 5px;
   background-color: #979797;
   color: white;
+  transition: all .5s;
 }
 
 .toggleContainer {
@@ -75,7 +76,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(65px);
-  -ms-transform: translateX(65px);
-  transform: translateX(65px);
+  -webkit-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  transform: translateX(60px);
 }

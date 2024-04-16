@@ -28,7 +28,6 @@ const ChosenProduct = () => {
 
   const handleConfirmar = () => {
     setConfirmOrder(true);
-    console.log("hice clic en confirmar");
   };
 
   const handleBackToMenu = () => {

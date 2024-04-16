@@ -10,12 +10,13 @@ export default function CompensationInput({ item }) {
     <li>
       <label htmlFor="food-type">
         {item.description}
-        <FontAwesomeIcon
+        {/* <FontAwesomeIcon
           className={`checkbox-icon${isChecked ? '--active' : ''}`}
           icon={!isChecked ? faSquare : faSquareCheck}
           onClick={() => setCheck(!isChecked)}
-        />
+        /> */}
       </label>
+      <input type="checkbox" />
     </li>
   );
 }

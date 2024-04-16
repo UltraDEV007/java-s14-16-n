@@ -18,22 +18,18 @@ import Compensation from "./components/Compensation/Compensation";
 import ChosenProduct from "./components/ChosenProduct/ChosenProduct";
 import Arrival from "./components/Arrival/Arrival";
 import SearchResult from "./components/SearchResult/SearchResult";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-
-// conexion al json
-import { data } from './data/findall';
-// import { products } from "./data/products";
-// import { stores } from "./data/stores";
 import Main from "./pages/Main";
 import Summary from "./components/Summary/Summary";
 import FinalClaim from "./components/FinalClaim/FinalClaim";
 import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
+import { data } from './data/findall';
+import {order} from './data/order'
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [dataOrder, setDataOrder ] = useState ([])
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -46,13 +42,14 @@ function App() {
     //     console.log(response.data)
     //     // setDataProducts(response.data.content);
     //     setLoading(false);
-      // })
-      // .catch(error => {
-      //   console.error('Error getting data:', error);
-      //   setLoading(false);
-      // });
+    // })
+    // .catch(error => {
+    //   console.error('Error getting data:', error);
+    //   setLoading(false);
+    // });
 
     setDataProducts(data);
+    setDataOrder(order)
     setLoading(false);
   }, []);
 
@@ -62,11 +59,12 @@ function App() {
       <AppContext.Provider
         value={{
           dataProducts,
+          dataOrder,
           selectedProduct,
           setSelectedProduct,
         }}
       >
-      
+
         <Routes>
           <Route
             path="/"
@@ -78,15 +76,8 @@ function App() {
           >
             <Route
               path="inicio"
+              element={<Home />}
             >
-              <Route 
-                path=':mealName'
-                element={<SearchedMeal />}
-              />
-              <Route 
-                index 
-                element={<Home />}
-              />
             </Route>
             <Route
               path="perfil"
@@ -104,12 +95,17 @@ function App() {
               path="pagos"
               element={<Payment />}
             />
-            <Route path="busqueda/*">
-              <Route path=":mealId" />
+            <Route 
+              path="busqueda"
+            >
+              <Route 
+                index 
+                element={<SearchedMeal />} 
+              />
               <Route path="pagar">
                 <Route
                   path="confirmar"
-                  element={<ConfirmOrder />}
+                  element={<ConfirmOrder order={dataOrder}/>}
                 />
                 <Route
                   path="medio-de-pago"
@@ -156,6 +152,7 @@ function App() {
                   element={<SearchResult />}
                 />
               </Route>
+              <Route path=":mealId" />
             </Route>
           </Route>
         </Routes>
