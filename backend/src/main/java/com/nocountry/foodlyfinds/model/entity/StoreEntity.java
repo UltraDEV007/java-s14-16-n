@@ -41,4 +41,5 @@ public class StoreEntity {
     @NotNull(message = "Store Image url cannot be null")
     @Pattern(regexp = "^https://img\\.mesa\\d+\\.pe/archivos/webpages/\\d+-[\\w-]+\\.png$", message = "Invalid store image URL format. Example: https://img.mesa123.pe/archivos/webpages/123-example.png")
     private String storeImageUrl;
+
 }
