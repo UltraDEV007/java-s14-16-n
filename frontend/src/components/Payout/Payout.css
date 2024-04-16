@@ -1,73 +1,84 @@
-.cash-stamp {
+.payout {
   display: grid;
-  row-gap: 30px;
-  grid-template-columns: 25px 1fr 25px;
-  grid-auto-rows: max-content;
-  min-height: 100dvh;
-  color: black;
-  background-color: white;
+  grid-template-rows: repeat(5, max-content) 1fr max-content;
+  row-gap: 8px;
+  align-content: stretch;
 
-  a {
-    justify-self: start;
+  main:has(&) {
+    flex-grow: 1;
+    display: flex;
+    padding: 8px 16px 18px;
+    justify-content: center;
+
+    header:has(+ &) {
+      background-color: white;
+    }
+  }
+
+  .payment {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+
+    svg > * {
+      fill: var(--blue);
+    }
+  }
+
+  h3, > p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  label:has([type='text']) {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--light-gray);
     position: relative;
-    top: 25px;
-    
-    path {
-      fill: black;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 20px;
+
+    p {
+      color: var(--blue);
+    }
+
+    span {
+      color:rgba(0, 0, 0, .7);
+      position: absolute;
+      inset: 0;
+      background-color: white;
+      opacity: 1;
+      transition: 
+        opacity 100ms linear,
+        background-color 100ms linear;
+    }
+
+    .transparent {
+      opacity: 0;
+      background-color: transparent;
     }
   }
 
-  > *:not(hr) {
-    grid-column: 2;
-  }
-
-  > hr {
-    grid-column: span 3;
-    background-color: invert;
-  }
-
-  > p {
-    width: 40%;
-    font-size: 14px;
-  }
-
-  [type='number'] {
-    background: transparent;
+  [type='text'] {
     border: 0;
-    width: 100%;
-    font-size: 42px;
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
+    text-align: start;
+    line-height: 1.5;
 
     &:focus {
       outline: none;
     }
-
-    label:has(&) {
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      display: flex;
-      margin: 0 15px;
-      align-items: center;
-
-      &:focus-within {
-        border: 1px solid #000000;
-      }
-
-      > svg {
-        height: 42px;
-        aspect-ratio: 2 / 3;
-        padding-left: 15px;
-      }
-    }
   }
 
   button {
-    text-transform: uppercase;
     font-size: 21px;
-    padding: 22px;
     font-weight: 400;
+    width: 95%;
+    justify-self: center;
+    max-width: 450px;
+    grid-row: -2;
   }
 }
