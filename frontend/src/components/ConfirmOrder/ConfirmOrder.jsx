@@ -77,7 +77,7 @@ function ConfirmOrder({ order }) {
                       <div onClick={() => handleDeleteItem(index)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
                     </div>
                   </div>
-                  <div className="count">
+                  <div className="count-ConfirmOrder">
                     <p className="info-item-confirm">Cantidad: {item.productCant}</p>
                     <p className="info-item-confirm">Total: $ {item.productTotal.toLocaleString()} </p>
                   </div>
@@ -85,7 +85,7 @@ function ConfirmOrder({ order }) {
               )}
 
             </section>)}
-          <section className="totalCount">
+          <section className="totalCount-ConfirmOrder">
             <div className="totalItem ">
               <div className="itemIcon">
                 <FontAwesomeIcon icon={faBox} />
