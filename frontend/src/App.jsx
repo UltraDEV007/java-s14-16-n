@@ -160,7 +160,6 @@ function App() {
           {/* RUTAS SIN ANIDAMIENTO */}
 
           <Route path="/" element={<Welcome />} />
-
           <Route path="/*" element={<Main />}>
             <Route path="inicio" element={<Home />} />
             <Route path="beneficios" element={<Bonus />} />
