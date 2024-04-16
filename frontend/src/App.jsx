@@ -96,9 +96,9 @@ function App() {
               element={<Payment />}
             />
             <Route 
-              path="busqueda" 
-              element={<SearchedMeal />} 
+              path="busqueda/*"
             >
+              <Route index element={<SearchedMeal />} />
               <Route path=":mealId" />
               <Route path="pagar">
                 <Route
