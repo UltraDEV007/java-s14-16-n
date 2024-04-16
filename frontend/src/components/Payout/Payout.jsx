@@ -35,7 +35,11 @@ export default function Payout() {
               onChange={(e, value = e.target.value) => setMoney(/^$|[0-9\.]+$/.test(value) ? value : money)}
             />
           </label>
-          <MainBtn onClick={() => navigate('../procesando-pago')} disabled={17000 <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
+          {/* original */}
+          {/* <MainBtn onClick={() => navigate('../procesando-pago')} disabled={17000 <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn> */}
+          
+          {/* MODIFICADO PARA INCORPORAR NUEVA VISTA */}
+          <MainBtn onClick={() => navigate('/busqueda/pagar/detalle-de-pedido')} disabled={17000 <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
         </Form>
       </main>
     </>
