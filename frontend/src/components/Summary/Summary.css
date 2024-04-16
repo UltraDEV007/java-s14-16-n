@@ -5,6 +5,7 @@
   color: rgba(0, 0, 0, 0.7);
   letter-spacing: -.32px;
   align-items: start;
+  border-top: 21px var(--blue) solid;
 
   > img {
     object-fit: cover;
