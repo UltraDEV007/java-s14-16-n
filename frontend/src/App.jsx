@@ -96,10 +96,12 @@ function App() {
               element={<Payment />}
             />
             <Route 
-              path="busqueda/*"
+              path="busqueda"
             >
-              <Route index element={<SearchedMeal />} />
-              <Route path=":mealId" />
+              <Route 
+                index 
+                element={<SearchedMeal />} 
+              />
               <Route path="pagar">
                 <Route
                   path="confirmar"
@@ -150,6 +152,7 @@ function App() {
                   element={<SearchResult />}
                 />
               </Route>
+              <Route path=":mealId" />
             </Route>
           </Route>
         </Routes>
