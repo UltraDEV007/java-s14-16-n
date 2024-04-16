@@ -5,6 +5,7 @@
   color: white;
   font-size: 24px;
   height: max-content;
+  transition: background-color linear 250ms;
 
   &:disabled {
     background-color: var(--gray);

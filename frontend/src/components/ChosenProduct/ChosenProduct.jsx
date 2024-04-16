@@ -3,7 +3,11 @@ import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShop } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShop,
+  faAngleDown,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
 
 const ChosenProduct = () => {
@@ -60,61 +64,92 @@ const ChosenProduct = () => {
           </div>
           <div className="child2">
             <p className="storeName">{selectedProductData.storeId.name}</p>
-
             <p className="storeAddres">{selectedProductData.storeId.address}</p>
           </div>
-          <div className="child3 pointer">
+          <div className="child3 storeIcon pointer">
             <FontAwesomeIcon icon={faShop} />
           </div>
         </section>
       </section>
-      <h4 className="listTitle">Lista del pedido</h4>
-      <section className="infoFood">
-        <article className="imageFood">
-          <img
-            src={selectedProductData.productImageUrl}
-            alt="imagen comida"
+      <div className="wrapperInfoFood">
+        <div className="listTitle">
+          <FontAwesomeIcon
+            className="pointer"
+            icon={faAngleDown}
           />
-        </article>
-        <article className="nameFood">
-          <h2>{selectedProductData.name}</h2>
-          <h2>$ {selectedProductData.price}</h2>
-        </article>
-      </section>
-      {/* <h4>Ingredientes: {selectedProductData.ingredients}</h4> */}
-      <div className="row">
-        <input
-          className="btnAdd"
-          type="button"
-          value="Ingredientes"
-        />
-        <input
-          className="btnAdd"
-          type="button"
-          value="Aclaraciones"
-        />
+          <h4>Lista del pedido</h4>
+          <FontAwesomeIcon
+            className="pointer"
+            icon={faAngleDown}
+          />
+        </div>
+        <div className="cardInfoFood">
+          <section className="infoFood">
+            <article className="imageFood child4">
+              <img
+                src={selectedProductData.productImageUrl}
+                alt="imagen comida"
+              />
+            </article>
+            <article className="nameFood child5">
+              <h2 className="productNameFood">{selectedProductData.name}</h2>
+              <h2 className="categoryFood">
+                {" "}
+                {selectedProductData.categoryId.name}
+              </h2>
+            </article>
+            <article className="nameFood child6 trashIcon ">
+              <FontAwesomeIcon
+                className="pointer"
+                icon={faTrashCan}
+              />
+            </article>
+          </section>
+          <div className="rowBtns">
+            <input
+              className="btnIngredients btnsReset"
+              type="button"
+              value="Ingredientes"
+            />
+            <input
+              className="btnClarifications btnsReset"
+              type="button"
+              value="Aclaraciones"
+            />
+          </div>
+          <div className="rowBtns">
+            <div className="counter">
+              <input
+                className="btnLess btnsReset"
+                type="button"
+                value="-"
+              />
+
+              <input
+                className="count btnsReset"
+                type="button"
+                value="1"
+              />
+              <input
+                className="btnMore btnsReset"
+                type="button"
+                value="+"
+              />
+            </div>
+            <div className="price">$ 15000</div>
+          </div>
+        </div>
       </div>
-      <div className="rowBtns">
-        <input
-          className="MyButton"
-          type="button"
-          value="+ - 1"
-        />
-        <input
-          className="btnAdd"
-          type="button"
-          value="Agregar"
-        />
-      </div>
+
       <div className="columnBtns">
         <input
-          className="btnMenu"
+          className="btnMenu btnsReset"
           type="button"
           value="Agregar más al pedido"
           onClick={handleBackToMenu}
         />
         <input
-          className="btnConfirm"
+          className="btnConfirm btnsReset"
           type="button"
           value="Confirmar"
           onClick={handleConfirmar}

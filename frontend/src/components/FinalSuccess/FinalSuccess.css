@@ -20,6 +20,17 @@
   animation: movefront 3s linear forwards;
   animation-delay: 1s;
   opacity: 0;
+
+  h5 {
+    margin-top: 2dvh;
+    font-size: x-large;
+    font-weight: 400;
+  }
+  
+  img {
+    width: 20em;
+    margin-top: 3dvh;
+  }
 }
 
 @keyframes movefront {
@@ -84,15 +95,4 @@
     opacity: 1;
     transform: scale(100);
   }
-}
-
-h5 {
-  margin-top: 2dvh;
-  font-size: x-large;
-  font-weight: 400;
-}
-
-img {
-  width: 20em;
-  margin-top: 3dvh;
 }

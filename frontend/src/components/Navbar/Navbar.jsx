@@ -39,8 +39,11 @@ function Navbar() {
     case '/busqueda/pagar/medio-de-pago':
       paginaActual = 'Método de Pago';
       break;
-      case '/busqueda/pagar/monto-de-efectivo':
+    case '/busqueda/pagar/monto-de-efectivo':
       paginaActual = 'Método de Pago';
+      break;
+    case '/busqueda/pagar/detalle-de-pedido':
+      paginaActual = 'Detalles del Pedido';
       break;
     default:
       paginaActual = 'Av. Rivadavia 2360';
@@ -49,12 +52,13 @@ function Navbar() {
   const hideBackArrow = location.pathname === '/inicio';
   const hideLocationIcon = location.pathname.startsWith('/busqueda/pagar')
   const isMinHeader = location.pathname.startsWith('/busqueda/pagar') && !location.pathname.includes('/busqueda/pagar/producto-elegido');;
-  const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido' ;
+  const isMediumHeader = location.pathname === '/busqueda/pagar/producto-elegido';
   const showHeader = hideBackArrow || isMediumHeader || [
     'busqueda',
-    'busqueda/pagar/confirmar', 
-    'busqueda/pagar/medio-de-pago', 
+    'busqueda/pagar/confirmar',
+    'busqueda/pagar/medio-de-pago',
     'busqueda/pagar/monto-de-efectivo',
+    'busqueda/pagar/detalle-de-pedido',
   ].some(path => `/${path}` === location.pathname)
 
   return (
@@ -68,7 +72,7 @@ function Navbar() {
           </address>
           <div className='headerLinks'>
             <div className='hamburger-btn-container'>
-            <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{ color: '#D57FFF', fontSize: '21px', width: '32px' }} /></LinkRouter>
+              <LinkRouter to=''><FontAwesomeIcon icon={faBell} style={{ color: '#D57FFF', fontSize: '21px', width: '32px' }} /></LinkRouter>
             </div>
             <HamburgerBtn />
           </div>

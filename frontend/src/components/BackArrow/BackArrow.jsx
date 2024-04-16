@@ -13,13 +13,15 @@ function BackArrow() {
             case '/busqueda':
                 return '/inicio';
             case '/busqueda/pagar/producto-elegido':
-                return '/busqueda/mealId';
+                return '/busqueda';
             case '/busqueda/pagar/confirmar':
                 return '/busqueda/pagar/producto-elegido';
             case '/busqueda/pagar/medio-de-pago':
                 return '/busqueda/pagar/confirmar';
             case '/busqueda/pagar/monto-de-efectivo':
                 return '/busqueda/pagar/medio-de-pago';
+            case '/busqueda/pagar/detalle-de-pedido':
+                return '/busqueda/pagar/monto-de-efectivo';
             default:
                 return '/';
         }
