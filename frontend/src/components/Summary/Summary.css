@@ -6,6 +6,8 @@
   letter-spacing: -.32px;
   align-items: start;
   border-top: 21px var(--blue) solid;
+  flex-grow: 1;
+  place-content: start;
 
   > img {
     object-fit: cover;
