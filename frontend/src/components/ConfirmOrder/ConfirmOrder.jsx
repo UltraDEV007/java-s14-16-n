@@ -42,7 +42,7 @@ function ConfirmOrder({ order }) {
   return (
     <>
 
-      <div className="ConfirmContent">
+      <main className="ConfirmContent">
         <div className="infoStoreContent">
           <div className="storeInfo">
             <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={order[0].storeId.storeImageUrl} alt="logo store"></img></div>
@@ -108,7 +108,7 @@ function ConfirmOrder({ order }) {
         </div>
 
         <button className={`btn-confirm-goPay ${emptyList ? 'btn-noConfirm' : ''}`} onClick={handlePagar} disabled={emptyList}>Ir a pagar</button>
-      </div>
+      </main>
 
 
 
