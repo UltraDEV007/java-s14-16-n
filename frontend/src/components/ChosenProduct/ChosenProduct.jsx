@@ -43,7 +43,7 @@ const ChosenProduct = () => {
   }
 
   if (!selectedProductData) {
-    return <p>Cargando...</p>; // O cualquier otra lógica de carga que prefieras
+    return <p style={{flexGrow: '1'}}>Cargando...</p>; // O cualquier otra lógica de carga que prefieras
   }
 
   return (

@@ -11,7 +11,7 @@ function Home() {
   return (
     <>
 
-        <div className='homeContent'>
+        <main className='homeContent'>
           <div style={{ 
             width: '100%',
              display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', paddingLeft: '10%', textAlign: 'left' }}
@@ -20,7 +20,7 @@ function Home() {
           <div className='cardProductContainerHome'>
             <CardProduct products={dataProducts} />
           </div>
-        </div>
+        </main>
     </>
   )
 }
