@@ -5,6 +5,7 @@ import './cardProduct.css'
 
 
 function CardProduct({ products }) {
+  
     const { selectedProduct, setSelectedProduct } = useContext(AppContext)
     const [goToItem, setGoToItem] = useState(false)
 
@@ -15,7 +16,6 @@ function CardProduct({ products }) {
         }
     }
     
-    // dirigir la navegacion al detalle de producto actualizar path segun endopoint de API
     if (goToItem) {
         return <Navigate to={'/busqueda/pagar/producto-elegido'} />
     }
@@ -34,17 +34,17 @@ function CardProduct({ products }) {
                             </div>
                             <div className='cardInfoStore'>
                                 <div className='contentLogo'>
-                                    <img src={item.storeId.storeImageUrl} alt='logo restaurant'></img></div>
+                                    <img src={item.store.storeImageUrl} alt='logo restaurant'></img></div>
                                 <div className='contentTexStore'>
-                                    <p style={{fontSize:'10px', fontWeight:'400', lineHeight:'16px', textAlign:'left'}}>{item.storeId.name}</p>
+                                    <p style={{fontSize:'10px', fontWeight:'400', lineHeight:'16px', textAlign:'left'}}>{item.store.name}</p>
                                     <p style={{fontSize:'8px', fontWeight:'300', lineHeight:'16px', textAlign:'left'}}>
-                                        {item.storeId.address}
+                                        {item.store.address}
                                         </p>
                                 </div>
                             </div>
                             <div className='cardProductDetail'>
                                 <p style={{fontSize:'10px', fontWeight:'500', lineHeight:'16px', textAlign:'left', color:'#3F9BFF'}}>
-                                    {item.categoryId.name}
+                                    {item.category.name}
                                     </p>
                                 <p style={{fontSize:'18px', fontWeight:'500', lineHeight:'16px', textAlign:'rigth' }}><span style={{color:'#3F9BFF'}}>$</span>{item.price}</p>
                             </div>

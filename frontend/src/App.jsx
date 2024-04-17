@@ -35,25 +35,20 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // codigo para obtener los productos de la api
     axios
       .get(API_BASE_URL)
       .then((response) => {
-        console.log('respuesta de la api:response')
-        console.log(response.data)
-    // //     // setDataProducts(response.data);
-    //     setLoading(false);
-    })
-    .catch(error => {
-      console.error('Error getting data:', error);
-      setLoading(false);
-    });
+        setDataProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error getting data:', error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
-    setDataProducts(data);
     setDataOrder(order)
-    setLoading(false);
   }, []);
-
 
   return (
     <>
@@ -65,6 +60,7 @@ function App() {
           setSelectedProduct,
         }}
       >
+
         <Routes>
           <Route
             path="/"
@@ -89,23 +85,23 @@ function App() {
             />
             <Route
               path="pedidos"
-              // element={<Orders />}
+            // element={<Orders />}
             />
             <Route
               path="pagos"
-              // element={<Payment />}
+            // element={<Payment />}
             />
-            <Route 
+            <Route
               path="busqueda"
             >
-              <Route 
-                index 
-                element={<SearchedMeal />} 
+              <Route
+                index
+                element={<SearchedMeal />}
               />
               <Route path="pagar">
                 <Route
                   path="confirmar"
-                  element={<ConfirmOrder order={dataOrder}/>}
+                  element={<ConfirmOrder order={dataOrder} />}
                 />
                 <Route
                   path="medio-de-pago"
