@@ -37,7 +37,7 @@ public class UserTblEntity {
     private Long phoneNumber;
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
+    //@Column(columnDefinition = "LONGBLOB")  /// esta dando error en la base de datos por eso la elimine (Joel Fiare)
     @JsonIgnore
     private byte[] photo;
 
