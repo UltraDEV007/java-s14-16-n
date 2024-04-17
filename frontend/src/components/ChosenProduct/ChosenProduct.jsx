@@ -35,7 +35,7 @@ const ChosenProduct = () => {
   };
 
   if (confirmOrder) {
-    return <Navigate to={"/busqueda/pagar/confirmar"} />;
+    return <Navigate to={"../confirmar"} />;
   }
 
   if (goToMenu) {

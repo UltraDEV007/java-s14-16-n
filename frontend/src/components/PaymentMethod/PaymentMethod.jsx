@@ -14,7 +14,7 @@ export default function PaymentMethod() {
   const handleOnBtnClick = () => {
     setValidAmount(value >= pay);
 
-    if(value >= pay) setTimeout(navigate, 1e3, '/busqueda/pagar/monto-de-efectivo')
+    if(value >= pay) setTimeout(navigate, 1e3, '../monto-de-efectivo')
   };
 
   const handleOnValueChange = (num) => {

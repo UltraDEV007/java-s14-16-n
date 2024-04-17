@@ -3,11 +3,7 @@ import MainBtn from "../share/Buttons/MainBtn/MainBtn";
 import "./Arrival.css";
 import { useNavigate } from "react-router-dom";
 
-// original
-// let paths = ['../final-exitoso', '../compensacion']
-
-// modificado segun nuevas rutas
-let paths = ['busqueda/pagar/final-exitoso', 'busqueda/pagar/compensacion']
+let paths = ['../final-exitoso', '../compensacion']
 export default function Arrival() {
   const [openDialog, setOpenDialog] = useState(false);
   const navigate = useNavigate()

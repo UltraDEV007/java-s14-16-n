@@ -23,7 +23,7 @@ function ConfirmOrder({ order }) {
     setGoToPay(true)
   }
   if (goToPay) {
-    return <Navigate to={'/busqueda/pagar/medio-de-pago'} />
+    return <Navigate to={'../medio-de-pago'} />
   }
 
   const handleToggleOrderList = () => {

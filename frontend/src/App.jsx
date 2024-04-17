@@ -65,9 +65,8 @@ function App() {
           setSelectedProduct,
         }}
       >
-
         <Routes>
-          {/* <Route
+          <Route
             path="/"
             element={<Welcome />}
           />
@@ -90,11 +89,11 @@ function App() {
             />
             <Route
               path="pedidos"
-              element={<Orders />}
+              // element={<Orders />}
             />
             <Route
               path="pagos"
-              element={<Payment />}
+              // element={<Payment />}
             />
             <Route 
               path="busqueda"
@@ -155,31 +154,8 @@ function App() {
               </Route>
               <Route path=":mealId" />
             </Route>
-          </Route> */}
-
-          {/* RUTAS SIN ANIDAMIENTO */}
-
-          <Route path="/" element={<Welcome />} />
-          <Route path="/*" element={<Main />}>
-            <Route path="inicio" element={<Home />} />
-            <Route path="beneficios" element={<Bonus />} />
-            <Route path="perfil" element={<Profile />} />
-            <Route path="busqueda" element={<SearchedMeal />} />
-            <Route path="busqueda/pagar/producto-elegido" element={<ChosenProduct />} />
-            <Route path="busqueda/pagar/confirmar" element={<ConfirmOrder order={dataOrder} />} />
-            <Route path="busqueda/pagar/medio-de-pago" element={<PaymentMethod />} />
-            <Route path="busqueda/pagar/monto-de-efectivo" element={<Payout />} />
-            <Route path="busqueda/pagar/detalle-de-pedido" element={<OrderDetails />} />
-            <Route path="busqueda/pagar/procesando-pago" element={<ConfirmPayment />} />
-            <Route path="busqueda/pagar/pedido-aprobado" element={<Approved />} />
-            <Route path="busqueda/pagar/detalles-de-entrega" element={<Summary />} />
-            <Route path="busqueda/pagar/aviso-de-llegada" element={<Arrival />} />
-            <Route path="busqueda/pagar/compensacion" element={<Compensation />} />
-            <Route path="busqueda/pagar/final-con-reclamo" element={<FinalClaim />} />
-            <Route path="busqueda/pagar/final-exitoso" element={<FinalSuccess />} />
           </Route>
         </Routes>
-
       </AppContext.Provider>
     </>
   );

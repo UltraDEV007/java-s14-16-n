@@ -38,7 +38,7 @@ const compensationList = {
 export default function Compensation() {
   const navigate = useNavigate()
 
-  const handleOnBtnClick = () => setTimeout(navigate, 1e3, 'busqueda/pagar/final-con-reclamo')
+  const handleOnBtnClick = () => setTimeout(navigate, 1e3, '../final-con-reclamo')
   return (
     <>
       <Form className="compensation">
