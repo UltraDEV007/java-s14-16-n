@@ -1,5 +1,4 @@
 li {
-  border-bottom: 1px solid rgb(148, 148, 148, 0.5);
   display: grid;
   column-gap: 20px;
   padding: 2dvh 0;
@@ -10,21 +9,9 @@ li {
     width: 2dvh;
   }
 
-    /* 
-    > .checkbox-icon {
-      transition: opacity 0.2s ease-in;
-      color: rgb(116, 115, 115);
-      width: 1.5em;
-      height: 1.5em;
-      opacity: 0.5;
-    }
+}
 
-    > .checkbox-icon--active {
-      transition: opacity 0.2s ease-in;
-      color: rgb(66, 66, 66);
-      width: 1.5em;
-      height: 1.5em;
-      opacity: 1;
-    } 
-    */
+.card-border {
+  border-bottom: 1px solid rgb(148, 148, 148, 0.5);
+  border-top: 1px solid rgb(148, 148, 148, 0.5);
 }

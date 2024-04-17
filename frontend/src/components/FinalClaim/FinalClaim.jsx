@@ -5,8 +5,7 @@ export default function FinalClaim() {
   return (
     <div className="final-claim">
       <p>
-        Sentimos que la tienda te haya hecho pasar un mal momento, pero para
-        ello estamos nosotros asegurándote que:
+        Sentimos que la tienda te haya hecho pasar un mal momento, pero estamos nosotros asegurándote que:
       </p>
       <h5>¡Siempre sales ganando!</h5>
       <div>
