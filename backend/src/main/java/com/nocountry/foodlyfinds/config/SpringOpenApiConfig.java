@@ -15,7 +15,7 @@ public class SpringOpenApiConfig {
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("demo-app-foodly")
-                .pathsToMatch("v1", "/api/v1/user/**" , "/api/v1/issues/**")
+                .pathsToMatch("v1", "/api/v1/user/**" , "/api/v1/issues/**", "api/v1/order", "api/v1/product", "api/v1/stores")
                 .packagesToScan("com.nocountry.foodlyfinds.controller")
                 .build();
     }
