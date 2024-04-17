@@ -36,18 +36,18 @@ function App() {
 
   useEffect(() => {
     // codigo para obtener los productos de la api
-    // axios
-    //   .get(API_BASE_URL)
-    //   .then((response) => {
-    //     console.log('respuesta de la api:response')
-    //     console.log(response.data)
+    axios
+      .get(API_BASE_URL)
+      .then((response) => {
+        console.log('respuesta de la api:response')
+        console.log(response.data)
     // //     // setDataProducts(response.data);
     //     setLoading(false);
-    // })
-    // .catch(error => {
-    //   console.error('Error getting data:', error);
-    //   setLoading(false);
-    // });
+    })
+    .catch(error => {
+      console.error('Error getting data:', error);
+      setLoading(false);
+    });
 
     setDataProducts(data);
     setDataOrder(order)
