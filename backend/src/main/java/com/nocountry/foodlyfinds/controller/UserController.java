@@ -21,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/user")
 @RequiredArgsConstructor
 public class UserController {

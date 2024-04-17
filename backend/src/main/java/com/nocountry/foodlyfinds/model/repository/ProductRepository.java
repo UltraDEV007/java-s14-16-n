@@ -11,6 +11,9 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
+    @Query("SELECT p FROM ProductEntity p JOIN FETCH p.categoryId JOIN FETCH p.storeId")
+    List<ProductEntity> findAll();
+
     List<ProductEntity> findByCategoryIdCategoryId(Long categoryId);
     List<ProductEntity> findByNameIgnoreCaseContaining(String name);
     List<ProductEntity> findByStoreIdStoreId(Long id);

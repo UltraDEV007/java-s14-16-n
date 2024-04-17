@@ -7,7 +7,7 @@ export default function CompensationInput({ item }) {
   const [isChecked, setCheck] = useState(false);
 
   return (
-    <li>
+    <li className={item.border && 'card-border'}>
       <label htmlFor="food-type">
         {item.description}
         {/* <FontAwesomeIcon

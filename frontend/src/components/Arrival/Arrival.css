@@ -18,6 +18,8 @@
 
     > h4 {
       font-size: x-large;
+      font-weight: 400;
+      margin: 0 2dvh 0 2dvh;
     }
 
   }

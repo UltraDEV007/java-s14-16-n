@@ -6,6 +6,7 @@
   justify-content: start;
   font-size: 12px;
   font-weight: 600;
+  flex-grow: 1;
 }
 .backward {
   text-align: left;
@@ -117,7 +118,7 @@
 .counter {
   width: 47%;
 }
-.price {
+.rowBtns > .price {
   outline: 1px solid #322f3761;
   border-radius: 5px;
   width: 47%;

@@ -26,8 +26,9 @@
   > h5 {
     width: 100%;
     margin-top: 0;
-    font-size: large;
+    font-weight: 700;
     text-align: center;
+    font-size: calc(.9em)
   }
 
   > a {

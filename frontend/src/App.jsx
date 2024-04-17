@@ -2,12 +2,12 @@ import React, { useState, useContext, useEffect } from "react";
 import AppContext from "./context/AppContex";
 import { API_BASE_URL } from "./config";
 import "./index.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Orders from "./pages/Orders";
-import Payment from "./pages/Payment";
+// import Orders from "./pages/Orders";
+// import Payment from "./pages/Payment";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
@@ -24,23 +24,24 @@ import FinalClaim from "./components/FinalClaim/FinalClaim";
 import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
+import OrderDetails from "./components/OrderDetails/OrderDetails";
 import { data } from './data/findall';
-import {order} from './data/order'
+import { order } from './data/order'
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
-  const [dataOrder, setDataOrder ] = useState ([])
+  const [dataOrder, setDataOrder] = useState([])
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // codigo para obtener los productos de la api
     // axios
-    //   .get(`${API_BASE_URL}`)
+    //   .get(API_BASE_URL)
     //   .then((response) => {
-    //     console.log('respuesta de la api:response.data')
+    //     console.log('respuesta de la api:response')
     //     console.log(response.data)
-    //     // setDataProducts(response.data.content);
+    // //     // setDataProducts(response.data);
     //     setLoading(false);
     // })
     // .catch(error => {
@@ -64,7 +65,6 @@ function App() {
           setSelectedProduct,
         }}
       >
-
         <Routes>
           <Route
             path="/"
@@ -89,11 +89,11 @@ function App() {
             />
             <Route
               path="pedidos"
-              element={<Orders />}
+              // element={<Orders />}
             />
             <Route
               path="pagos"
-              element={<Payment />}
+              // element={<Payment />}
             />
             <Route 
               path="busqueda"
