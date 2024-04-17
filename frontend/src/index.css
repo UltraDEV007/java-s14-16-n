@@ -1,5 +1,8 @@
 @import url(./App.css);
-
+@font-face {
+  font-family: 'ebrima';
+  src: url('/assets/fonts/ebrima.ttf') format('truetype');
+}
 :root {
   --blue: #3f9bff;
   --lilac: #d57fff;
