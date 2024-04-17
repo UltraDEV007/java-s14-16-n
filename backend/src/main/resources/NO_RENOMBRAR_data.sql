@@ -1,15 +1,16 @@
 -- Datos de ejemplo para la tabla user_tbl
 INSERT INTO user_tbl (name, email, password, coords, phone_number)
-VALUES ('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', 123-456-7890),
-       ('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', 987-654-3210),
-       ('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', 555-555-5555);
+VALUES
+    ('Juan Perez', 'juan@example.com', '123', '40.7128° N, 74.0060° W', '1234567890'),
+    ('María García', 'maria@example.com', '123', '34.0522° N, 118.2437° W', '9876543210'),
+    ('Carlos López', 'carlos@example.com', '123', '51.5074° N, 0.1278° W', '5555555555');
 
 -- Datos de ejemplo para la tabla store
-INSERT INTO store (store_id,name, address, phone_number, store_image_url)
+INSERT INTO store (store_id, name, address, phone_number, store_image_url)
 VALUES
-    (1,'Pizzería Pablito', 'Av. Uruguay 1500', '123456789', 'https://i.postimg.cc/6365xNyQ/Pizzer-a-Pablito.png'),
-    (2,'Bocatto da Fiorentino', 'San Martín 1006', '987654321', 'https://i.postimg.cc/3R9NkxPp/Bocatto-Fiorentino.png'),
-    (3,'Don Julio', 'Guatemala 4699', '987654321', 'https://i.postimg.cc/x8CCMS2Z/DonJulio.jpg');
+    (1, 'Pizzería Pablito', 'Av. Uruguay 1500', '123456789', 'https://i.postimg.cc/6365xNyQ/Pizzer-a-Pablito.png'),
+    (2, 'Bocatto da Fiorentino', 'San Martín 1006', '987654321', 'https://i.postimg.cc/3R9NkxPp/Bocatto-Fiorentino.png'),
+    (3, 'Don Julio', 'Guatemala 4699', '987654321', 'https://i.postimg.cc/x8CCMS2Z/DonJulio.jpg');
 
 -- Datos de ejemplo para la tabla category
 INSERT INTO category (name)
@@ -21,8 +22,8 @@ VALUES ('Hamburguesas'),
        ('Platos Principales'),
        ('Comida Internacional');
 
--- Datos de ejemplo para la tabla calification
-INSERT INTO calification (user_id, store_id, value)
+-- Datos de ejemplo para la tabla calification_tbl
+INSERT INTO calification_tbl (user_id, store_id, value_qualification)
 VALUES (1, 1, 4),
        (2, 2, 5),
        (3, 3, 3);
@@ -46,7 +47,7 @@ VALUES
     (8, 'Fideos con Albóndigas', 4, 'https://i.postimg.cc/NfKF0Yb9/Fideos-Alb-ndigas.jpg', 'Fideos, Albóndigas, Salsa de tomate, Cebolla, Ajo, Aceite de oliva, Sal, Pimienta, Queso rallado (opcional)', '', 8000.00, 45,3),
     (9, 'Tacos al pastor', 6, 'https://i.postimg.cc/R0BZGtmK/Tacos-Pastor.jpg', 'Carne de cerdo adobada, Tortillas de maíz, Piña, Cebolla, Cilantro, Salsa picante', '', 8000.00, 30,3);
 
--- Datos de ejemplo para la tabla order
+-- Datos de ejemplo para la tabla order_tbl
 INSERT INTO order_tbl (user_id, total_amount, order_type)
 VALUES (1, 8.99, 'TAKEAWAY'),
        (2, 10.99, 'DELIVERY'),
