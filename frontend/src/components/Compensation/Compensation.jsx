@@ -13,6 +13,7 @@ const compensationList = {
     {
       name: "time",
       description: "Tiempo de espera",
+      border: true,
     },
     {
       name: "quality",
@@ -22,11 +23,12 @@ const compensationList = {
   compensation: [
     {
       name: "present",
-      description: "Mi comida en condiciones más otro producto de regalo",
+      description: "Pedido correcto más otro producto de regalo",
     },
     {
       name: "refund",
       description: "Devolución del dinero",
+      border: true,
     },
     {
       name: "coupon",
