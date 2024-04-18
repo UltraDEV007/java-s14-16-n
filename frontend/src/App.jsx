@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import AppContext from "./context/AppContex";
-import { API_BASE_URL } from "./config";
+import { uriProduct } from "./utils/const";
 import "./index.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-// import Orders from "./pages/Orders";
-// import Payment from "./pages/Payment";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
@@ -25,6 +23,7 @@ import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
 import { order } from './data/order'
+import Building from "./components/Building/Building";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -34,7 +33,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(API_BASE_URL)
+      .get(uriProduct)
       .then((response) => {
         setDataProducts(response.data);
       })
@@ -82,14 +81,6 @@ function App() {
               element={<Bonus />}
             />
             <Route
-              path="pedidos"
-            // element={<Orders />}
-            />
-            <Route
-              path="pagos"
-            // element={<Payment />}
-            />
-            <Route
               path="busqueda"
             >
               <Route
@@ -105,6 +96,10 @@ function App() {
                 <Route
                   path="medio-de-pago"
                   element={<Payout />}
+                />
+                <Route
+                  path="detalle-de-pedido"
+                  element={<OrderDetails />}
                 />
                 <Route
                   path="procesando-pago"
@@ -145,6 +140,10 @@ function App() {
               </Route>
               <Route path=":mealId" />
             </Route>
+            <Route
+              path="construccion"
+              element={<Building />}
+            />
           </Route>
         </Routes>
       </AppContext.Provider>
