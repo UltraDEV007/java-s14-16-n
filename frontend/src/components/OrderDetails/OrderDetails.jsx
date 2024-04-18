@@ -19,7 +19,7 @@ function OrderDetails() {
     setGoToPedir(true)
   }
   if (goToPedir) {
-    return <Navigate to={'../procesando-pago'} />
+    return <Navigate to={'/busqueda/pagar/procesando-pago'} />
   }
 
   const handleToggleOrderList = () => {
@@ -30,7 +30,7 @@ function OrderDetails() {
   return (
     <>
 
-      <main className="ConfirmContent">
+      <div className="ConfirmContent">
         <div className="infoStoreContent">
           <div className="storeInfo">
             <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={finalOrder[0].storeId.storeImageUrl} alt="logo store"></img></div>
@@ -105,7 +105,7 @@ function OrderDetails() {
         </div>
         <button className='btn-SendOrder-orderDetail' onClick={handlePedir}>Hacer el Pedido</button>
         {/* <button className={`btn-confirm-goPay ${emptyList ? 'btn-noConfirm' : ''}`} onClick={handlePagar} disabled={emptyList}>Ir a pagar</button> */}
-      </main>
+      </div>
 
       
 
