@@ -4,7 +4,6 @@ import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faUser, faPercent, faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
-const build = 'construccion';
 const pages = [
   {
     name: 'Inicio',
@@ -14,7 +13,7 @@ const pages = [
 
   {
     name: "Descuentos",
-    paths: [build, "/beneficios"],
+    paths: ["/beneficios"],
     icon: faPercent,
   },
   {
@@ -27,7 +26,7 @@ const pages = [
   },
   {
     name: "Cuenta",
-    paths: [build, "/perfil"],
+    paths: ["/perfil"],
     icon: faUser,
   },
 ];
@@ -39,7 +38,6 @@ function Footer() {
 
   const showFooter = [
     'inicio', 
-    'construccion',
     'busqueda',
     `busqueda/${mealId}`,
     'busqueda/pagar/producto-elegido',

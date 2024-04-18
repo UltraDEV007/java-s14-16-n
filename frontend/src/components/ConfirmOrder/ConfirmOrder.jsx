@@ -42,13 +42,13 @@ function ConfirmOrder({ order }) {
   return (
     <>
 
-      <main className="ConfirmContent">
+      <div className="ConfirmContent">
         <div className="infoStoreContent">
           <div className="storeInfo">
-            <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={order[0].store.storeImageUrl} alt="logo store"></img></div>
+            <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={order[0].storeId.storeImageUrl} alt="logo store"></img></div>
             <div className="storeDataConfirmar">
-              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '16px' }}>{order[0].store.name}</p>
-              <p style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}>{order[0].store.address}</p>
+              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '16px' }}>{order[0].storeId.name}</p>
+              <p style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}>{order[0].storeId.address}</p>
             </div>
           </div>
           <div className="iconContent"><FontAwesomeIcon icon={faShop} style={{ width: '100%', height: '100%', color: '#D57FFF' }} /></div>
@@ -108,7 +108,7 @@ function ConfirmOrder({ order }) {
         </div>
 
         <button className={`btn-confirm-goPay ${emptyList ? 'btn-noConfirm' : ''}`} onClick={handlePagar} disabled={emptyList}>Ir a pagar</button>
-      </main>
+      </div>
 
 
 

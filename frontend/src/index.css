@@ -1,8 +1,5 @@
 @import url(./App.css);
-@font-face {
-  font-family: 'ebrima';
-  src: url('/assets/fonts/ebrima.ttf') format('truetype');
-}
+
 :root {
   --blue: #3f9bff;
   --lilac: #d57fff;
@@ -13,21 +10,4 @@
   --gray: #979797;
   --dark-gray: #322F37;
   --half-gradient: linear-gradient(var(--blue) 50%, var(--lilac) 0%)
-}
-.roboto-light {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.roboto-regular {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.roboto-medium {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
 }

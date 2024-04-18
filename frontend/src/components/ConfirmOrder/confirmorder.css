@@ -1,7 +1,6 @@
 .ConfirmContent {
-    /* width: 100%;
-    min-height: 100dvh; */
-    flex-grow: 1;
+    width: 100%;
+    min-height: 100dvh;
     padding: 5%;
     display: flex;
     flex-direction: column;
