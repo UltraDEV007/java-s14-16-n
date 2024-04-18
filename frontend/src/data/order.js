@@ -2,15 +2,15 @@ export const order = [
   {
     "productId": 1,
     "name": "Hamburguesa clásica",
-    "storeId": {
-      "storeId": 2,
+    "store": {
+      "id": 2,
       "name": "Bocatto da Fiorentino",
       "address": "San Martín 1006",
       "phoneNumber": "987654321",
       "storeImageUrl": "https://i.postimg.cc/3R9NkxPp/Bocatto-Fiorentino.png"
     },
-    "categoryId": {
-      "categoryId": 1,
+    "category": {
+      "id": 1,
       "name": "Hamburguesas"
     },
     "productImageUrl": "https://i.postimg.cc/SRJSj7LF/Hamburguesa-Cl-sica.jpg",
@@ -21,15 +21,15 @@ export const order = [
   // {
   //   "productId": 2,
   //   "name": "Pizza Margarita",
-  //   "storeId": {
-  //     "storeId": 2,
+  //   "store": {
+  //     "id": 2,
   //     "name": "Bocatto da Fiorentino",
   //     "address": "San Martín 1006",
   //     "phoneNumber": "987654321",
   //     "storeImageUrl": "https://i.postimg.cc/3R9NkxPp/Bocatto-Fiorentino.png"
   //   },
-  //   "categoryId": {
-  //     "categoryId": 2,
+  //   "category": {
+  //     "id": 2,
   //     "name": "Pizzas"
   //   },
   //   "productImageUrl": "https://i.postimg.cc/j58qsk74/Pizza-Margarita.jpg",

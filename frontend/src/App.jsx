@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import AppContext from "./context/AppContex";
-import { API_BASE_URL } from "./config";
+import { uriProduct } from "./utils/const";
 import "./index.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-// import Orders from "./pages/Orders";
-// import Payment from "./pages/Payment";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
@@ -25,8 +23,8 @@ import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
-import { data } from './data/findall';
 import { order } from './data/order'
+import Building from "./components/Building/Building";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -35,25 +33,20 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // codigo para obtener los productos de la api
-    // axios
-    //   .get(API_BASE_URL)
-    //   .then((response) => {
-    //     console.log('respuesta de la api:response')
-    //     console.log(response.data)
-    // //     // setDataProducts(response.data);
-    //     setLoading(false);
-    // })
-    // .catch(error => {
-    //   console.error('Error getting data:', error);
-    //   setLoading(false);
-    // });
+    axios
+      .get(uriProduct)
+      .then((response) => {
+        setDataProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error getting data:', error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
-    setDataProducts(data);
     setDataOrder(order)
-    setLoading(false);
   }, []);
-
 
   return (
     <>
@@ -65,6 +58,7 @@ function App() {
           setSelectedProduct,
         }}
       >
+
         <Routes>
           <Route
             path="/"
@@ -88,24 +82,16 @@ function App() {
               element={<Bonus />}
             />
             <Route
-              path="pedidos"
-              // element={<Orders />}
-            />
-            <Route
-              path="pagos"
-              // element={<Payment />}
-            />
-            <Route 
               path="busqueda"
             >
-              <Route 
-                index 
-                element={<SearchedMeal />} 
+              <Route
+                index
+                element={<SearchedMeal />}
               />
               <Route path="pagar">
                 <Route
                   path="confirmar"
-                  element={<ConfirmOrder order={dataOrder}/>}
+                  element={<ConfirmOrder order={dataOrder} />}
                 />
                 <Route
                   path="medio-de-pago"
@@ -154,6 +140,10 @@ function App() {
               </Route>
               <Route path=":mealId" />
             </Route>
+            <Route
+              path="construccion"
+              element={<Building />}
+            />
           </Route>
         </Routes>
       </AppContext.Provider>
