@@ -11,7 +11,6 @@ import Profile from "./pages/Profile";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
-import PaymentMethod from "./components/PaymentMethod/PaymentMethod";
 import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
@@ -102,12 +101,9 @@ function App() {
                   path="confirmar"
                   element={<ConfirmOrder order={dataOrder} />}
                 />
+                
                 <Route
                   path="medio-de-pago"
-                  element={<PaymentMethod />}
-                />
-                <Route
-                  path="monto-de-efectivo"
                   element={<Payout />}
                 />
                 <Route
