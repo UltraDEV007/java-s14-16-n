@@ -102,6 +102,10 @@ function App() {
                   element={<Payout />}
                 />
                 <Route
+                  path="detalle-de-pedido"
+                  element={<OrderDetails />}
+                />
+                <Route
                   path="procesando-pago"
                   element={<ConfirmPayment />}
                 />
