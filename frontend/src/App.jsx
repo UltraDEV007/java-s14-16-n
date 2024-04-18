@@ -6,8 +6,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-// import Orders from "./pages/Orders";
-// import Payment from "./pages/Payment";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
@@ -26,6 +24,7 @@ import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
 import { order } from './data/order'
+import Building from "./components/Building/Building";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -81,14 +80,6 @@ function App() {
             <Route
               path="beneficios"
               element={<Bonus />}
-            />
-            <Route
-              path="pedidos"
-            // element={<Orders />}
-            />
-            <Route
-              path="pagos"
-            // element={<Payment />}
             />
             <Route
               path="busqueda"
@@ -149,6 +140,10 @@ function App() {
               </Route>
               <Route path=":mealId" />
             </Route>
+            <Route
+              path="construccion"
+              element={<Building />}
+            />
           </Route>
         </Routes>
       </AppContext.Provider>
