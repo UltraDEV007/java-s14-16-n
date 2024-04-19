@@ -30,3 +30,25 @@
     opacity: .6;
   }
 }
+
+.menu-filter {
+  padding: 15px 42px 21px;
+  display: grid;
+  grid-template-columns: repeat(2, 118px);
+  grid-template-rows: 37px;
+  grid-auto-rows: 31px;
+  gap: 8px;
+
+  h4, button {
+    grid-column: span 2;
+  }
+
+  button {
+    background: var(--blue);
+    color: white;
+    width: max-content;
+    justify-self: center;
+    border-radius: 5px;
+    padding-inline: 25px;
+  }
+}
