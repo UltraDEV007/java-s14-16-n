@@ -1,4 +1,4 @@
-@keyframes rotate {
+/* @keyframes rotate {
   from {
     rotate: 0;
   } to {
@@ -12,4 +12,39 @@
   aspect-ratio: 1;
   animation: rotate 3s infinite linear;
   height: 100%
+} */
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to{
+    transform: rotate(1turn);
+  }
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column-reverse;
+  top: 0;
+  left: 0;
+  padding-top: 1dvh;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: start;
+
+  &::after {
+    content: '';
+    width: 4dvh;
+    height: 4dvh;
+    border: 1dvh solid rgb(209, 209, 209);
+    border-top-color: rgb(63, 155, 255);
+    border-radius: 50%;
+    animation: loading 1s ease infinite;
+  }
+
+  > span {
+    margin-top: 1dvh;
+  }
 }

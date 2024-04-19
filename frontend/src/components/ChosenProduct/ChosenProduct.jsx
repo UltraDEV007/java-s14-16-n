@@ -9,6 +9,7 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
+import Spinner from "../share/Spinner/Spinner";
 
 const ChosenProduct = () => {
   const { selectedProduct, dataProducts } = useContext(AppContext);
@@ -43,7 +44,7 @@ const ChosenProduct = () => {
   }
 
   if (!selectedProductData) {
-    return <p style={{flexGrow: '1'}}>Cargando...</p>; // O cualquier otra lógica de carga que prefieras
+    return <Spinner msg="Buscando producto..."/>; // -> puedes cambiar el mensaje si lo deseas
   }
 
   return (
