@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/qualification")
 @RequiredArgsConstructor
 public class QualificationController {
@@ -25,4 +26,11 @@ public class QualificationController {
         qualificationService.createQualification(userId, storeId, value);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @GetMapping("/store/{storeId}/average")
+    public ResponseEntity<Double> getAverageRatingForStore(@PathVariable Long storeId) {
+        Double averageRating = qualificationService.getAverageRatingForStore(storeId);
+        return ResponseEntity.ok(averageRating);
+    }
+
 }

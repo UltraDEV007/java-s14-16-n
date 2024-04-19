@@ -12,6 +12,8 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QualificationServiceImpl implements QualificationService {
 
@@ -42,4 +44,18 @@ public class QualificationServiceImpl implements QualificationService {
 
         qualificationRepository.save(qualification);
     }
+
+    @Override
+    public Double getAverageRatingForStore(Long storeId) {
+        List<QualificationEntity> qualifications = qualificationRepository.findByStoreId(storeId);
+        if (qualifications.isEmpty()) {
+            return 0.0; // O algún valor por defecto si no hay calificaciones
+        }
+        int sum = 0;
+        for (QualificationEntity qualification : qualifications) {
+            sum += qualification.getValue();
+        }
+        return (double) sum / qualifications.size();
+    }
+
 }
