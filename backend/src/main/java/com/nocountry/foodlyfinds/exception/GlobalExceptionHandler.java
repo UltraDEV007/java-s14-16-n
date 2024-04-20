@@ -26,6 +26,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handlerResourceNotFoundException(ResourceNotFoundException ex, HttpServletRequest request) {
         return createErrorResponse("ResourceNotFoundException", ex.getMessage(), request, HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<?> handlerEnumsResourceNotFoundException(IllegalArgumentException ex, HttpServletRequest request) {
+        String errorMessage = ex.getMessage();
+        String invalidArgument = extractInvalidArgument(errorMessage);
+        String friendlyErrorMessage = "Illegal Argument: " + invalidArgument;
+        return createErrorResponse("IllegalArgumentException", friendlyErrorMessage, request, HttpStatus.BAD_REQUEST);
+    }
 
     @ExceptionHandler(InvalidImageException.class)
     public ResponseEntity<?> handlerInvalidImageException(InvalidImageException ex, HttpServletRequest request) {
@@ -100,5 +107,18 @@ public class GlobalExceptionHandler {
         errorResponse.setStatus(status.toString());
         errorResponse.setTimestamp(LocalDateTime.now());
         return ResponseEntity.status(status).body(errorResponse);
+    }
+
+    private String extractInvalidArgument(String errorMessage) {
+        // El mensaje de error generalmente contiene el nombre completo de la clase y el valor que causó el problema
+        // Por ejemplo: "No enum constant com.nocountry.foodlyfinds.model.enums.EIssueType.WAITING_TIM"
+
+        // Vamos a extraer la parte final del mensaje que representa el valor del argumento
+        String[] parts = errorMessage.split("\\.");
+        if (parts.length > 0) {
+            return parts[parts.length - 1]; // El último elemento del array es el valor del argumento
+        } else {
+            return "Valor desconocido";
+        }
     }
 }
