@@ -55,6 +55,7 @@ function App() {
           dataOrder,
           selectedProduct,
           setSelectedProduct,
+          loading,
         }}
       >
 
