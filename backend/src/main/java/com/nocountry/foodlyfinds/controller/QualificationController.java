@@ -28,8 +28,12 @@ public class QualificationController {
     }
 
     @GetMapping("/store/{storeId}/average")
-    public ResponseEntity<Double> getAverageRatingForStore(@PathVariable Long storeId) {
+    public ResponseEntity<?> getAverageRatingForStore(@PathVariable Long storeId) {
         Double averageRating = qualificationService.getAverageRatingForStore(storeId);
+        if (averageRating == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("The Store with ID '" + storeId + "' no have qualifications.");
+        }
         return ResponseEntity.ok(averageRating);
     }
 

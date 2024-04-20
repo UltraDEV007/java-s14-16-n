@@ -30,12 +30,23 @@ public class QualificationServiceImpl implements QualificationService {
     @Transactional
     @Override
     public void createQualification(Long userId, Long storeId, Integer value) throws IllegalArgumentException {
-        UserTblEntity user = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException("User not found with id "+ userId));
-        StoreEntity store = storeRepository.findById(storeId).orElseThrow(() -> new EntityNotFoundException("Store not found with id " + storeId));
-
-        if (value < 0 || value > 1) {
-            throw new IllegalArgumentException("La puntuación debe ser 0 o 1 .");
+        if (value != 0 && value != 1) {
+            throw new IllegalArgumentException("\n" +
+                    "The score must be 0 or 1.");
         }
+
+        if (userId == null || userId <= 0) {
+            throw new IllegalArgumentException("User ID is invalid.");
+        }
+
+        if (storeId == null || storeId <= 0) {
+            throw new IllegalArgumentException("Store ID is invalid.");
+        }
+
+        UserTblEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+        StoreEntity store = storeRepository.findById(storeId)
+                .orElseThrow(() -> new EntityNotFoundException("Store not found with ID: " + storeId));
 
         QualificationEntity qualification = new QualificationEntity();
         qualification.setUser(user);
@@ -44,12 +55,11 @@ public class QualificationServiceImpl implements QualificationService {
 
         qualificationRepository.save(qualification);
     }
-
     @Override
     public Double getAverageRatingForStore(Long storeId) {
         List<QualificationEntity> qualifications = qualificationRepository.findByStoreId(storeId);
         if (qualifications.isEmpty()) {
-            return 0.0; // O algún valor por defecto si no hay calificaciones
+            return null;
         }
         int sum = 0;
         for (QualificationEntity qualification : qualifications) {
