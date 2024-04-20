@@ -3,19 +3,23 @@ import { Link as LinkRouter, useLocation, useParams, useSearchParams } from 'rea
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faUser, faPercent, faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import HouseIcon from '../../assets/Nav-Icon.svg'
+import DiscountIcon from '../../assets/Discount-Icon.svg'
+import ShopCar from '../../assets/Shop-Cart-Icon.svg'
+import User from '../../assets/User-Icon.svg'
 
 const build = 'construccion';
 const pages = [
   {
     name: 'Inicio',
     paths: ['/inicio', '/busqueda/mealId'],
-    icon: faHouse
+    icon: HouseIcon,
   },
 
   {
     name: "Descuentos",
     paths: [build, "/beneficios"],
-    icon: faPercent,
+    icon: DiscountIcon,
   },
   {
     name: 'Mi Pedido',
@@ -23,12 +27,12 @@ const pages = [
       '/busqueda/pagar/producto-elegido',
       '/busqueda/pagar/detalles-de-entrega'
     ],
-    icon: faCartShopping
+    icon: ShopCar
   },
   {
     name: "Cuenta",
     paths: [build, "/perfil"],
-    icon: faUser,
+    icon: User,
   },
 ];
 
@@ -70,11 +74,12 @@ function Footer() {
                 <LinkRouter to={page.paths[0]}
                  
                   >
-                  <FontAwesomeIcon
-                    icon={page.icon}
-                    style={{ fontSize: "20px" }}
-                  />
-                  <p style={{ fontSize: "14px" }}>{page.name}</p>
+                    <img
+                    src={page.icon}
+                    alt={page.name}
+                    style={{ width: "18px" }}
+                    ></img>
+                  <p style={{ fontSize: "12px" }}>{page.name}</p>
                 </LinkRouter>
               </li>
             ))}
