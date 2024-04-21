@@ -1,8 +1,6 @@
 .toggle-container {
   display: grid;
   grid-auto-flow: column;
-  height: 2.5dvh;
-  margin: 1dvh 0;
   width: 100%;
   column-gap: 1dvh;
   grid-template-columns: repeat(3, 1fr);
