@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShop, faAngleDown, faTrashCan, faMotorcycle, faBox } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faTrashCan} from "@fortawesome/free-solid-svg-icons";
+import OrderIcon from '../../assets/Order-Icon.svg';
+import StoreIcon from '../../assets/Store-Info-Button.svg';
+import DeliveryIcon from '../../assets/Delivery-Icon.svg';
 import { Link } from "react-router-dom";
 import AppContext from '../../context/AppContex';
-import './confirmorder.css'
+import './confirmorder.css';
 
 function ConfirmOrder({ order }) {
   const [goToPay, setGoToPay] = useState(false)
@@ -51,7 +54,11 @@ function ConfirmOrder({ order }) {
               <p style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}>{order[0].store.address}</p>
             </div>
           </div>
-          <div className="iconContent"><FontAwesomeIcon icon={faShop} style={{ width: '100%', height: '100%', color: '#D57FFF' }} /></div>
+          <div className="iconContent">
+            <img src={StoreIcon}
+              alt='Store Icon'
+              style={{ width: '25px' }} />
+          </div>
         </div>
 
         <div className="orderContent">
@@ -88,14 +95,18 @@ function ConfirmOrder({ order }) {
           <section className="totalCount-ConfirmOrder">
             <div className="totalItem ">
               <div className="itemIcon">
-                <FontAwesomeIcon icon={faBox} />
+                <img src={OrderIcon}
+                  alt='Order Icon'
+                  style={{ width: '16px' }} />
                 <p>Pedido</p>
               </div>
               <p><span style={{ color: '#3F9BFF' }}>$</span>{subTotal.toLocaleString()}</p>
             </div>
             {delivery !== 0 && <div className="totalItem">
               <div className="itemIcon">
-                <FontAwesomeIcon icon={faMotorcycle} />
+                <img src={DeliveryIcon}
+                  alt='Store Icon'
+                  style={{ width: '20px' }} />
                 <p>Envío</p>
               </div>
               <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery.toLocaleString()}</p>

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShop, faStore, faAngleDown, faTrashCan, faMotorcycle, faBox, faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faTrashCan, faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import CloseStore from '../../assets/Close-Store.svg';
+import OrderIcon from '../../assets/Order-Icon.svg';
+import DeliveryIcon from '../../assets/Delivery-Icon.svg';
 import { Link } from "react-router-dom";
 import { order } from "../../data/order";
 import './orderdetails.css'
@@ -33,13 +36,17 @@ function OrderDetails() {
       <main className="ConfirmContent">
         <div className="infoStoreContent">
           <div className="storeInfo">
-            <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={finalOrder[0].storeId.storeImageUrl} alt="logo store"></img></div>
+            <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={finalOrder[0].store.storeImageUrl} alt="logo store"></img></div>
             <div className="storeDataConfirmar">
-              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '16px' }}>{finalOrder[0].storeId.name}</p>
-              <p style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}>{finalOrder[0].storeId.address}</p>
+              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '16px' }}>{finalOrder[0].store.name}</p>
+              <p style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}>{finalOrder[0].store.address}</p>
             </div>
           </div>
-          <div className="iconContent"><FontAwesomeIcon icon={faStore} style={{ width: '100%', height: '100%', color: '#D57FFF' }} /></div>
+          <div className="iconContent">
+            <img src={CloseStore}
+              alt='Store Icon'
+              style={{ width: '25px' }} />
+          </div>
         </div>
 
         <div className="orderContent">
@@ -49,39 +56,43 @@ function OrderDetails() {
             <p style={{ fontWeight: '700', fontSize: '16px', lineHeight: '16px' }}>Lista del pedido</p>
             <div><FontAwesomeIcon icon={faAngleDown} /></div>
           </section>
-          
+
           <section className={showOrderList ? "articlesContent active" : "articlesContent"}>
-              {finalOrder.map((item, index) =>
-                <div className="itemContent" key={index}>
-                  <div className="mealData">
-                    <div className="mealDataImage"><img src={item.productImageUrl} alt="food image"></img></div>
-                    <div className="mealDataFood">
-                      <div className="mealDataFoodStore">
-                        <p style={{ fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>{item.name}</p>
-                        <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.categoryId.name}</p>
-                      </div>
-                      <div onClick={() => handleDeleteItem(index)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
+            {finalOrder.map((item, index) =>
+              <div className="itemContent" key={index}>
+                <div className="mealData">
+                  <div className="mealDataImage"><img src={item.productImageUrl} alt="food image"></img></div>
+                  <div className="mealDataFood">
+                    <div className="mealDataFoodStore">
+                      <p style={{ fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>{item.name}</p>
+                      <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.category.name}</p>
                     </div>
-                  </div>
-                  <div className="count-ConfirmOrder">
-                    <p className="info-item-confirm">Cantidad: {item.productCant}</p>
-                    <p className="info-item-confirm">Total: $ {item.productTotal.toLocaleString()} </p>
+                    <div onClick={() => handleDeleteItem(index)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
                   </div>
                 </div>
-              )}
+                <div className="count-ConfirmOrder">
+                  <p className="info-item-confirm">Cantidad: {item.productCant}</p>
+                  <p className="info-item-confirm">Total: $ {item.productTotal.toLocaleString()} </p>
+                </div>
+              </div>
+            )}
 
-            </section>
+          </section>
           <section className="totalCount-ConfirmOrder">
             <div className="totalItem-OrderDetail ">
               <div className="itemIcon">
-                <FontAwesomeIcon icon={faBox} />
+              <img src={OrderIcon}
+                  alt='Order Icon'
+                  style={{ width: '16px' }} />
                 <p>Pedido</p>
               </div>
               <p><span style={{ color: '#3F9BFF' }}>$</span>{subTotal.toLocaleString()}</p>
             </div>
             {delivery !== 0 && <div className="totalItem-OrderDetail">
               <div className="itemIcon">
-                <FontAwesomeIcon icon={faMotorcycle} />
+              <img src={DeliveryIcon}
+                  alt='Store Icon'
+                  style={{ width: '20px' }} />
                 <p>Envío</p>
               </div>
               <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery.toLocaleString()}</p>
@@ -107,7 +118,7 @@ function OrderDetails() {
         {/* <button className={`btn-confirm-goPay ${emptyList ? 'btn-noConfirm' : ''}`} onClick={handlePagar} disabled={emptyList}>Ir a pagar</button> */}
       </main>
 
-      
+
 
 
     </>
