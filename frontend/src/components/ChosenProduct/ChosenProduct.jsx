@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import AppContext from "../../context/AppContex";
 import { Navigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShop,
@@ -12,20 +11,20 @@ import "./ChosenProduct.css";
 import Spinner from "../share/Spinner/Spinner";
 
 const ChosenProduct = () => {
-  const { selectedProduct, dataProducts } = useContext(AppContext);
+  const { selectedProduct, dataProducts, loading } = useContext(AppContext);
   const [confirmOrder, setConfirmOrder] = useState(false);
   const [goToMenu, setGoToMenu] = useState(false);
-  const [selectedProductData, setSelectedProductData] = useState(null);
+  const [productData, setProductData] = useState(null);
+  const [productQuantity, setProductQuantity] = useState(1);
 
   useEffect(() => {
-    // Buscar el producto correspondiente usando el ID del producto seleccionado
-    if (selectedProduct) {
+    if (!loading && selectedProduct) {
       const product = dataProducts.find(
         (item) => item.productId === selectedProduct
       );
-      setSelectedProductData(product);
+      setProductData(product);
     }
-  }, [selectedProduct, dataProducts]);
+  }, [selectedProduct, dataProducts, loading]);
 
   const handleConfirmar = () => {
     setConfirmOrder(true);
@@ -35,16 +34,26 @@ const ChosenProduct = () => {
     setGoToMenu(true);
   };
 
+  const handleOnQuantityChange = (value) => {
+    if (productQuantity + value <= 0) return;
+    setProductQuantity(productQuantity + value);
+  };
+
   if (confirmOrder) {
-    return <Navigate to={"../confirmar"} />;
+    return (
+      <Navigate
+        to="../confirmar"
+        state={{ productData, productQuantity }}
+      />
+    );
   }
 
   if (goToMenu) {
-    return <Navigate to={"/inicio"} />;
+    return <Navigate to="/inicio" />;
   }
 
-  if (!selectedProductData) {
-    return <Spinner msg="Buscando producto..."/>; // -> puedes cambiar el mensaje si lo deseas
+  if (loading || !productData) {
+    return <Spinner msg="Cargando datos del producto..." />;
   }
 
   return (
@@ -52,26 +61,27 @@ const ChosenProduct = () => {
       <section className="infoRestaurant">
         <img
           className="imageRestaurant"
-          src={selectedProductData.storeId.storeImageUrl}
-          alt={selectedProductData.storeId.name}
+          src={productData.store.storeImageUrl}
+          alt={productData.store.name}
         />
         <section className="infoStore">
           <div className="child1">
             <img
               className="storeLogo"
-              src={selectedProductData.storeId.storeImageUrl}
-              alt={selectedProductData.storeId.name}
+              src={productData.store.storeImageUrl}
+              alt={productData.store.name}
             />
           </div>
           <div className="child2">
-            <p className="storeName">{selectedProductData.storeId.name}</p>
-            <p className="storeAddres">{selectedProductData.storeId.address}</p>
+            <p className="storeName">{productData.store.name}</p>
+            <p className="storeAddres">{productData.store.address}</p>
           </div>
           <div className="child3 storeIcon pointer">
             <FontAwesomeIcon icon={faShop} />
           </div>
         </section>
       </section>
+
       <div className="wrapperInfoFood">
         <div className="listTitle">
           <FontAwesomeIcon
@@ -88,16 +98,13 @@ const ChosenProduct = () => {
           <section className="infoFood">
             <article className="imageFood child4">
               <img
-                src={selectedProductData.productImageUrl}
-                alt="imagen comida"
+                src={productData.productImageUrl}
+                alt="Imagen del producto"
               />
             </article>
             <article className="nameFood child5">
-              <h2 className="productNameFood">{selectedProductData.name}</h2>
-              <h2 className="categoryFood">
-                {" "}
-                {selectedProductData.categoryId.name}
-              </h2>
+              <h2 className="productNameFood">{productData.name}</h2>
+              <h2 className="categoryFood">{productData.category.name}</h2>
             </article>
             <article className="nameFood child6 trashIcon ">
               <FontAwesomeIcon
@@ -124,20 +131,24 @@ const ChosenProduct = () => {
                 className="btnLess btnsReset"
                 type="button"
                 value="-"
+                onClick={() => handleOnQuantityChange(-1)}
               />
-
               <input
                 className="count btnsReset"
                 type="button"
-                value="1"
+                value={productQuantity}
               />
               <input
                 className="btnMore btnsReset"
                 type="button"
                 value="+"
+                onClick={() => handleOnQuantityChange(1)}
               />
             </div>
-            <div className="price">$ 15000</div>
+            <div className="price">
+              <span className="dollar-sign">$ </span>
+              {productData.price * productQuantity}
+            </div>
           </div>
         </div>
       </div>

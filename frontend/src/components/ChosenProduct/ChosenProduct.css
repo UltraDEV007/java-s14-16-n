@@ -300,3 +300,17 @@
   width: 33%;
   cursor: unset;
 }
+
+.rowBtns > .price {
+  outline: 1px solid #322f3761;
+  border-radius: 5px;
+  width: 47%;
+  height: 21px;
+  text-align: end;
+  padding-right: 10px;
+  /* Existing styles */
+}
+
+.dollar-sign {
+  color: #3f9bff; /* Blue color for the dollar sign */
+}
