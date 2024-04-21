@@ -8,19 +8,19 @@
  <h3 align="center">"Rico y rápido"</h3>
 
  <h2 align="center">Recibirás lo que pediste ¡para disfrutar de un buen momento! </br> 
- Lo hicimos pensando en ti</br>
+ Lo hicimos pensando en ti.</br>
  </h2>
 
 <div>
   <p><b>¡Bienvenid@! Nuestro sitio te permitirá:</b></p> 
   <ul>
-  <li>navegar mirando qué comidas puedes comprar</li>
-  <li>una vez elegida la comida, poder agregar varias porciones y otros alimentos almacenándolos en el carrito de compra</li>
-  <li>ver la información del alimento como ingredientes, además de los datos de la tienda</li>
-  <li>notificaciones varias desde descuentos diarios hasta la llegada de tu pedido</li>
-  <li>poder elegir entre varios tipos de pago</li>
-  <li>en caso de que el pedido no sea en forma o tiempo estipulado, recibir una compensación de la tienda</li>
-  <li>esto y ¡mucho más!</li>
+  <li>Navegar viendo qué comidas puedes comprar.</li>
+  <li>Una vez elegida la comida, poder agregar varias porciones y otros alimentos almacenándolos en el carrito de compras.</li>
+  <li>Ver la información del alimento como ingredientes, además de los datos de la tienda.</li>
+  <li>Notificaciones: desde descuentos diarios hasta la llegada de tu pedido.</li>
+  <li>Poder elegir entre varios tipos de pagos.</li>
+  <li>En caso de que el pedido no llegue en forma o tiempo estipulado, recibir una compensación de la tienda.</li>
+  <li>Esto y ¡mucho más!</li>
   </ul>
   Con nuestro sitio siempre saldrás ganando, ya sea con el producto bien recibido u obteniendo una compensación.<br>
   <p>Utiliza FoodlyFinds hoy mismo y ¡saborea tu próxima comida! </p>
