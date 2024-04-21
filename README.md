@@ -19,7 +19,7 @@
   <li>Ver la información del alimento como ingredientes, además de los datos de la tienda.</li>
   <li>Notificaciones: desde descuentos diarios hasta la llegada de tu pedido.</li>
   <li>Poder elegir entre varios tipos de pagos.</li>
-  <li>En caso de que el pedido no llegue en forma o tiempo estipulado, recibir una compensación de la tienda.</li>
+  <li>En caso de que el pedido no llegue en el tiempo o forma estipulado, recibir una compensación de la tienda.</li>
   <li>Esto y ¡mucho más!</li>
   </ul>
   Con nuestro sitio siempre saldrás ganando, ya sea con el producto bien recibido u obteniendo una compensación.<br>
