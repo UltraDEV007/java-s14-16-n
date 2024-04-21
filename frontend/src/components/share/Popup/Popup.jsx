@@ -14,7 +14,7 @@ export default function Popup({
   const paramName = params.get(param)
 
   function close() {
-    setParams('')
+    setParams(prev => (prev.delete(param), prev))
   }
   
   useEffect(() => {

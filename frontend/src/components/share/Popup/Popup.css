@@ -26,6 +26,7 @@ dialog {
   transition: visibility 200ms ease-in-out;
   margin: auto;
   position: fixed;
+  inset: 0;
   animation: 200ms forwards ease-out;
   transform: translateY(50%);
   

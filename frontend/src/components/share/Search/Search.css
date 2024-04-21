@@ -32,14 +32,32 @@
 }
 
 .menu-filter {
-  padding: 15px 42px 21px;
+  padding: 15px 35px 21px;
   display: grid;
   grid-template-columns: repeat(2, 118px);
   grid-template-rows: 37px;
   grid-auto-rows: 31px;
   gap: 8px;
 
-  h4, button {
+  dialog:has(&) {
+    transform: translateY(-70%);
+    animation-duration: 350ms;
+  }
+
+  svg {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+    position: relative;
+    inset: -10px 0px 0px 30px;
+  }
+
+  h4 {
+    grid-row: 1;
+    grid-column: 1 / 3;
+  }
+
+  button {
     grid-column: span 2;
   }
 
