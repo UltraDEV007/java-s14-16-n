@@ -79,7 +79,7 @@ function ConfirmOrder({ order }) {
                     <div className="mealDataFood">
                       <div className="mealDataFoodStore">
                         <p style={{ fontSize: '13px', fontWeight: '500', lineHeight: '16px' }}>{item.name}</p>
-                        <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.categoryId.name}</p>
+                        <p style={{ fontSize: '10px', fontWeight: '500', lineHeight: '16px', color: '#3F9BFF' }}>{item.category.name}</p>
                       </div>
                       <div onClick={() => handleDeleteItem(index)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#979797' }} /></div>
                     </div>
