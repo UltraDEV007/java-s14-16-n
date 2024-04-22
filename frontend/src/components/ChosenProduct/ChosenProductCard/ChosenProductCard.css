@@ -1,0 +1,148 @@
+.cardInfoFood {
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid #322f37b2;
+  border-radius: 0px 0px 5px 5px;
+
+  .infoFood {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .imageFood > img {
+    width: 55px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .child4 {
+    flex: 1; /* Ocupa 1/4 del ancho total */
+  }
+
+  .nameFood {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.4000000059604645px;
+    text-align: left;
+  }
+
+  .child5 {
+    flex: 2; /* Ocupa la mitad del ancho total */
+    margin-left: -0.3rem;
+  }
+
+  .productNameFood {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.4000000059604645px;
+    text-align: left;
+  }
+
+  .categoryFood {
+    color: #3f9bff;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.4000000059604645px;
+    text-align: left;
+  }
+
+  .child6 {
+    flex: 1; /* Ocupa 1/4 del ancho total */
+    text-align: end;
+    color: #979797;
+  }
+
+  .trashIcon {
+    font-size: 18px;
+    padding-right: 1rem;
+  }
+
+  .rowBtns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4px 0px 7px 0px;
+
+    .btnIngredients {
+        width: 47%;
+        color: white;
+        background-color: #3f9bff;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0.4000000059604645px;
+        text-align: center;
+        padding: 4px 0px;
+        border-radius: 5px;
+      }
+    
+      .btnClarifications {
+        width: 47%;
+        color: white;
+        background-color: #322f37;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0.4000000059604645px;
+        text-align: center;
+        padding: 4px 0px;
+        border-radius: 5px;
+      }
+  }
+
+  .btnsReset {
+    /* Resetear el estilo */
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    outline: none;
+    cursor: pointer;
+    /* Resetear el estilo del texto */
+    font: inherit;
+    line-height: normal;
+    /* Resetear el estilo de las propiedades de la lista */
+    -webkit-appearance: none; /* Para Safari/Chrome */
+    -moz-appearance: none; /* Para Firefox */
+    appearance: none;
+    /* Resetear estilos adicionales */
+    -webkit-user-select: none; /* Evitar la selección de texto en navegadores Webkit */
+    -moz-user-select: none; /* Evitar la selección de texto en Firefox */
+    -ms-user-select: none; /* Evitar la selección de texto en IE/Edge */
+    user-select: none; /* Evitar la selección de texto en navegadores modernos */
+  }
+
+  .counter {
+      width: 47%;
+    }
+
+    .btnLess {
+      width: 33%;
+      cursor: pointer;
+      outline: 1px solid #322f3761;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .count {
+      outline: 1px solid #322f3761;
+      width: 33%;
+      cursor: unset;
+    }
+
+    .btnMore {
+      width: 33%;
+      cursor: pointer;
+      outline: 1px solid #322f3761;
+      border-radius: 0px 5px 5px 0px;
+    }
+  
+}

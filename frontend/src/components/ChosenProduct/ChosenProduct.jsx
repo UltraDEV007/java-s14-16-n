@@ -9,6 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./ChosenProduct.css";
 import Spinner from "../share/Spinner/Spinner";
+import List from "../share/List/List";
+import ChosenProductCard from "./ChosenProductCard/ChosenProductCard";
 
 const ChosenProduct = () => {
   const { selectedProduct, dataProducts, loading } = useContext(AppContext);
@@ -34,18 +36,13 @@ const ChosenProduct = () => {
     setGoToMenu(true);
   };
 
-  const handleOnQuantityChange = (value) => {
+  /* const handleOnQuantityChange = (value) => {
     if (productQuantity + value <= 0) return;
     setProductQuantity(productQuantity + value);
-  };
+  }; */
 
   if (confirmOrder) {
-    return (
-      <Navigate
-        to="../confirmar"
-        state={{ productData, productQuantity }}
-      />
-    );
+    return <Navigate to="../confirmar" state={{ productData }} />;
   }
 
   if (goToMenu) {
@@ -82,17 +79,11 @@ const ChosenProduct = () => {
         </section>
       </section>
 
-      <div className="wrapperInfoFood">
+      {/* <div className="wrapperInfoFood">
         <div className="listTitle">
-          <FontAwesomeIcon
-            className="pointer"
-            icon={faAngleDown}
-          />
+          <FontAwesomeIcon className="pointer" icon={faAngleDown} />
           <h4>Lista del pedido</h4>
-          <FontAwesomeIcon
-            className="pointer"
-            icon={faAngleDown}
-          />
+          <FontAwesomeIcon className="pointer" icon={faAngleDown} />
         </div>
         <div className="cardInfoFood">
           <section className="infoFood">
@@ -107,10 +98,7 @@ const ChosenProduct = () => {
               <h2 className="categoryFood">{productData.category.name}</h2>
             </article>
             <article className="nameFood child6 trashIcon ">
-              <FontAwesomeIcon
-                className="pointer"
-                icon={faTrashCan}
-              />
+              <FontAwesomeIcon className="pointer" icon={faTrashCan} />
             </article>
           </section>
           <div className="rowBtns">
@@ -151,21 +139,30 @@ const ChosenProduct = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="columnBtns">
-        <input
-          className="btnMenu btnsReset"
-          type="button"
-          value="Agregar más al pedido"
-          onClick={handleBackToMenu}
-        />
-        <input
-          className="btnConfirm btnsReset"
-          type="button"
-          value="Confirmar"
-          onClick={handleConfirmar}
-        />
+      <div className="content">
+        <List>
+          <ChosenProductCard
+            productData={productData}
+            setQuantity={(value) => setProductQuantity(value)}
+          />
+        </List>
+
+        <section className="columnBtns">
+          <input
+            className="btnMenu btnsReset"
+            type="button"
+            value="Agregar más al pedido"
+            onClick={handleBackToMenu}
+          />
+          <input
+            className="btnConfirm btnsReset"
+            type="button"
+            value="Confirmar"
+            onClick={handleConfirmar}
+          />
+        </section>
       </div>
     </main>
   );

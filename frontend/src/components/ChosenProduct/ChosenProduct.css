@@ -75,6 +75,10 @@
     cursor: pointer;
   }
 
+  .content {
+    padding: 0 2dvh;
+  }
+
   .wrapperInfoFood {
     width: 90%;
     margin: 0 auto;
@@ -98,33 +102,33 @@
       padding-right: 10px;
     }
 
-    .cardInfoFood {
+    /* .cardInfoFood {
       font-weight: 600;
       font-size: 15px;
       border: 1px solid #322f37b2;
       border-radius: 0px 0px 5px 5px;
-    }
+    } */
 
-    .infoFood {
+    /* .infoFood {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
       margin-top: 5px;
       width: 100%;
-    }
+    } */
 
-    .imageFood > img {
+    /* .imageFood > img {
       width: 55px;
       height: 40px;
       border-radius: 5px;
     }
 
     .child4 {
-      flex: 1; /* Ocupa 1/4 del ancho total */
-    }
+      flex: 1;
+    } */
 
-    .nameFood {
+    /* .nameFood {
       font-size: 13px;
       font-weight: 500;
       line-height: 16px;
@@ -133,11 +137,11 @@
     }
 
     .child5 {
-      flex: 2; /* Ocupa la mitad del ancho total */
+      flex: 2;
       margin-left: -0.3rem;
-    }
+    } */
 
-    .productNameFood {
+    /* .productNameFood {
       font-size: 13px;
       font-weight: 600;
       line-height: 16px;
@@ -152,10 +156,10 @@
       line-height: 16px;
       letter-spacing: 0.4000000059604645px;
       text-align: left;
-    }
+    } */
 
-    .child6 {
-      flex: 1; /* Ocupa 1/4 del ancho total */
+    /* .child6 {
+      flex: 1;
       text-align: end;
       color: #979797;
     }
@@ -170,7 +174,7 @@
       align-items: center;
       justify-content: space-around;
       padding: 4px 0px 7px 0px;
-    }
+    } */
 
     .btnIngredients {
       width: 47%;
@@ -251,10 +255,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1dvh;
     justify-content: space-around;
 
     .btnMenu {
-      width: 90%;
+      width: 100%;
       margin-bottom: 6rem;
       padding: 8px 30px;
       font-size: 15px;
