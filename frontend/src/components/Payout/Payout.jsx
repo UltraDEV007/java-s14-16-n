@@ -9,7 +9,7 @@ import ToggleButton from '../share/ToggleButton/ToggleButton';
 import { useAppContext } from '../../context/AppContex';
 
 export default function Payout() {
-  const 
+  const
     navigate = useNavigate(),
     [money, setMoney]= useState(''),
     { state } = useLocation(),
@@ -21,7 +21,7 @@ export default function Payout() {
         <Form className={'payout'}>
           <div className='payment'>
             <p>Total a pagar</p>
-            <p><FontAwesomeIcon icon={faDollarSign} /> {state}</p>
+            <p><FontAwesomeIcon icon={faDollarSign} /> {state.total}</p>
           </div>
           <h3>Seleccione un método de pago</h3>
           <ToggleButton options={['Efectivo', 'Pago Online']}/>
@@ -41,10 +41,10 @@ export default function Payout() {
           </label>
           <MainBtn 
             onClick={() => {
-              setDataOrder(prev => [{...prev[0], money}])
+              setDataOrder(() => [{...state, money}])
               navigate('../procesando-pago')
             }} 
-            disabled={state <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
+            disabled={state.total <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
         </Form>
       </main>
     </>

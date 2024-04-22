@@ -3,15 +3,17 @@ import logo from '../../assets/pizza.jpg'
 import './Summary.css'
 import Tooltip from '../Tooltip/Tooltip'
 import { useAppContext } from '../../context/AppContex'
+import { useEffect } from 'react'
 
 export default function Summary() {
   const 
     navigate = useNavigate(),
     { dataOrder } = useAppContext(),
     [order] = dataOrder;
-  // useEffect(() => {
-  //   setTimeout(navigate, 5e3, '../aviso-de-llegada')
-  // })
+  
+  useEffect(() => {
+    setTimeout(navigate, 5e3, '../aviso-de-llegada')
+  })
 
   return (
     <>

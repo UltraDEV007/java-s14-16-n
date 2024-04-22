@@ -33,7 +33,7 @@ function ConfirmOrder() {
     setGoToPay(true)
   }
   if (goToPay) {
-    return <Navigate to={'../medio-de-pago'} state={subTotal + delivery} />
+    return <Navigate to={'../medio-de-pago'} state={{...order, total: subTotal + delivery}} />
   }
 
   const handleToggleOrderList = () => {
