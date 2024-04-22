@@ -13,23 +13,46 @@
   justify-content: center;
   overflow: hidden;
   background-color: rgb(60, 140, 256);
-}
 
-.content {
-  position: absolute;
-  animation: movefront 3s linear forwards;
-  animation-delay: 1s;
-  opacity: 0;
+  .content {
+    position: absolute;
+    animation: movefront 3s linear forwards;
+    animation-delay: 1s;
+    opacity: 0;
 
-  h5 {
-    margin-top: 2dvh;
-    font-size: x-large;
-    font-weight: 400;
+    h5 {
+      margin-top: 2dvh;
+      font-size: x-large;
+      font-weight: 400;
+    }
+
+    img {
+      width: 20em;
+      margin-top: 3dvh;
+    }
   }
-  
-  img {
-    width: 20em;
-    margin-top: 3dvh;
+
+  .circle-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(60, 140, 256);
+    animation: reveal 1s linear forwards;
+  }
+
+  .circle {
+    width: 4dvh;
+    height: 4dvh;
+    position: absolute;
+    border-radius: 100%;
+    overflow: hidden;
+    animation: expand 1s linear forwards;
+    animation-delay: 1s;
+    background-color: white;
   }
 }
 
@@ -48,18 +71,6 @@
   }
 }
 
-.circle-container {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgb(60, 140, 256);
-  animation: reveal 1s linear forwards;
-}
-
 @keyframes reveal {
   0% {
     opacity: 0;
@@ -72,23 +83,12 @@
   }
 }
 
-.circle {
-  width: 4dvh;
-  height: 4dvh;
-  position: absolute;
-  border-radius: 100%;
-  overflow: hidden;
-  animation: expand 1s linear forwards;
-  animation-delay: 1s;
-  background-color: white;
-}
-
 @keyframes expand {
   0% {
     transform: scale(0);
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 0.8;
   }
   100% {
