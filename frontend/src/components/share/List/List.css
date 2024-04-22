@@ -1,0 +1,28 @@
+.products-list {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    background-color: rgba(50, 47, 55, 1);
+    color: white;
+    padding: 0.5dvh 1dvh;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: scale .3s ease-in-out;
+    font-size: large;
+
+    &:active {
+        scale: .95;
+    }
+
+    > svg {
+        transition: all .3s ease-in-out;
+    }
+
+    .icon-up {
+        rotate: 180deg;
+        transition: all .3s ease-in-out;
+    }
+  }
+}
