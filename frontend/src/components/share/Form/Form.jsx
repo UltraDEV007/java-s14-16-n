@@ -23,7 +23,7 @@ export default function Form({
     if (assert(onSubmit)) {
       const formData = Object.fromEntries(new FormData(e.target))
       
-      onsubmit({
+      onSubmit({
         e, 
         disable: () => setDisabled(validate),
         formData

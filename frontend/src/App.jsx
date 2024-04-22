@@ -27,7 +27,7 @@ import Building from "./components/Building/Building";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
-  const [dataOrder, setDataOrder] = useState([])
+  const [dataOrder, setDataOrder] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 

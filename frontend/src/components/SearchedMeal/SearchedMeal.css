@@ -14,7 +14,6 @@
   > ul {
     display: grid;
     justify-self: stretch;
-    align-content: space-evenly;
     gap: 20px;
 
     li {

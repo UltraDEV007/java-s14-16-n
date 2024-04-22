@@ -1,26 +1,24 @@
-import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import './Search.css'
 import Popup from '../Popup/Popup'
 import Radio from '../Buttons/Radio/Radio'
 import { useRef } from 'react'
 
-const buttons = ['pizza', 'hamburguesa', 'postres', 'guarnición']
+const buttons = ['hamburguesas', 'pizzas', 'ensalada', 'pastas', 'postres', 'platos prin...']
 
 export default function Search({
   param = 'q',
-  setRoute = 'busqueda',
 }) {
   const [params, setParams] = useSearchParams()
-  const navigate = useNavigate()
   const closeFn = useRef(null)
 
   return (
     <>
       <search className='search-bar'>
-        <button className='magnifier' type="submit" onClick={() => navigate(setRoute, { state: params.get(param) })}/>
+        <button className='magnifier' type="submit" />
         <input 
           type="search" 
-          name="search" 
+          name="name" 
           placeholder='Buscar' 
           value={params.get(param) ?? ''} 
           onChange={(e, value = e.target.value) => setParams(prev => (value ? prev.set(param, value) : prev.delete(param), prev), {replace: true})}
@@ -47,7 +45,7 @@ export default function Search({
             <rect x="12.0208" y="4.24265" width="11" height="1" transform="rotate(135 12.0208 4.24265)" fill="#979797"/>
           </svg>
           <h4>Filtros de búsqueda</h4>
-          {buttons.map(b => <Radio >{b}</Radio>)}
+          {buttons.map((b, i) => <Radio key={i} value={i + 1}>{b}</Radio>)}
           <button type='button' onClick={() => closeFn.current()}>Confirmar</button>
         </menu>
       </Popup>
