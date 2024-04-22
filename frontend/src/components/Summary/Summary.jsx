@@ -12,7 +12,7 @@ export default function Summary() {
     [order] = dataOrder;
   
   useEffect(() => {
-    setTimeout(navigate, 5e3, '../aviso-de-llegada')
+    setTimeout(navigate, 1e4, '../aviso-de-llegada')
   })
 
   return (
