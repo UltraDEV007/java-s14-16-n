@@ -5,6 +5,7 @@
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid #DDE1E6;
+  position: relative;
 
   .magnifier {
     padding-left: 15px;
@@ -28,6 +29,27 @@
 
   ::placeholder {
     opacity: .6;
+  }
+}
+
+nav.indexed {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  left: 15%;
+  right: 15%;
+  outline: var(--light-gray) 1px solid;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: start;
+
+  hr {
+    border-color: var(--light-gray);
+    color: var(--light-gray)
+  }
+
+  a {
+    color: var(--blue);
   }
 }
 

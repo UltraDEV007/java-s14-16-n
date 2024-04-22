@@ -2,29 +2,64 @@ import { useSearchParams } from 'react-router-dom'
 import './Search.css'
 import Popup from '../Popup/Popup'
 import Radio from '../Buttons/Radio/Radio'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { findByName } from '../../../utils/Api'
+import Indexed from '../Indexed/Indexed'
 
 const buttons = ['hamburguesas', 'pizzas', 'ensalada', 'pastas', 'postres', 'platos prin...']
 
 export default function Search({
   param = 'q',
 }) {
-  const [params, setParams] = useSearchParams()
-  const closeFn = useRef(null)
+  const 
+    [params, setParams] = useSearchParams(),
+    closeFn = useRef(null),
+    [list, setList] = useState([]),
+    [controller, setController] = useState(null),
+    search = useRef(null);
+
+    useEffect(() => {
+      const form = search.current.closest('form');
+      
+      function clean() {
+        setList([])
+      }
+
+      form.addEventListener('submit', clean)
+
+      return () => form.removeEventListener('submit', clean)
+    })
 
   return (
     <>
-      <search className='search-bar'>
+      <search className='search-bar' ref={search}>
         <button className='magnifier' type="submit" />
         <input 
           type="search" 
           name="name" 
           placeholder='Buscar' 
           value={params.get(param) ?? ''} 
-          onChange={(e, value = e.target.value) => setParams(prev => (value ? prev.set(param, value) : prev.delete(param), prev), {replace: true})}
+          onChange={(e) => {
+            const value = e.target.value;
+            controller?.abort('update')
+            setController(new AbortController())
+            setParams(prev => {
+              !!value ? prev.set(param, value) : prev.delete(param);
+              setController(prevCon => {
+                findByName({ name: prev.get(param), signal: prevCon.signal })
+                  .then(setList)
+                  .catch((err) => err)
+                return prevCon
+              })
+              return prev
+            }, {replace: true})
+          }}
         />
         <button className='filter' type='button' onClick={() => setParams(prev => (prev.set('s', 'filter'), prev))}/>
       </search >
+      {!!list.length && <nav className='indexed'>
+        {list.map((item, _, arr) => <Indexed key={item.productId} hr={arr.at(-1) !== item} item={item} onClick={() => setList([])} />)}
+      </nav>}
       <Popup name={'filter'} param='s' fn={closeFn}>
         <menu className='menu-filter'>
           <svg 

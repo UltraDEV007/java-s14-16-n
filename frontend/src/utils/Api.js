@@ -1,5 +1,7 @@
 // const BASE_URL = "http://158.180.237.16:8080/api/v1/product/findall"
-const BASE_URL = "https://s14-16-n-java-production.up.railway.app/api/v1/"
+const 
+  BASE_URL = "https://s14-16-n-java-production.up.railway.app/api/v1/",
+  product = `${BASE_URL}product/`;
 
 const error = {
   '404': 'No hay resultados',
@@ -17,6 +19,13 @@ export function searchMeal(form) {
     .map(([key, value]) => key + '=' + value)
     .join('&')
 
-  return fetch(`${BASE_URL}product/search?${params}`)
+  return fetch(`${product}search?${params}`)
+    .then(confirm)
+}
+
+export function findByName({ name, signal }) {
+  return fetch(`${product}findbyname/${name}`, {
+    signal,
+  })
     .then(confirm)
 }
