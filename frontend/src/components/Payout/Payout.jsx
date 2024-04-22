@@ -6,12 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Payout.css'
 import { useState } from 'react';
 import ToggleButton from '../share/ToggleButton/ToggleButton';
+import { useAppContext } from '../../context/AppContex';
 
 export default function Payout() {
   const 
     navigate = useNavigate(),
     [money, setMoney]= useState(''),
-    { state } = useLocation();
+    { state } = useLocation(),
+    { setDataOrder } = useAppContext();
 
   return (
     <>
@@ -32,11 +34,17 @@ export default function Payout() {
               type="text" 
               name="cash"
               pattern='[0-9\.]+$'
-              value={money} 
+              value={money}
+              autoComplete='off'
               onChange={(e, value = e.target.value) => setMoney(/^$|[0-9\.]+$/.test(value) ? value : money)}
             />
           </label>
-          <MainBtn onClick={() => navigate('../procesando-pago')} disabled={state <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
+          <MainBtn 
+            onClick={() => {
+              setDataOrder(prev => [{...prev[0], money}])
+              navigate('../procesando-pago')
+            }} 
+            disabled={state <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
         </Form>
       </main>
     </>
