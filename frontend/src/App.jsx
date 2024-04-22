@@ -22,7 +22,6 @@ import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
-import { order } from './data/order'
 import Building from "./components/Building/Building";
 
 function App() {
@@ -43,8 +42,6 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
-
-    setDataOrder(order)
   }, []);
 
   return (
@@ -52,7 +49,6 @@ function App() {
       <AppContext.Provider
         value={{
           dataProducts,
-          dataOrder,
           selectedProduct,
           setSelectedProduct,
           loading,
@@ -91,7 +87,7 @@ function App() {
               <Route path="pagar">
                 <Route
                   path="confirmar"
-                  element={<ConfirmOrder order={dataOrder} />}
+                  element={<ConfirmOrder />}
                 />
                 
                 <Route
