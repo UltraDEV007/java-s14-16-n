@@ -39,6 +39,7 @@ export default function Search({
           name="name" 
           placeholder='Buscar' 
           value={params.get(param) ?? ''} 
+          autoComplete='off'
           onChange={(e) => {
             const value = e.target.value;
             controller?.abort('update')
