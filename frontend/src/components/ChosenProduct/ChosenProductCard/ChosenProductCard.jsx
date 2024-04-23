@@ -7,12 +7,10 @@ const ChosenProductCard = ({ productData, setQuantity }) => {
   const [productQuantity, setProductQuantity] = useState(1);
 
   const handleOnQuantityChange = (value) => {
-    const sum = productQuantity + value
+    const sum = productQuantity + value;
     if (sum <= 0) return;
-    setProductQuantity(() => {
-      setQuantity(sum)
-      return sum
-    });
+    setProductQuantity(sum);
+    setQuantity(sum);
   };
 
   return (
