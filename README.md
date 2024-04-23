@@ -286,6 +286,7 @@
 |:-:|:-:|
 | **Diego Gonzales Soto - QA**| **Federico Bazan - QA**| 
 | <a href="https://github.com/dgsoto"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diego-gonzales-soto/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/FedeBazan"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/julio-bazan-6ba406212/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+![federico-bazan](https://github.com/No-Country/s14-16-n-java/assets/88388043/af01e328-6d0e-4211-9c69-df668802d3ca)
 
 <a href="https://www.youtube.com/watch?v=GxkzzUnyqQY">
 
