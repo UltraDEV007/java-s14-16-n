@@ -41,8 +41,7 @@
  
 <div>
 <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup%20pc%20FF.png">
-<img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup%20FF%20m%C3%B3vil%201.png">
-<img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup%20FF%20m%C3%B3vil%202.png">
+<img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup_mobile.png">
 </div>
 
 
