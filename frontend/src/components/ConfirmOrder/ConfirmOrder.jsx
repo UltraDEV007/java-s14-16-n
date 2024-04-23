@@ -11,14 +11,14 @@ import './confirmorder.css';
 
 function ConfirmOrder() {
   let { state } = useLocation();
-  const order = state ? state.productData : null;
-  console.log(order)
 
+  const order = state ? state.productData : null;
+ const productQuantity = state.productQuantity +1;
   const [goToPay, setGoToPay] = useState(false)
   const [showOrderList, setShowOrderList] = useState(false)
   const [delivery, setDelivery] = useState(order.retiro ? 0 : 2000);
   const [emptyList, setEmptyList] = useState(false);
-  const [subTotal, setSubTotal] = useState(order.productQuantity ? order.price * order.productQuantity : 0);
+  const [subTotal, setSubTotal] = useState(productQuantity ? order.price * productQuantity : 0);
 
   if (!order || Object.keys(order) === 0) {
     return <div>No hay órdenes para confirmar</div>;
@@ -99,8 +99,8 @@ function ConfirmOrder() {
                   </div>
                 </div>
                 <div className="count-ConfirmOrder">
-                  <p className="info-item-confirm">Cantidad: {order.productQuantity ? order.productQuantity : 0}</p>
-                  <p className="info-item-confirm">Total: $ {subTotal} </p>
+                  <p className="info-item-confirm">Cantidad: {productQuantity ? productQuantity : 0}</p>
+                  <p className="info-item-confirm">Total: $ {subTotal.toLocaleString()} </p>
                 </div>
               </div>
               {/* // )} */}
@@ -115,7 +115,7 @@ function ConfirmOrder() {
                   style={{ width: '16px' }} />
                 <p>Pedido</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{subTotal} </p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{subTotal.toLocaleString()} </p>
             </div>
             {delivery !== 0 && <div className="totalItem">
               <div className="itemIcon">
@@ -124,11 +124,11 @@ function ConfirmOrder() {
                   style={{ width: '20px' }} />
                 <p>Envío</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery.toLocaleString()}</p>
             </div>}
             <div className="totalItem ">
               <p>Total</p>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{(subTotal + delivery)}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{(subTotal + delivery).toLocaleString()}</p>
             </div>
           </section>
         </div>

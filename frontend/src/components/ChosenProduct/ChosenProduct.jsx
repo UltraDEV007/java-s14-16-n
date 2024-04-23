@@ -42,7 +42,7 @@ const ChosenProduct = () => {
   }; */
 
   if (confirmOrder) {
-    return <Navigate to="../confirmar" state={{ productData }} />;
+    return <Navigate to="../confirmar" state={{ productData, productQuantity }} />;
   }
 
   if (goToMenu) {
