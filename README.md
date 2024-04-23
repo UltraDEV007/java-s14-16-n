@@ -29,7 +29,7 @@
 
  <div align='center'>
  
- [![Ver Promocional](https://img.shields.io/badge/VER%20PROMOCIONAL-blue)](https://www.youtube.com/watch?v=Xrfnt5lpNAQ&feature=youtu.be)
+ [![Ver Promocional](https://img.shields.io/badge/VER%20PROMOCIONAL-blue)](https://www.youtube.com/watch?v=ZREkxyqYG2M)
 
  </a>
  </div>
