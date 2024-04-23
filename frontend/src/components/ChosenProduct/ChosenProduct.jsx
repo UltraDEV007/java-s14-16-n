@@ -145,7 +145,7 @@ const ChosenProduct = () => {
         <List>
           <ChosenProductCard
             productData={productData}
-            setQuantity={(value) => setProductQuantity(value)}
+            setQuantity={setProductQuantity}
           />
         </List>
 
