@@ -22,7 +22,7 @@ function OrderDetails() {
     setGoToPedir(true)
   }
   if (goToPedir) {
-    return <Navigate to={'../procesando-pago'} />
+    return <Navigate to={'../confirmar'} state={finalOrder} />
   }
 
   const handleToggleOrderList = () => {
