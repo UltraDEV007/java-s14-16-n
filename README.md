@@ -28,11 +28,9 @@
 </div>
 
  <div align='center'>
-  En construcción
-  <a href="[https://www.youtube.com/watch?v=Xrfnt5lpNAQ&feature=youtu.be]" target="_blank">
  
- ![ver promocional](https://img.shields.io/badge/VER%20PROMOCIONAL-blue)
- 
+ [![Ver Promocional](https://img.shields.io/badge/VER%20PROMOCIONAL-blue)](https://www.youtube.com/watch?v=Xrfnt5lpNAQ&feature=youtu.be)
+
  </a>
  </div>
 
