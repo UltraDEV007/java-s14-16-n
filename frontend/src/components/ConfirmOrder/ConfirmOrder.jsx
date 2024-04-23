@@ -11,9 +11,8 @@ import './confirmorder.css';
 
 function ConfirmOrder() {
   let { state } = useLocation();
-
   const order = state ? state.productData : null;
- const productQuantity = state.productQuantity +1;
+  const productQuantity = state.productQuantity + 1;
   const [goToPay, setGoToPay] = useState(false)
   const [showOrderList, setShowOrderList] = useState(false)
   const [delivery, setDelivery] = useState(order.retiro ? 0 : 2000);
@@ -24,16 +23,11 @@ function ConfirmOrder() {
     return <div>No hay órdenes para confirmar</div>;
   }
 
-  // si recibe un array
-  // const subTotal = newOrder.reduce((total, item) => total + item.productTotal, 0);
-  // const delivery = order[0].entrega === 0 ? 2000 : 0;
-
-
   const handlePagar = () => {
     setGoToPay(true)
   }
   if (goToPay) {
-    return <Navigate to={'../medio-de-pago'} state={{...order, total: subTotal + delivery}} />
+    return <Navigate to={'../medio-de-pago'} state={{ ...order, total: subTotal + delivery }} />
   }
 
   const handleToggleOrderList = () => {
@@ -43,17 +37,6 @@ function ConfirmOrder() {
     setEmptyList(true)
     setSubTotal(0)
     setDelivery(0)
-    
-    // const updateOrder = [...newOrder];
-    // updateOrder.splice(index, 1); // Elimina el elemento segun el indice recibido
-    // setNewOrder(updateOrder)
-    // if (updateOrder.length === 0) {
-    //   setEmptyList(true)
-    // }
-    // // actualizar el subtotal
-    // const newSubTotal = updateOrder.reduce((total, item) => total + item.productTotal, 0);
-    // setSubTotal(newSubTotal);
-
   }
 
   return (
@@ -107,7 +90,7 @@ function ConfirmOrder() {
             </section>)}
 
           <section className="totalCount-ConfirmOrder">
-            
+
             <div className="totalItem ">
               <div className="itemIcon">
                 <img src={OrderIcon}
