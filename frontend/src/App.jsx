@@ -88,10 +88,13 @@ function App() {
               />
               <Route path="pagar">
                 <Route
+                  path="producto-elegido"
+                  element={<ChosenProduct />}
+                />
+                <Route
                   path="confirmar"
                   element={<ConfirmOrder />}
                 />
-                
                 <Route
                   path="medio-de-pago"
                   element={<Payout />}
@@ -125,10 +128,6 @@ function App() {
                   element={<FinalSuccess />}
                 />
                 <Route
-                  path="producto-elegido"
-                  element={<ChosenProduct />}
-                />
-                <Route
                   path="aviso-de-llegada"
                   element={<Arrival />}
                 />
@@ -137,7 +136,6 @@ function App() {
                   element={<SearchResult />}
                 />
               </Route>
-              <Route path=":mealId" />
             </Route>
             <Route
               path="construccion"

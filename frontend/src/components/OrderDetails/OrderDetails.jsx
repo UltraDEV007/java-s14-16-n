@@ -12,7 +12,6 @@ import AppContext from "../../context/AppContex";
 function OrderDetails() {
   let { state } = useLocation();
   const { dataOrder } = useContext(AppContext)
-console.log(dataOrder)
   const finalOrder = dataOrder[0]
 
   const [delivery, setDelivery] = useState(2000);
@@ -27,7 +26,7 @@ const totalOrder = totalProduct
     setGoToPedir(true)
   }
   if (goToPedir) {
-    return <Navigate to={'../confirmar'} state={finalOrder} />
+    return <Navigate to={'../procesando-pago'} />
   }
 
   const handleToggleOrderList = () => {

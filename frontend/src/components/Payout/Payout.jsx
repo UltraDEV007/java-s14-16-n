@@ -42,7 +42,7 @@ export default function Payout() {
           <MainBtn 
             onClick={() => {
               setDataOrder(() => [{...state, money}])
-              navigate('../procesando-pago')
+              navigate('../detalle-de-pedido')
             }} 
             disabled={state.total <= +money.replace('.', '') ? false : true}>Confirmar</MainBtn>
         </Form>
