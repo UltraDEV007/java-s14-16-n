@@ -127,7 +127,7 @@
  <h2>Pasos para su instalación y uso</h2>
 
 <div>
-<a href="https://github.com/No-Country/s14-16-n-java">
+<a href="https://github.com/No-Country/s14-16-n-java/blob/main/Pasos%20instalaci%C3%B3n">
 
 ![VER Instalación](https://img.shields.io/badge/VER_INSTALACIÓN-blue?style=for-the-badge&logo=VER_INSTALACIÓN)
 
