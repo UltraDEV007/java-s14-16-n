@@ -32,7 +32,7 @@ export default function Popup({
       return () => {
         document.removeEventListener('click', listen)
         document.removeEventListener('keydown', listen)
-        dialog.current.close()
+        dialog.current?.close()
       }
     }
   })
