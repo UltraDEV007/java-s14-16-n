@@ -282,10 +282,11 @@
 | **Kevin Leon - FRONT END**| **Milton Oscar Flores - FRONT END**| 
 | <a href="https://github.com/k-alex-leon"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/kevin-león-242891217/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/MiltonOscarFlores"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/miltonoscarflores"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
-| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/diego-soto.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/assets/88388043/af01e328-6d0e-4211-9c69-df668802d3ca" width=200 height=200>| 
+| <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/diego-soto.jpeg" width=200>| <img src="https://github.com/No-Country/s14-16-n-java/assets/88388043/5f680934-1b4d-4ac6-9250-049ca5eb8d23" width=200>| 
 |:-:|:-:|
 | **Diego Gonzales Soto - QA**| **Federico Bazan - QA**| 
 | <a href="https://github.com/dgsoto"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/diego-gonzales-soto/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> | <a href="https://github.com/FedeBazan"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/julio-bazan-6ba406212/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+
 
 
 <a href="https://www.youtube.com/watch?v=GxkzzUnyqQY">
