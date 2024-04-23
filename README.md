@@ -27,9 +27,9 @@
     
 </div>
 
- <div align='center'>
+ <div>
  
- [![Ver Promocional](https://img.shields.io/badge/VER%20PROMOCIONAL-blue)](https://www.youtube.com/watch?v=ZREkxyqYG2M)
+ ![Ver Promocional](https://img.shields.io/badge/VER_PROMOCIONAL-blue?style=for-the-badge&logo=VER_PROMOCIONAL)
 
  </a>
  </div>
@@ -55,12 +55,12 @@
 
   <a href="https://www.youtube.com/watch?v=GxkzzUnyqQY" target="_blank">
   
- ![ver demo](https://img.shields.io/badge/VER%20DEMO-blue)
+ ![ver demo](https://img.shields.io/badge/VER_DEMO-blue?style=for-the-badge&logo=VER_DEMO)
  En construcción
  
  </a>
 
-<h4>Características generales</h4>
+<h3>Características generales</h3>
   <ul>
   <li>Registro de usuarios y autenticación.</li>
   <li>Posición del cliente en un mapa.</li>
@@ -70,11 +70,11 @@
   <li>Información de distintas fases de pedidos.</li>
   </ul>
 
-<h4>Información en detalle de Research, Estructura, Wireframes y Diseño del MVP</h4>
+<h3>Información en detalle de Research, Estructura, Wireframes y Diseño del MVP</h3>
  <div>
   <a href="https://drive.google.com/file/d/1GZg0PCbsD8sT80BOsMZR-8fmWqr0u14s/view?usp=sharing" target="_blank">
  
- ![Static Badge](https://img.shields.io/badge/VER_PRESENTACI%C3%93N-blue)
+ ![Presentación UX UI](https://img.shields.io/badge/VER_PRESENTACIÓN-blue?style=for-the-badge&logo=VER_PRESENTACIÓN)
 
   </a>
  </div>
@@ -83,145 +83,42 @@
 
 <!--..............................................TECNOLOGÍAS DE CADA DEPARTAMENTO...................................................-->
 <div>
-  <h4>Tecnologías usadas en Diseño UX</h4>
+  <h3>Tecnologías usadas</h3>
 
- <a href="https://app.optimalworkshop.com/optimalsort/hkzkaoav/ldabeqxv/shared-results/rfz67o9wrklemcmmzaszoquk1mu6ckoo" target="_blank">
- 
- ![informe optimalworkshop](https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604)
+| UX |
+| ------- |
+|<img width="225" height="20" src="https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604" alt="Optimal-Workshop"/> [](https://app.optimalworkshop.com/optimalsort/hkzkaoav/ldabeqxv/shared-results/rfz67o9wrklemcmmzaszoquk1mu6ckoo)|
+|<img width="200" height="20" src="https://img.shields.io/badge/VER_DISE%C3%91O_WHIMSICAL-8313dd" alt="Whimsical"/> [](https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6)|
 
-  </a>
-
- <a href="https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6" target="_blank">
- 
- ![diseño whimsical](https://img.shields.io/badge/VER_DISE%C3%91O_WHIMSICAL-8313dd)
-
-  </a>
-
- <a href="https://static.mentimeter.com/screenshot/1-que-te-inspira-floodlyfinds.jpg?maxage=600&w=1920&h=1080&url=https%3A%2F%2Fwww.mentimeter.com%2Fapp%2Fpresentation%2Falt7czcvrm1rioyiobn1fugz92nu2kc5%2Fpx1irg1ik1fv%2Fpreview%3Fp%3D0&cache_buster=7" target="_blank">
- 
- ![presentación mentimeter](https://img.shields.io/badge/VER_PRESENTACI%C3%93N_MENTIMETER-206cfd)
-
-  </a>
- 
+| UI |
+| ------- |
+|<img width="225" height="20" src="https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white" alt="Figma"/> [](https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1)|
+|<img width="100" height="20" src="https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop" alt="Photoshop"/> [](https://www.adobe.com/ar/products/photoshop.html)|
+|<img width="100" height="20" src="https://img.shields.io/badge/Illustrator-330000?logo=Illustrator&logoColor=black" alt="Ilustrator"/> [](https://www.adobe.com/ar/products/illustrator.html)|
   
-  <h4>Tecnologías usadas en Diseño UI</h4>
+| FRONT END |
+| ------- |
+|<img width="125" height="28" src="https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff" alt="Javascript"/> [](https://developer.mozilla.org/es/docs/Web/JavaScript)|
+|<img width="125" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=" alt="React"/> [](https://es.react.dev/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/> [](https://vitejs.dev/guide/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff" alt="HTML5"/> [](https://developer.mozilla.org/es/docs/Glossary/HTML5)|
+|<img width="125" height="28" src="https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff" alt="CSS"/> [](https://www.w3schools.com/css/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff" alt="MarkDown"/> [](https://markdown.es/)|
 
- <a href="https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1" target="_blank">
- 
-  ![Diseño Figma](https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white)
+| BACK END |
+| ------- |
+|<img width="125" height="28" src="https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white" alt="Java"/> [](https://www.java.com/es/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring"/> [](https://spring.io/projects/spring-framework)|
+|<img width="125" height="28" src="https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff" alt="MYSQL"/> [](https://www.mysql.com/products/connector/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Docker-1d63ed?style=for-the-badge&logo=Docker&logoColor=fff" alt="Docker"/> [](https://www.docker.com/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff" alt="Swagger"/> [](https://swagger.io/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Lombok-bc1f2d?style=for-the-badge&logo=Lombok&logoColor=fff" alt="Lombok"/> [](https://projectlombok.org/)|
 
-  </a>
-
-  <a  href="https://www.adobe.com/ar/products/photoshop.html" target="_blank">
-
-  ![Photoshop](https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop)
-
-  </a>
-
-  <a  href="https://www.adobe.com/ar/products/illustrator.html" target="_blank">
-
-  ![Illustrator](https://img.shields.io/badge/Illustrator-330000?logo=Illustrator&logoColor=black)
-
-  </a>
-  
-  
-  <h4>Tecnologías usadas en Front End</h4>
-
-  <a  href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
-
-  ![JS](https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff)
-
-  </a>
-
-  <a  href="https://es.react.dev/" target="_blank">
-
-  ![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
-
-  </a>
-
-  <a  href="https://vitejs.dev/guide/" target="_blank">
-
-  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-
-  </a>
-
-   <a  href="https://developer.mozilla.org/es/docs/Glossary/HTML5" target="_blank">
-
-  ![HTML5](https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff)
-
-  </a>
-
-  <a  href="https://www.w3schools.com/css/" target="_blank">
-
-  ![CSS3](https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff)
-
-  </a>
-
-  <a  href="https://markdown.es/" target="_blank">
-
-  ![markdown](https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff)
-
-  </a>
-
-
-  <h4>Tecnologías usadas en Back End</h4>
-
-  <a  href="https://www.java.com/es/" target="_blank">
-
-  ![Java](https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white)
-
-  </a>
-
-  <a  href="https://spring.io/projects/spring-framework" target="_blank">
-
-  ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-
-  </a>
-
-  <a  href="https://www.mysql.com/products/connector/" target="_blank">
-
-  ![MYSQL](https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff)
-
-  </a>
-
-   <a  href="https://www.docker.com/" target="_blank">
-
-  ![Docker](https://img.shields.io/badge/Docker-1d63ed?style=for-the-badge&logo=Docker&logoColor=fff)
-
-  </a>
-
-  <a  href="https://swagger.io/" target="_blank">
-
-  ![SWAGGER](https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff)
-
-  </a>
-
-  <a  href="https://projectlombok.org/" target="_blank">
-
-  ![Lombok](https://img.shields.io/badge/Lombok-bc1f2d?style=for-the-badge&logo=Lombok&logoColor=fff)
-
-  </a>
-
-  
-  <h4>Tecnologías usadas en QA</h4>
-
-   <a  href="https://www.postman.com/blue-eclipse-566265/workspace/no-country/collection/32526974-0ceaeebf-d85b-41d2-9186-e4e1ea72926e" target="_blank">
-
-  ![Postman](https://img.shields.io/badge/Postman-fe6a33?style=for-the-badge&logo=Postman&logoColor=fff)
-
-  </a>
-
-  <a  href="https://www.selenium.dev/" target="_blank">
-
-  ![Excel](https://img.shields.io/badge/Selenium-01b400?style=for-the-badge&logo=Selenium&logoColor=fff)
-
-  </a>
-
-  <a  href="https://www.microsoft.com/es-ar/microsoft-365/excel" target="_blank">
-
-  ![Excel](https://img.shields.io/badge/Excel-127b42?style=for-the-badge&logo=Excel&logoColor=fff)
-
-  </a>
+| QA |
+| ------- |
+|<img width="125" height="28" src="https://img.shields.io/badge/Postman-fe6a33?style=for-the-badge&logo=Postman&logoColor=fff" alt="Postman"/> [](https://www.postman.com/blue-eclipse-566265/workspace/no-country/collection/32526974-0ceaeebf-d85b-41d2-9186-e4e1ea72926e)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Selenium-01b400?style=for-the-badge&logo=Selenium&logoColor=fff" alt="Seleniun"/> [](https://www.selenium.dev/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Excel-127b42?style=for-the-badge&logo=Excel&logoColor=fff" alt="Excel"/> [](https://www.microsoft.com/es-ar/microsoft-365/excel)|
   
 </div>
 
@@ -233,7 +130,7 @@
 <div>
 <a href="https://github.com/No-Country/s14-16-n-java">
 
-![VER INFORMACIÓN](https://img.shields.io/badge/VER_INFORMACI%C3%93N-blue)
+![VER Instalación](https://img.shields.io/badge/VER_INSTALACIÓN-blue?style=for-the-badge&logo=VER_INSTALACIÓN)
 
 </a>
 </div>
@@ -241,7 +138,7 @@
  <div>
   <a href="mailto:esportsmelg@gmail.com">
  
- ![INFORMAR ERROR](https://img.shields.io/badge/INFORMAR_ERROR-red)
+ ![INFORMAR ERROR](https://img.shields.io/badge/INFORMAR_ERROR-orange?style=for-the-badge&logo=INFORMAR_ERROR)
 
   </a>
  </div>
@@ -291,7 +188,7 @@
 
 <a href="https://www.youtube.com/watch?v=GxkzzUnyqQY">
 
-![Video presentación de equipo](https://img.shields.io/badge/VIDEO_PRESENTACI%C3%93N_DE_EQUIPO-blue)
+![Video presentación de equipo](https://img.shields.io/badge/VIDEO_PRESENTACIÓN_DE_EQUIPO-blue?style=for-the-badge&logo=VIDEO_PRESENTACIÓN_DE_EQUIPO)
 
 </a>
 
