@@ -30,7 +30,7 @@ http://localhost:5173/
 
 # PASOS PARA INSTALACIÓN BACK END:
 
-### Clonar el Proyecto
+### Clona este repositorio en tu equipo local:
 ```
 Abre una terminal en tu sistema operativo.
 Utiliza el comando git clone seguido de la URL del repositorio para clonar el proyecto. Por ejemplo:

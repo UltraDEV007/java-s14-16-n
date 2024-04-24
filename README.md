@@ -73,14 +73,13 @@
 
 <h3>Información en detalle de Research, Estructura, Wireframes y Diseño del MVP</h3>
  <div>
-  <a href="https://drive.google.com/file/d/1GZg0PCbsD8sT80BOsMZR-8fmWqr0u14s/view?usp=sharing" target="_blank">
+  <a href="https://drive.google.com/file/d/1hiR0aHeMrGCQmGmvcsI-DA7bxJqgBYS5/view?usp=sharing" target="_blank">
  
  ![Presentación UX UI](https://img.shields.io/badge/VER_PRESENTACIÓN-blue?style=for-the-badge&logo=VER_PRESENTACIÓN)
 
   </a>
  </div>
-
-
+ 
 
 <!--..............................................TECNOLOGÍAS DE CADA DEPARTAMENTO...................................................-->
 <div>
@@ -88,38 +87,38 @@
 
 | UX |
 | ------- |
-|<img width="225" height="20" src="https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604" alt="Optimal-Workshop"/> [](https://app.optimalworkshop.com/optimalsort/hkzkaoav/ldabeqxv/shared-results/rfz67o9wrklemcmmzaszoquk1mu6ckoo)|
-|<img width="200" height="20" src="https://img.shields.io/badge/VER_DISE%C3%91O_WHIMSICAL-8313dd" alt="Whimsical"/> [](https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6)|
+|<img src="https://img.shields.io/badge/OPTIMAL_WORKSHOP-fdd604?style=for-the-badge&logo=OPTIMAL_WORKSHOP" alt="Optimal-Workshop"/> [Ver informe](https://app.optimalworkshop.com/optimalsort/hkzkaoav/ldabeqxv/shared-results/rfz67o9wrklemcmmzaszoquk1mu6ckoo)|
+|<img src="https://img.shields.io/badge/WHIMSICAL-8313dd?style=for-the-badge&logo=WHIMSICAL" alt="Whimsical"/> [Ver informe](https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6)|
 
 | UI |
 | ------- |
-|<img width="225" height="20" src="https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white" alt="Figma"/> [](https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1)|
-|<img width="100" height="20" src="https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop" alt="Photoshop"/> [](https://www.adobe.com/ar/products/photoshop.html)|
-|<img width="100" height="20" src="https://img.shields.io/badge/Illustrator-330000?logo=Illustrator&logoColor=black" alt="Ilustrator"/> [](https://www.adobe.com/ar/products/illustrator.html)|
+|<img height="32" src="https://img.shields.io/badge/FIGMA-f66042?style=for-the-badge&logo=Figma&logoColor=fff" alt="Figma"/> [Ver informe](https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1)|
+|<img width="100" height="30" src="https://img.shields.io/badge/PHOTOSHOP-31a8ff?style=for-the-badge&logo=Photoshop&logoColor=fff" alt="Photoshop"/>|
+|<img width="100" height="30" src="https://img.shields.io/badge/ILLUSTRATOR-ff9a00?style=for-the-badge&logo=Illustrator&logoColor=fff" alt="Ilustrator"/>|
   
 | FRONT END |
 | ------- |
-|<img width="125" height="28" src="https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff" alt="Javascript"/> [](https://developer.mozilla.org/es/docs/Web/JavaScript)|
-|<img width="125" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=" alt="React"/> [](https://es.react.dev/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Javascript-efda4f?style=for-the-badge&logo=Javascript&logoColor=fff" alt="Javascript"/>|
+|<img width="125" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=" alt="React"/>|
 |<img width="125" height="28" src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/> [](https://vitejs.dev/guide/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff" alt="HTML5"/> [](https://developer.mozilla.org/es/docs/Glossary/HTML5)|
-|<img width="125" height="28" src="https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff" alt="CSS"/> [](https://www.w3schools.com/css/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff" alt="MarkDown"/> [](https://markdown.es/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/HTML5-e44d26?style=for-the-badge&logo=HTML5&logoColor=fff" alt="HTML5"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/CSS3-264de4?style=for-the-badge&logo=CSS3&logoColor=fff" alt="CSS"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Markdown-black?style=for-the-badge&logo=Markdown&logoColor=fff" alt="MarkDown"/>|
 
 | BACK END |
 | ------- |
-|<img width="125" height="28" src="https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white" alt="Java"/> [](https://www.java.com/es/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring"/> [](https://spring.io/projects/spring-framework)|
-|<img width="125" height="28" src="https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff" alt="MYSQL"/> [](https://www.mysql.com/products/connector/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Docker-1d63ed?style=for-the-badge&logo=Docker&logoColor=fff" alt="Docker"/> [](https://www.docker.com/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff" alt="Swagger"/> [](https://swagger.io/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Lombok-bc1f2d?style=for-the-badge&logo=Lombok&logoColor=fff" alt="Lombok"/> [](https://projectlombok.org/)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Java-%2523ED8B00.svg?style=for-the-badge&logo=oracle&logoColor=red&color=white" alt="Java"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white" alt="Spring"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/MYSQL-237f97?style=for-the-badge&logo=MYSQL&logoColor=fff" alt="MYSQL"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Docker-1d63ed?style=for-the-badge&logo=Docker&logoColor=fff" alt="Docker"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Swagger-6d9a00?style=for-the-badge&logo=Swagger&logoColor=fff" alt="Swagger"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Lombok-bc1f2d?style=for-the-badge&logo=Lombok&logoColor=fff" alt="Lombok"/>|
 
 | QA |
 | ------- |
-|<img width="125" height="28" src="https://img.shields.io/badge/Postman-fe6a33?style=for-the-badge&logo=Postman&logoColor=fff" alt="Postman"/> [](https://www.postman.com/blue-eclipse-566265/workspace/no-country/collection/32526974-0ceaeebf-d85b-41d2-9186-e4e1ea72926e)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Selenium-01b400?style=for-the-badge&logo=Selenium&logoColor=fff" alt="Seleniun"/> [](https://www.selenium.dev/)|
-|<img width="125" height="28" src="https://img.shields.io/badge/Excel-127b42?style=for-the-badge&logo=Excel&logoColor=fff" alt="Excel"/> [](https://www.microsoft.com/es-ar/microsoft-365/excel)|
+|<img width="125" height="28" src="https://img.shields.io/badge/Postman-fe6a33?style=for-the-badge&logo=Postman&logoColor=fff" alt="Postman"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Selenium-01b400?style=for-the-badge&logo=Selenium&logoColor=fff" alt="Seleniun"/>|
+|<img width="125" height="28" src="https://img.shields.io/badge/Excel-127b42?style=for-the-badge&logo=Excel&logoColor=fff" alt="Excel"/>|
   
 </div>
 
@@ -129,7 +128,7 @@
  <h2>Pasos para su instalación y uso</h2>
 
 <div>
-<a href="https://github.com/No-Country/s14-16-n-java/blob/main/Pasos%20instalaci%C3%B3n">
+<a href="https://github.com/No-Country/s14-16-n-java/blob/main/Pasos%20instalaci%C3%B3n.md">
 
 ![VER Instalación](https://img.shields.io/badge/VER_INSTALACIÓN-blue?style=for-the-badge&logo=VER_INSTALACIÓN)
 
@@ -152,7 +151,7 @@
 
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/florencia-weingartner.jpeg" width=200>| 
 |:-:|
-| **Florencia Weingartner - PM**| 
+| **Florencia Weingartner - PM y Video Editor**| 
 | <a href="https://github.com/GitMangus/"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/florencia-weingartner"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/elisa-lucero1.png" width=200>| 
@@ -187,7 +186,7 @@
 
 
 
-<a href="https://www.youtube.com/watch?v=GxkzzUnyqQY">
+<a href="https://www.youtube.com/watch?v=1rx_JNhYYWM">
 
 ![Video presentación de equipo](https://img.shields.io/badge/VIDEO_PRESENTACIÓN_DE_EQUIPO-blue?style=for-the-badge&logo=VIDEO_PRESENTACIÓN_DE_EQUIPO)
 
