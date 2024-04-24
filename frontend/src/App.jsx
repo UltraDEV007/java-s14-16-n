@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import AppContext from "./context/AppContex";
-import { API_BASE_URL } from "./config";
+import { uriProduct } from "./utils/const";
 import "./index.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";

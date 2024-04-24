@@ -37,7 +37,7 @@ const totalOrder = totalProduct
   return (
     <>
 
-      <div className="ConfirmContent">
+      <main className="ConfirmContent">
         <div className="infoStoreContent">
           <div className="storeInfo">
             <div className="storeLogoConfirmar" style={{ fontSize: '10px', fontWeight: '300', lineHeight: '16px' }}><img src={finalOrder.store.storeImageUrl} alt="logo store"></img></div>
