@@ -4,11 +4,13 @@ import Form from "../share/Form/Form";
 import './FoodQuery.css'
 import '../share/ToggleButton/ToggleButton'
 import ToggleButton from "../share/ToggleButton/ToggleButton";
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 export default function FoodQuery() {
-  const { pathname } = useLocation();
-  const { mealId } = useParams();
+  const 
+    { pathname } = useLocation(),
+    { mealId } = useParams(),
+    navigate = useNavigate();
 
   const showSearch = [
     'inicio', 
@@ -17,9 +19,13 @@ export default function FoodQuery() {
   ].some(path => pathname === `/${path}`);
   const showToggleButton = showSearch || '/busqueda/pagar/producto-elegido' === pathname;
 
+  function submit({formData}) {
+    navigate('busqueda', { state: formData })
+  }
+
   return (
     <>
-      <Form className={'food-query'}>
+      <Form className={'food-query'} onSubmit={submit}>
         <div style={{width:'100%', visibility: showSearch ? 'visible' : 'hidden' }}>
         {showSearch && <Search />}
         </div>

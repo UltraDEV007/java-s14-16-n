@@ -1,0 +1,20 @@
+.label-button {
+  background: var(--light-gray);
+  border-radius: 5px;
+  text-transform: capitalize;
+  color: var(--gray);
+  position: relative;
+  display: grid;
+  place-items: center;
+
+
+  [type='radio'] {
+    appearance: none;
+    position: absolute;
+  }
+
+  &:has([type='radio']:checked) {
+    background-color: var(--blue);
+    color: white;
+  }
+}

@@ -9,38 +9,59 @@ const compensationList = {
     {
       name: "type",
       description: "Tipo de comida",
+      checked: false,
     },
     {
       name: "time",
       description: "Tiempo de espera",
       border: true,
+      checked: false,
     },
     {
       name: "quality",
       description: "Calidad de la comida",
+      checked: false,
     },
   ],
   compensation: [
     {
       name: "present",
       description: "Pedido correcto más otro producto de regalo",
+      checked: false,
     },
     {
       name: "refund",
       description: "Devolución del dinero",
       border: true,
+      checked: false,
     },
     {
       name: "coupon",
       description: "Descuento futuro en la misma tienda",
+      checked: false,
     },
   ],
 };
 
 export default function Compensation() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleOnBtnClick = () => setTimeout(navigate, 1e3, '../final-con-reclamo')
+  const handleOnValueCheck = (type, index) => {
+    compensationList[type][index].checked =
+      !compensationList[type][index].checked;
+  };
+
+  const handleOnBtnClick = () => {
+    let failChecked = compensationList.fail.find(
+      (item) => item.checked === true
+    );
+    let compensationChecked = compensationList.compensation.find(
+      (item) => item.checked === true
+    );
+    if (failChecked && compensationChecked) {
+      setTimeout(navigate, 1e3, "../final-con-reclamo");
+    }
+  };
   return (
     <>
       <Form className="compensation">
@@ -49,7 +70,13 @@ export default function Compensation() {
             <h4>¿En qué falló la entrega?</h4>
             <ul>
               {compensationList.fail.map((item, key) => {
-                return <CompensationInput key={key} item={item} />;
+                return (
+                  <CompensationInput
+                    key={key}
+                    item={item}
+                    checked={() => handleOnValueCheck("fail", key)}
+                  />
+                );
               })}
             </ul>
           </section>
@@ -58,7 +85,13 @@ export default function Compensation() {
             <h4>¿Qué compensación elijes?</h4>
             <ul>
               {compensationList.compensation.map((item, key) => {
-                return <CompensationInput key={key} item={item} />;
+                return (
+                  <CompensationInput
+                    key={key}
+                    item={item}
+                    checked={() => handleOnValueCheck("compensation", key)}
+                  />
+                );
               })}
             </ul>
           </section>

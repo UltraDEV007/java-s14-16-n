@@ -1,25 +1,32 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MainBtn from "../share/Buttons/MainBtn/MainBtn";
 import "./Arrival.css";
 import { useNavigate } from "react-router-dom";
+import Popup from "../share/Popup/Popup";
 
-let paths = ['../final-exitoso', '../compensacion']
+let paths = ["../final-exitoso", "../compensacion"];
 export default function Arrival() {
   const [openDialog, setOpenDialog] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleOnOpenDialog = () => setOpenDialog(true);
+  const fn = useRef(null);
+
+  useEffect(() => {
+    setTimeout(navigate, 1e4, '../aviso-de-llegada?popup=choice')
+  }, [])
 
   const handleOnBtnClick = (path) => {
-    setTimeout(navigate, 1e3, path)
-  }
+    fn.current()
+    setTimeout(navigate, 1e3, path);
+  };
 
   return (
-    <div className="arrival" onClick={handleOnOpenDialog}>
+    <div className="arrival">
       <section className="sign">
         <h4>¡Nos confirman que tu pedido ha llegado a tu domicilio!</h4>
       </section>
-      {openDialog && (
+
+      <Popup name={'choice'} fn={fn}>
         <div className="choice">
           <div>
             <p>
@@ -32,7 +39,7 @@ export default function Arrival() {
             </div>
           </div>
         </div>
-      )}
+      </Popup>
     </div>
   );
 }

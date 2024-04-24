@@ -1,4 +1,4 @@
-li {
+.compensation li {
   display: grid;
   column-gap: 20px;
   padding: 2dvh 0;

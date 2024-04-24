@@ -9,7 +9,6 @@ import Profile from "./pages/Profile";
 import Bonus from "./pages/Bonus";
 import Welcome from "./pages/Welcome/Welcome";
 import Payout from "./components/Payout/Payout";
-import PaymentMethod from "./components/PaymentMethod/PaymentMethod";
 import ConfirmPayment from "./components/ConfirmPayment/ConfirmPayment";
 import Approved from "./components/Approved/Approved";
 import Compensation from "./components/Compensation/Compensation";
@@ -23,34 +22,26 @@ import FinalSuccess from "./components/FinalSuccess/FinalSuccess";
 import ConfirmOrder from "./components/ConfirmOrder/ConfirmOrder";
 import SearchedMeal from "./components/SearchedMeal/SearchedMeal";
 import OrderDetails from "./components/OrderDetails/OrderDetails";
-import { data } from './data/findall';
-import { order } from './data/order'
 import Building from "./components/Building/Building";
 
 function App() {
   const [dataProducts, setDataProducts] = useState([]);
-  const [dataOrder, setDataOrder] = useState([])
+  const [dataOrder, setDataOrder] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // codigo para obtener los productos de la api
-    // axios
-    //   .get(API_BASE_URL)
-    //   .then((response) => {
-    //     console.log('respuesta de la api:response')
-    //     console.log(response.data)
-    // //     // setDataProducts(response.data);
-    //     setLoading(false);
-    // })
-    // .catch(error => {
-    //   console.error('Error getting data:', error);
-    //   setLoading(false);
-    // });
-
-    setDataProducts(data);
-    setDataOrder(order)
-    setLoading(false);
+    axios
+      .get(uriProduct)
+      .then((response) => {
+        setDataProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error getting data:', error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
 
@@ -59,9 +50,11 @@ function App() {
       <AppContext.Provider
         value={{
           dataProducts,
-          dataOrder,
           selectedProduct,
           setSelectedProduct,
+          dataOrder,
+          setDataOrder,
+          loading,
         }}
       >
         <Routes>
@@ -95,16 +88,20 @@ function App() {
               />
               <Route path="pagar">
                 <Route
+                  path="producto-elegido"
+                  element={<ChosenProduct />}
+                />
+                <Route
                   path="confirmar"
-                  element={<ConfirmOrder order={dataOrder}/>}
+                  element={<ConfirmOrder />}
                 />
                 <Route
                   path="medio-de-pago"
-                  element={<PaymentMethod />}
+                  element={<Payout />}
                 />
                 <Route
-                  path="monto-de-efectivo"
-                  element={<Payout />}
+                  path="detalle-de-pedido"
+                  element={<OrderDetails />}
                 />
                 <Route
                   path="procesando-pago"
@@ -131,10 +128,6 @@ function App() {
                   element={<FinalSuccess />}
                 />
                 <Route
-                  path="producto-elegido"
-                  element={<ChosenProduct />}
-                />
-                <Route
                   path="aviso-de-llegada"
                   element={<Arrival />}
                 />
@@ -143,7 +136,6 @@ function App() {
                   element={<SearchResult />}
                 />
               </Route>
-              <Route path=":mealId" />
             </Route>
             <Route
               path="construccion"

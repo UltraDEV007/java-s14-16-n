@@ -5,6 +5,7 @@
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid #DDE1E6;
+  position: relative;
 
   .magnifier {
     padding-left: 15px;
@@ -28,5 +29,66 @@
 
   ::placeholder {
     opacity: .6;
+  }
+}
+
+nav.indexed {
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  left: 15%;
+  right: 15%;
+  outline: var(--light-gray) 1px solid;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+  text-align: start;
+
+  hr {
+    border-color: var(--light-gray);
+    color: var(--light-gray)
+  }
+
+  a {
+    color: var(--blue);
+  }
+}
+
+.menu-filter {
+  padding: 15px 35px 21px;
+  display: grid;
+  grid-template-columns: repeat(2, 118px);
+  grid-template-rows: 37px;
+  grid-auto-rows: 31px;
+  gap: 8px;
+
+  dialog:has(&) {
+    transform: translateY(-70%);
+    animation-duration: 350ms;
+  }
+
+  svg {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: end;
+    position: relative;
+    inset: -10px 0px 0px 30px;
+  }
+
+  h4 {
+    grid-row: 1;
+    grid-column: 1 / 3;
+  }
+
+  button {
+    grid-column: span 2;
+  }
+
+  button {
+    background: var(--blue);
+    color: white;
+    width: max-content;
+    justify-self: center;
+    border-radius: 5px;
+    padding-inline: 25px;
   }
 }

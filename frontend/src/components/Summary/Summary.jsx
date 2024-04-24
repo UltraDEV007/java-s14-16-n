@@ -2,19 +2,24 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/pizza.jpg'
 import './Summary.css'
 import Tooltip from '../Tooltip/Tooltip'
+import { useAppContext } from '../../context/AppContex'
+import { useEffect } from 'react'
 
 export default function Summary() {
-  const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   setTimeout(navigate, 1e4, '/busqueda/pagar/aviso-de-llegada')
-  // })
+  const 
+    navigate = useNavigate(),
+    { dataOrder } = useAppContext(),
+    [order] = dataOrder;
+  
+  useEffect(() => {
+    setTimeout(navigate, 1e4, '../aviso-de-llegada')
+  })
 
   return (
     <>
       <main className='summary'>
-        <img src={logo} alt='comida'/>
-        <h3>{'1 Pizza Carbonara con huevo'}</h3>
+        <img src={order.productImageUrl} alt='comida'/>
+        <h3>{`1 ${order.name}`}</h3>
         <hr />
         <div>
           <p>A llegar en tu domicilio {'San Juan 206'}</p>
@@ -22,11 +27,11 @@ export default function Summary() {
         </div>
         <hr />
         <address>
-          <h3>{'Fundamentos Pizza'}</h3>
-          <p>{'Av. Córdoba 3120, Montevideo'}</p>
+          <h3>{order.store.name}</h3>
+          <p>{order.store.address}</p>
         </address>
         <hr />
-        <p className='price'>TOTAL PAGADO ${17000}</p>
+        <p className='price'>TOTAL PAGADO ${order.money}</p>
         <Tooltip >Cuando llegue el pedido confirma que todo está bien</Tooltip>
       </main>
     </>

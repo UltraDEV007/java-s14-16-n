@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CalificationResponse {
+public class QualificationResponse {
 
-    private Long calificationId;
+    private Long qualificationId;
     private UserTblEntity user;
     private StoreEntity store;
     private  Integer value;

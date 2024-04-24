@@ -1,5 +1,9 @@
-import './Spinner.css'
+import "./Spinner.css";
 
-export default function Spinner() {
-  return <span className='dotted-spinner'/>
+export default function Spinner({ msg = "Cargando..." }) {
+  return (
+    <div className="spinner">
+      <span>{msg}</span>
+    </div>
+  );
 }

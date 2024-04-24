@@ -14,7 +14,7 @@ export default function Popup({
   const paramName = params.get(param)
 
   function close() {
-    setParams('')
+    setParams(prev => (prev.delete(param), prev))
   }
   
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Popup({
       return () => {
         document.removeEventListener('click', listen)
         document.removeEventListener('keydown', listen)
-        dialog.current.close()
+        dialog.current?.close()
       }
     }
   })

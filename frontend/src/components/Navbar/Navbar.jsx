@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import HamburgerBtn from '../share/Buttons/HamburgerBtn/HamburgerBtn';
 import FoodQuery from '../FoodQuery/FoodQuery';
-import BackArrow from '../BackArrow/BackArrow'
+import Backward from '../share/Buttons/Backward/Backward';
 
 
 
@@ -65,7 +65,7 @@ function Navbar() {
     <>
       {showHeader && <header className={`header ${isMinHeader ? 'headerMin' : ''} ${isMediumHeader ? 'headerMedium' : ''}`}>
         <div className='headerH'>
-          {!hideBackArrow && <BackArrow />}
+          {!hideBackArrow && <Backward />}
           <address>
             {!hideLocationIcon && <FontAwesomeIcon icon={faLocationDot} style={{ color: '#D57FFF', fontSize: '21px' }} />}
             <p style={{ fontSize: '16px', lineHeight: '21px', fontWeight: '500' }}>{paginaActual}</p>

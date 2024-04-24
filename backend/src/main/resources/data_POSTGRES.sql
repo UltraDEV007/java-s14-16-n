@@ -23,7 +23,7 @@ VALUES ('Hamburguesas'),
        ('Comida Internacional');
 
 -- Datos de ejemplo para la tabla calification_tbl
-INSERT INTO calification_tbl (user_id, store_id, value_qualification)
+INSERT INTO qualification_tbl (user_id, store_id, value_qualification)
 VALUES (1, 1, 4),
        (2, 2, 5),
        (3, 3, 3);

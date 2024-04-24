@@ -21,33 +21,26 @@
       font-weight: 400;
       margin: 0 2dvh 0 2dvh;
     }
-
   }
 
-  > .choice {
-    position: absolute;
+  .choice {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(77, 77, 77, 0.3);
 
     > div {
-      width: 80%;
       background-color: white;
-      border: 1px solid black;
-      box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.3);
       border-radius: 12px;
       padding: 4dvh;
-      box-shadow: 1px;
       z-index: 10;
       opacity: 1;
 
       > div {
         display: grid;
         grid-auto-flow: column;
-        margin-top: 4dvh;
+        margin-top: 2dvh;
 
         > button {
           justify-self: center;
@@ -59,14 +52,14 @@
           padding: 2dvh;
           border-radius: 5px;
           box-shadow: none;
-          transition: all .3s;
+          transition: all 0.3s;
           color: black;
         }
 
         > button:active {
-          scale: .8;
+          scale: 0.8;
         }
-      
+
         > button:focus {
           background-color: rgb(63, 155, 255);
           border-style: none;
@@ -75,5 +68,4 @@
       }
     }
   }
-
 }
