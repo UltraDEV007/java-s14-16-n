@@ -73,7 +73,7 @@
 
 <h3>Información en detalle de Research, Estructura, Wireframes y Diseño del MVP</h3>
  <div>
-  <a href="https://drive.google.com/file/d/1_2OgmjTDwTKnBN5ojsYobQEEWbfXwxv8/view?usp=sharing" target="_blank">
+  <a href="https://drive.google.com/file/d/1hiR0aHeMrGCQmGmvcsI-DA7bxJqgBYS5/view?usp=sharing" target="_blank">
  
  ![Presentación UX UI](https://img.shields.io/badge/VER_PRESENTACIÓN-blue?style=for-the-badge&logo=VER_PRESENTACIÓN)
 
