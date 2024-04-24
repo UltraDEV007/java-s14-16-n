@@ -1,19 +1,23 @@
-#PASOS PARA INSTALACION FRONT END:
+# PASOS PARA INSTALACION FRONT END:
 Nota: Asegurate de tener instalados previamente en tu equipo node.js y npm
 
-###Clona este repositorio en tu equipo local:
+### Clona este repositorio en tu equipo local:
 Crea una carpeta para alojar el proyecto.
 En tu editor de código abre la carpeta creada, 
 Despliega la terminal para ejecutar el siguiente comando:  git clone https://github.com/No-Country/s14-16-n-java.git
 
-###Accede al directorio del proyecto:
-opcion 1, desde la consola: cd s14-16-n-java/frontend
-opción 2, desde el editor de código: File-> Open Folder->s14-16-n-java->frontend
+### Accede al directorio del proyecto:
+Opción 1, desde la consola: cd s14-16-n-java/frontend
+<br>
+Opción 2, desde el editor de código: File-> Open Folder->s14-16-n-java->frontend
 
 
-###Una vez que ingresaste a la carpeta frontend, instala las dependencias, necesitarás instalar react y vite en su ultima versión, para esto ejecuta en la terminal el comando:  npm install
+### Una vez que ingresaste a la carpeta frontend, instala las dependencias, necesitarás instalar react y vite en su ultima versión, para esto ejecuta en la terminal el comando:  
+npm install
 
-###Inicia el servidor de desarrollo, ejecutando el comando: npm run dev
-Este comando genera en tu terminal el enlace para acceder al servidor localhost (http://localhost:5173/)
+### Inicia el servidor de desarrollo, ejecutando el comando: npm run dev
+Este comando genera en tu terminal el enlace para acceder al servidor localhost http://localhost:5173/
 
 ¡Listo! sigue el link para abrir la webapp en tu navegador predeterminado (visualízalo en tamaño móvil para una mejor experiencia)
+
+# PASOS PARA INSTALACIÓN BACK END:
