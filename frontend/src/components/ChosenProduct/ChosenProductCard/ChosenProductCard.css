@@ -71,30 +71,30 @@
     padding: 4px 0px 7px 0px;
 
     .btnIngredients {
-        width: 47%;
-        color: white;
-        background-color: #3f9bff;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 16px;
-        letter-spacing: 0.4000000059604645px;
-        text-align: center;
-        padding: 4px 0px;
-        border-radius: 5px;
-      }
-    
-      .btnClarifications {
-        width: 47%;
-        color: white;
-        background-color: #322f37;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 16px;
-        letter-spacing: 0.4000000059604645px;
-        text-align: center;
-        padding: 4px 0px;
-        border-radius: 5px;
-      }
+      width: 47%;
+      color: white;
+      background-color: #3f9bff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0.4000000059604645px;
+      text-align: center;
+      padding: 4px 0px;
+      border-radius: 5px;
+    }
+
+    .btnClarifications {
+      width: 47%;
+      color: white;
+      background-color: #322f37;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16px;
+      letter-spacing: 0.4000000059604645px;
+      text-align: center;
+      padding: 4px 0px;
+      border-radius: 5px;
+    }
   }
 
   .btnsReset {
@@ -122,27 +122,58 @@
   }
 
   .counter {
-      width: 47%;
-    }
+    width: 47%;
+  }
 
-    .btnLess {
-      width: 33%;
-      cursor: pointer;
-      outline: 1px solid #322f3761;
-      border-radius: 5px 0px 0px 5px;
-    }
+  .btnLess {
+    width: 33%;
+    cursor: pointer;
+    outline: 1px solid #322f3761;
+    border-radius: 5px 0px 0px 5px;
+  }
 
-    .count {
-      outline: 1px solid #322f3761;
-      width: 33%;
-      cursor: unset;
-    }
+  .count {
+    outline: 1px solid #322f3761;
+    width: 33%;
+    cursor: unset;
+  }
 
-    .btnMore {
-      width: 33%;
-      cursor: pointer;
-      outline: 1px solid #322f3761;
-      border-radius: 0px 5px 5px 0px;
-    }
-  
+  .btnMore {
+    width: 33%;
+    cursor: pointer;
+    outline: 1px solid #322f3761;
+    border-radius: 0px 5px 5px 0px;
+  }
+}
+
+.modalTitulo {
+  color: #3f9bff;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.modalIngredientes {
+  color: #322f37c0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.4000000059604645px;
+  text-align: left;
+}
+
+.clarificationsInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #322f37c0;
+  text-align: center;
+  outline: none;
 }
