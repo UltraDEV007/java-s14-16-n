@@ -12,13 +12,14 @@ import AppContext from "../../context/AppContex";
 function OrderDetails() {
   let { state } = useLocation();
   const { dataOrder } = useContext(AppContext)
-
   const finalOrder = dataOrder[0]
 
   const [delivery, setDelivery] = useState(2000);
   const [goToPedir, setGoToPedir] = useState(false)
   const [showOrderList, setShowOrderList] = useState(false)
-
+const cantidad = finalOrder.productQuantity? finalOrder.productQuantity: ((finalOrder.total-delivery)/finalOrder.price)
+const totalProduct = finalOrder.total-delivery
+const totalOrder = totalProduct
 
 
   const handlePedir = () => {
@@ -77,8 +78,8 @@ function OrderDetails() {
                 </div>
               </div>
               <div className="count-ConfirmOrder">
-                <p className="info-item-confirm">Cantidad: {finalOrder.productQuantity}</p>
-                <p className="info-item-confirm">Total: $ {finalOrder.total} </p>
+                <p className="info-item-confirm">Cantidad: {cantidad}</p>
+                <p className="info-item-confirm">Total: $ {totalProduct.toLocaleString()} </p>
               </div>
             </div>
 
@@ -92,7 +93,7 @@ function OrderDetails() {
                   style={{ width: '16px' }} />
                 <p>Pedido</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{finalOrder.total}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{totalOrder.toLocaleString()}</p>
             </div>
             {delivery !== 0 && <div className="totalItem-OrderDetail">
               <div className="itemIcon">
@@ -101,15 +102,15 @@ function OrderDetails() {
                   style={{ width: '20px' }} />
                 <p>Envío</p>
               </div>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{delivery.toLocaleString()}</p>
             </div>}
             <div className="totalItem-OrderDetail ">
               <p>Total a pagar</p>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{(finalOrder.total + delivery)}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{(finalOrder.total).toLocaleString()}</p>
             </div>
             <div className="totalItem-OrderDetail ">
               <p>Pago en efectivo</p>
-              <p><span style={{ color: '#3F9BFF' }}>$</span>{finalOrder.money}</p>
+              <p><span style={{ color: '#3F9BFF' }}>$</span>{finalOrder.money.toLocaleString()}</p>
             </div>
             <div className="totalItem-OrderDetail ">
               <div className="itemIcon">

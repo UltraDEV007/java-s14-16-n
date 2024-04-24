@@ -12,7 +12,7 @@ import './confirmorder.css';
 function ConfirmOrder() {
   let { state } = useLocation();
   const order = state ? state.productData : null;
-  const productQuantity = state.productQuantity + 1;
+  const productQuantity = state.productQuantity;
   const [goToPay, setGoToPay] = useState(false)
   const [showOrderList, setShowOrderList] = useState(false)
   const [delivery, setDelivery] = useState(order.retiro ? 0 : 2000);
