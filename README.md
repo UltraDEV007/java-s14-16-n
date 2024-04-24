@@ -88,14 +88,14 @@
 
 | UX |
 | ------- |
-|<img width="225" height="20" src="https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604" alt="Optimal-Workshop"/> [](https://app.optimalworkshop.com/optimalsort/hkzkaoav/ldabeqxv/shared-results/rfz67o9wrklemcmmzaszoquk1mu6ckoo)|
-|<img width="200" height="20" src="https://img.shields.io/badge/VER_DISE%C3%91O_WHIMSICAL-8313dd" alt="Whimsical"/> [](https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6)|
+|<img width="225" height="30" src="https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604?style=for-the-badge&logo=VER_INFORME_OPTIMAL_WORKSHOP" alt="Optimal-Workshop"/> [](https://img.shields.io/badge/VER_INFORME_OPTIMAL_WORKSHOP-fdd604?style=for-the-badge&logo=VER_INFORME_OPTIMAL_WORKSHOP)|
+|<img width="200" height="30" src="https://img.shields.io/badge/VER_DISE%C3%91O_WHIMSICAL-8313dd?style=for-the-badge&logo=VER_DISE%C3%91O_WHIMSICAL" alt="Whimsical"/> [](https://whimsical.com/mapa-del-sitio-foodlyfinds-VT4aqgrdUbcKDsZ77c1Et6)|
 
 | UI |
 | ------- |
-|<img width="225" height="20" src="https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-%23F24E1E?logo=figma&logoColor=white" alt="Figma"/> [](https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1)|
-|<img width="100" height="20" src="https://img.shields.io/badge/Photoshop-31a8ff?logo=photoshop" alt="Photoshop"/> [](https://www.adobe.com/ar/products/photoshop.html)|
-|<img width="100" height="20" src="https://img.shields.io/badge/Illustrator-330000?logo=Illustrator&logoColor=black" alt="Ilustrator"/> [](https://www.adobe.com/ar/products/illustrator.html)|
+|<img width="225" height="30" src="https://img.shields.io/badge/VER_PRESENTACIÓN_FIGMA-f66042?style=for-the-badge&logo=Figma&logoColor=fff" alt="Figma"/> [](https://www.figma.com/file/UT1VY46ggnHHnnNDm6C4f4/s14-16-n-java?type=design&node-id=23%3A8&mode=design&t=6CfpaMmj1rOwweUC-1)|
+|<img width="100" height="30" src="https://img.shields.io/badge/PHOTOSHOP-31a8ff?style=for-the-badge&logo=Photoshop&logoColor=fff" alt="Photoshop"/> [](https://www.adobe.com/ar/products/photoshop.html)|
+|<img width="100" height="30" src="https://img.shields.io/badge/ILLUSTRATOR-ff9a00?style=for-the-badge&logo=Illustrator&logoColor=fff" alt="Ilustrator"/> [](https://www.adobe.com/ar/products/illustrator.html)|
   
 | FRONT END |
 | ------- |
