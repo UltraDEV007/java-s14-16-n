@@ -28,7 +28,9 @@
 </div>
 
  <div>
- 
+
+ <a href="https://www.youtube.com/watch?v=ZREkxyqYG2M" target="_blank">
+   
  ![Ver Promocional](https://img.shields.io/badge/VER_PROMOCIONAL-blue?style=for-the-badge&logo=VER_PROMOCIONAL)
 
  </a>
@@ -40,7 +42,7 @@
  <h2>Presentación del Sitio</h2>
  
 <div>
-<img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup%20pc%20FF.png">
+<img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup%20tr%C3%ADo.png">
 <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/design/mockup_mobile.png">
 </div>
 
