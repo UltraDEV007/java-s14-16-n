@@ -152,7 +152,7 @@
 
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/florencia-weingartner.jpeg" width=200>| 
 |:-:|
-| **Florencia Weingartner - PM**| 
+| **Florencia Weingartner - PM y Video Editor**| 
 | <a href="https://github.com/GitMangus/"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/florencia-weingartner"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
 
 | <img src="https://github.com/No-Country/s14-16-n-java/blob/main/images/team/elisa-lucero1.png" width=200>| 
@@ -187,7 +187,7 @@
 
 
 
-<a href="https://www.youtube.com/watch?v=GxkzzUnyqQY">
+<a href="https://www.youtube.com/watch?v=1rx_JNhYYWM">
 
 ![Video presentación de equipo](https://img.shields.io/badge/VIDEO_PRESENTACIÓN_DE_EQUIPO-blue?style=for-the-badge&logo=VIDEO_PRESENTACIÓN_DE_EQUIPO)
 
