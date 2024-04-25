@@ -54,10 +54,9 @@
  **Proyecto para No Country Marzo-Abril 2024**
  > Grupo: s14-16-n-java
 
-  <a href="https://www.youtube.com/watch?v=GxkzzUnyqQY" target="_blank">
+  <a href="https://youtu.be/NL_at48WSdU?si=oBXhvO_RU_6ib4yE" target="_blank">
   
  ![ver demo](https://img.shields.io/badge/VER_DEMO-blue?style=for-the-badge&logo=VER_DEMO)
- En construcción
  
  </a>
 
